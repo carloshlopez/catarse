@@ -1,0 +1,91 @@
+es:
+  adm: &admin
+    projects:
+      index:
+        by_state: 'Por estado'
+        between_created_at: 'Creado en entre'
+        submit: 'Filtrar'
+        send_to_draft: 'Enviar a BORRADOR!'
+        reject: 'Rechazar!'
+        approve: 'Aprovar!'
+        order_asc: 'Meta asc'
+        order_desc: 'Meta desc'
+        order_created_at: 'Fecha de envio'
+    financials:
+      index:
+        submit: 'Filtrar'
+        by_state: 'Por estado'
+        by_progress: Por progreso %
+    users:
+      index:
+        title: "Adm backers"
+        menu: Backers
+        credits: Creditos
+        credits_view: "Creditos calculados"
+        id: ID
+        key: Key
+        submit: Buscar
+        has_credits_difference: "Diferencia en creditos"
+        total_backed: backed
+        total_backers: backers
+        total_backs: backs
+        total_users: usuarios
+        total_credits: credits
+        total_credits_view: "creditos calculados"
+        user: Usuario
+        value: Valor
+        provider: Proveedor
+    backers:
+      messages:
+        successful:
+          confirm: 'Backer confirmado!'
+          pendent: 'Backer SIN confirmar!'
+          refund: 'Backer refunded!'
+          change_reward: 'Reward changed!'
+          hide: 'Backer hidden!'
+          cancel: 'Backer canceled!'
+      index:
+        cancel: 'Cancel backer'
+        refund_and_hide: 'Refund and hide'
+        backer_info: 'Info of backer %{key}'
+        payment_id: 'Payment ID'
+        payment_method: 'Payment method'
+        payment_choice: 'Payment choice'
+        payer_email: 'Payer email'
+        user_email: 'Catarse user email'        
+        pending_to_refund: 'Pending to refund'
+        created_at: 'Created at'
+        title: "Backers management"
+        menu: Backs
+        anonymous: Anonymous?
+        confirmed: Confirmed?
+        credits: "Used credits?"
+        id: ID
+        key: Key
+        no_backers: "No backers found."
+        project: Project
+        refunded: Refunded?
+        requested_refund: "Requested refund?"
+        reward: Reward
+        no_reward: "No reward"
+        submit: Search
+        total_backed: backed
+        total_backers: backers
+        total_backs: backs
+        total_users: Users
+        user: User
+        value: Value
+    statistics:
+      index:
+        title: "Statistics"
+        total_users: "Users"
+        total_backs: "Backs"
+        total_backers: "Backers"
+        total_backed: "Backed"
+        total_projects: "Projects"
+        total_projects_success: "Successful"
+        total_projects_online: "Online"
+
+  channels:
+    adm:
+      <<: *admin
