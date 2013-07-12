@@ -151,6 +151,7 @@ GEM
       thor
     crack (0.1.8)
     curb (0.8.4)
+    dalli (2.6.4)
     database_cleaner (1.0.1)
     debug_inspector (0.0.2)
     devise (2.2.4)
@@ -250,6 +251,7 @@ GEM
       treetop (~> 1.4.8)
     mailchimp (0.0.8)
       httparty
+    memcachier (0.0.2)
     mime-types (1.23)
     money (5.1.1)
       i18n (~> 0.6.0)
@@ -464,6 +466,7 @@ DEPENDENCIES
   compass-960-plugin
   compass-rails
   coveralls
+  dalli
   database_cleaner
   devise
   draper
@@ -486,6 +489,7 @@ DEPENDENCIES
   kaminari
   launchy
   letter_opener
+  memcachier
   moip!
   newrelic_rpm
   omniauth
