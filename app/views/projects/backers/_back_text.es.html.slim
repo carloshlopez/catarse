@@ -1,0 +1,11 @@
+h2 Quiero contribuir, ¿qué sigue después?
+h3 ¿Cómo puedo contribuir a este proyecto?
+p Primero, define el valor de tu contribución y escoge tu recompensa. Luego haz clic en “Confirmar y hacer el pago” para diriguirte a la siguiente página para realizar el pago.
+h3 ¿Cuándo se realiza el pago?
+p Una vez nos llegue la confirmación del pago por Efecty, Paypal o PSE confirmaremos la transaccción (la confirmación por pagos en línea no debería tardar más de 4 días). Luego, si el proyecto no alcanza los #{@project.display_goal} el #{@project.display_expires_at}, se cargará a tu cuenta la cantidad de dinero en forma de créditos.en #{Configuration[:company_name]}.
+h3 Entonces recibiré mi plata de regreso si el proyecto no alcanza su meta?
+p Si! Recibirás el 100% de lo que pagaste en forma de créditos para que apoyes otros proyectos en #{Configuration[:company_name]}.
+h3 Y si no quiero utilizar estos créditos en #{Configuration[:company_name]}?
+p No hay problema. Solamente entra a #{link_to t('credits.title'), user_path(current_user, anchor: :credits), :target => :_blank} tab, 60 días después y pide un chargeback. Si pagaste por tarjeta de crédito, se te cargará en el siguiente extracto. Si pagaste por PSE la única forma de devolverte el dinero es que abras una cuenta en Efecty y después nosotros te transferimos el valor a tu cuenta y de ahí la podrás meter a tu banco de nuevo.
+h3 Si el proyecto es exitoso, como consigo mi recompensa?
+p Cuando la recompensa esté lista, #{link_to @project.user.display_name, user_path(@project.user)} se comunicará contigo para cuadrar los detalles para hacertela llegar.

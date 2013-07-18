@@ -31,12 +31,12 @@
           = hidden_field_tag 'payment_method_url', nil
           - unless @backer.credits
             = form.inputs do
-              fieldset.live_in_brazil
+              /fieldset.live_in_brazil
                 = check_box_tag 'live_in_brazil', 'live', params[:locale] == 'pt'
                 = label_tag 'live_in_brazil', t('.live_in_brazil'), class: 'inline'
-              = form.input :full_name, required: true, as: :string
+              /= form.input :full_name, required: true, as: :string
               /= form.input :cpf, as: :string, input_html: {autocomplete: 'off'}
-              = form.input :email, required: true, as: :string
+              /= form.input :email, required: true, as: :string
               fieldset.address_data
                 .title
                   h2
@@ -56,14 +56,17 @@
               = form.actions do
                 .bootstrap-twitter
                   = form.submit (@backer.credits ? t('.submit.credits') : t('.submit.moip')), disabled: true, class: 'btn', id: 'user_submit'
-
-        #payment.hide
+        #payment_pse
+          #PSE
+            p Paga por PSE
+            = image_tag "pse/pagopse.png"
+        #payment_old.hide
           .title
             h1= t('.choose_payment')
             h2= t('.choose_payment_subtitle')
 
           .tab_container
-            nav#payment_menu
+            nav#payment_menu_old
               - PaymentEngines.engines.each do |engine|
                 = link_to "##{engine[:name]}_payment", id: engine[:name], class: 'selected enabled' , :'data-target' => engine[:review_path].call(@backer) do
                   = t("projects.backers.review.#{engine[:name]}")

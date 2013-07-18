@@ -1,0 +1,54 @@
+#page_content
+  .container
+	h1 Confirmación de tu contribución
+
+	p
+	 = 'Razón Social: '
+	 = @razon_social
+
+	p 
+	  = 'Nit: '
+	  = @nit
+	p 
+	  = 'Número de Factura: '
+	  = @no_fact
+	p 
+	  = 'Tipo de Documento: '
+	  = @tipo_doc
+	p 
+	  = 'Número Documento: '
+	  = @num_doc
+	p 
+	  = 'Nombre Empresa: '
+	  = @nombre_empresa
+	p 
+	  = 'Descripción: '
+	  = @desc
+	p 
+	  = 'Valor Total: '
+	  = @valor_total
+	p 
+	  = 'Iva: '
+	  = @iva
+	p 
+	  = 'Valor Neto: '
+	  = @valor_neto
+	p 
+	  = 'Valor base de Iva: '
+	  = @valor_base_dev_iva
+	p 
+	  = 'Fecha: '
+	  = @fecha
+	p 
+	  = 'Banco: '
+	  = @banco
+	p 
+	  = 'Número de Transacción (CUS): '
+	  = @num_transaccion	  
+
+    - if @estado_trans.upcase == "OK" 
+      p Transacción Aceptada
+      input type="button" name="Imprimir" value="Imprimir"
+    - else
+      p Transacción Rechazada
+      input type="button" name="Reintentar" value="Reintentar"

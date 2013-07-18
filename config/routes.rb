@@ -53,6 +53,10 @@ Catarse::Application.routes.draw do
   get "/guidelines_backers",    to: "static#guidelines_backers",  as: :guidelines_backers
   get "/guidelines_start",      to: "static#guidelines_start",    as: :guidelines_start
   get "/about",                 to: "static#about",               as: :about
+  
+  #Static paymet page
+  match "/pse_receive_payment" => "pse_payment#receive_payment", as: :pse_payments_receive
+  match "/pse_payment_confirmation" => "pse_payment#payment_confirmation", as: :pse_payment_confirmation
 
 
   match "/explore" => "explore#index", as: :explore

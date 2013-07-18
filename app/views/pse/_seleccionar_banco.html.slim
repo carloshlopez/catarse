@@ -1,0 +1,98 @@
+table border="0" cellpadding="1" cellspacing="3" width="50%"
+  tbody
+    tr valign="bottom"
+      td.titulares align="middle" colspan="2" height="25"
+        | Detalle
+        | de Pago
+        span.textosbl
+    tr
+      td.textosbl align="right" width="45%"
+      td width="55%"
+    tr
+      td.textosbl align="right" width="45%"
+      td width="55%"
+        | \&nbsp;
+        input#nit maxlength="16" name="nit" readonly="" size="15" value="190.85.74.123"
+      td.textosbl align="right" width="45%"
+      td width="55%"
+        | \&nbsp;
+        input#Text1 maxlength="16" name="nit" readonly="" size="15" value="NIT"
+      td.textosbl align="right" width="45%"
+      td width="55%"
+        | \&nbsp;
+        input#Text2 maxlength="16" name="nit" readonly="" size="15" value="1122334455"
+      td.textosbl align="right" width="45%"
+        | Nombre de
+        | Empresa
+      td width="55%"
+        | \&nbsp;
+        input#empresa name="empresa" readonly="" size="40" value="Inversiones LTDA"
+    tr
+      td.textosbl align="right" width="45%"
+        | Número de
+        | Factura
+      td width="55%"
+        | \&nbsp;
+        input#factura name="factura" readonly="" size="25" value="556677"
+    tr
+      td.textosbl align="right" width="45%"
+      td width="55%"
+        | \&nbsp;
+        input#valor name="valor" readonly="" size="25" value="$100,000.00"
+    tr
+      td.textosbl align="right" width="45%"
+      td width="55%"
+        | \&nbsp;
+        select#TipoCliente name="TipoCliente"
+          option selected="" value="0"
+            | Persona
+            | Natural
+          option value="1"
+            | Persona
+            | Jurídica
+    tr
+      td.textosbl align="right" width="45%"
+      td width="55%"
+        | \&nbsp;
+        select#Banco name="Banco"
+          option selected="" value="0"
+          option value="1052"
+          option value="1032"
+            | BANCO
+            | CAJA SOCIAL
+          option value="1019"
+            | BANCO
+            | COLPATRIA
+          option value="1006"
+            | BANCO CORPBANCA
+            | S.A
+          option value="1051"
+          option value="1001"
+          option value="1023"
+          option value="1012"
+          option value="1060"
+          option value="1002"
+          option value="1058"
+            | BANCO
+            | PROCREDIT
+          option value="1007"
+          option value="1061"
+          option value="1013"
+          option value="1009"
+          option value="1014"
+            | HELM BANK
+            | S.A.
+          option value="1010"
+          option value="1008"
+    tr
+      td.textosbl align="right" width="45%"
+      td width="55%"
+    tr valign="bottom"
+      td align="middle" colspan="2" height="28"
+        input#Image1.botonPSE name="Image1" onclick="this.disabled=true;__doPostBack('Image1','')" src="Plantilla%20PSE%20-%20Seleccionar%20Banco_files/pagopse.png" type="image"
+      td align="middle" colspan="2" height="20"
+    tr
+      td.titulares align="middle" colspan="2" height="20"
+        img#Image2 alt="" border="0" language="javascript" name="btnPSE" onclick="javascript:location.href='javascript:history.back(-2);'" src="Plantilla%20PSE%20-%20Seleccionar%20Banco_files/bot_volver.gif" type="image"
+      td align="left" colspan="2" width="36%"
+        span#MensajeError.txt13
