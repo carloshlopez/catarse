@@ -4,9 +4,9 @@
       .section_header
         .original_title
           p
-            = @campaign.name
-          p
             = image_tag @campaign.logo_url
+          p
+            = "Una campaña de"
           p
             =image_tag @validator.logo_url, :width=>"250px"
       .selected_projects.list
