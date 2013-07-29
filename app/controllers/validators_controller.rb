@@ -10,11 +10,11 @@ class ValidatorsController < InheritedResources::Base
     @proj_cali = @campaign.projects.find_by_name("Conecta tu corazón con Cali")
     @proj_bog = @campaign.projects.find_by_name("Conecta tu corazón con Bogotá")
     @proj_neiva = @campaign.projects.find_by_name("Conecta tu corazón con Neiva")
-    @proj_cucuta = @campaign.projects.find_by_name("Conecta tu corazón con Cucuta")
+    @proj_cucuta = @campaign.projects.find_by_name("Conecta tu corazón con Cúcuta")
     @proj_buc = @campaign.projects.find_by_name("Conecta tu corazón con Bucaramanga")
-    @proj_pereira = @campaign.projects.find_by_name("Conecta tu corazón con Pereira")
-    @proj_cart = @campaign.projects.find_by_name("Conecta tu corazón con Cartagena")
-    @proj_quilla = @campaign.projects.find_by_name("Conecta tu corazón con Barranquilla")
+    #@proj_pereira = @campaign.projects.find_by_name("Conecta tu corazón con Pereira")
+    #@proj_cart = @campaign.projects.find_by_name("Conecta tu corazón con Cartagena")
+    #@proj_quilla = @campaign.projects.find_by_name("Conecta tu corazón con Barranquilla")
 
     #@projects = @validator.projects
   end
