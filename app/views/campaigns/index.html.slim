@@ -1,0 +1,25 @@
+#page_content
+  .container
+    h1 Listing campaigns
+
+    table
+      tr
+        th Name
+        th Validator ID
+        th Validator Name
+        th
+        th
+        th
+
+      - @campaigns.each do |campaign|
+        tr
+          td = campaign.name
+          td = campaign.validator_id
+          td = campaign.validator.name
+          td = link_to 'Show', campaign
+          td = link_to 'Edit', edit_campaign_path(campaign)
+          td = link_to 'Destroy', campaign, :confirm => 'Are you sure?', :method => :delete
+
+    br
+
+    = link_to 'New Campaign', new_campaign_path

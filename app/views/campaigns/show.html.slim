@@ -1,0 +1,22 @@
+#page_content
+  .container
+    p#notice = notice
+
+    p
+      strong Name:
+      = @campaign.name
+    p
+      strong Logo Url:
+      = @campaign.logo_url
+    p
+      = image_tag @campaign.logo_url
+    p
+      strong Validator ID:
+      = @campaign.validator_id
+    p
+      strong Validator Name:
+      = @campaign.validator.name
+
+    = link_to 'Edit', edit_campaign_path(@campaign)
+    '|
+    = link_to 'Back', campaigns_path

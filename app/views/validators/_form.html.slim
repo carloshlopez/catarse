@@ -1,0 +1,19 @@
+= form_for @validator do |f|
+  - if @validator.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@validator.errors.count, "error")} prohibited this validator from being saved:"
+      ul
+        - @validator.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :site_url
+    = f.url_field :site_url
+  .field
+    = f.label :logo_url
+    = f.url_field :logo_url    
+
+  .actions = f.submit 'Save'

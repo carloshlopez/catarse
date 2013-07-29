@@ -1,0 +1,18 @@
+= form_for @campaign do |f|
+  - if @campaign.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@campaign.errors.count, "error")} prohibited this campaign from being saved:"
+      ul
+        - @campaign.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :logo_url
+    = f.url_field :logo_url        
+  .field
+    = f.label :validator_id
+    = f.select(:validator_id, Validator.all.collect{|v| [v.name, v.id]},  :prompt=> "Escoge una")
+  .actions = f.submit 'Save'

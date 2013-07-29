@@ -14,6 +14,7 @@ class Project < ActiveRecord::Base
 
   schema_associations
   belongs_to :user
+  belongs_to :campaign
   has_many :backers, dependent: :destroy
   has_many :rewards, dependent: :destroy
   has_many :updates, dependent: :destroy

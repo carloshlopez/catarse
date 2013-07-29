@@ -1,0 +1,32 @@
+#page_content
+  .container
+    .main
+      .section_header
+        .original_title
+          p
+            = @campaign.name
+          p
+            = image_tag @campaign.logo_url
+          p
+            =image_tag @validator.logo_url, :width=>"250px"
+      .selected_projects.list
+        .list_title
+          .title
+            h2 Región Andina
+        .projects
+          = render partial: 'projects/project', locals: {project: @proj_med, custom_class: 'first' }
+          = render partial: 'projects/project', locals: {project: @proj_cali, custom_class: 'first' }
+          = render partial: 'projects/project', locals: {project: @proj_bog, custom_class: 'first' }
+      br
+      .selected_projects.list
+        .list_title
+          .title
+            h2  Resto del país
+        .projects
+          = render partial: 'projects/project', locals: {project: @proj_neiva, custom_class: 'first' }
+          = render partial: 'projects/project', locals: {project: @proj_cucuta, custom_class: 'first' }
+          = render partial: 'projects/project', locals: {project: @proj_buc, custom_class: 'first' }
+          = render partial: 'projects/project', locals: {project: @proj_pereira, custom_class: 'first' }
+          = render partial: 'projects/project', locals: {project: @proj_cart, custom_class: 'first' }
+          = render partial: 'projects/project', locals: {project: @proj_quilla, custom_class: 'first' }
+    .clearfix   

@@ -1,0 +1,21 @@
+#page_content
+  .container
+    h1 Listing validators
+
+    table
+      tr
+        th Name
+        th
+        th
+        th
+
+      - @validators.each do |validator|
+        tr
+          td = validator.name
+          td = link_to 'Show', validator
+          td = link_to 'Edit', edit_validator_path(validator)
+          td = link_to 'Destroy', validator, :confirm => 'Are you sure?', :method => :delete
+
+    br
+
+    = link_to 'New Validator', new_validator_path

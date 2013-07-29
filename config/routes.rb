@@ -1,6 +1,13 @@
 require 'sidekiq/web'
 
 Catarse::Application.routes.draw do
+  resources :campaigns
+
+
+  resources :validators
+  match '/conectandocorazones' => "validators#conectando_corazones"
+
+
   match '/thank_you' => "static#thank_you"
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
