@@ -5,8 +5,8 @@ class ValidatorsController < InheritedResources::Base
     @validator = Validator.find_by_name("Conexión Colombia")
     @campaign = @validator.campaigns.first
     @projects = @campaign.projects
-    @proj_med = @campaign.projects.first
-    #@proj_med = @campaign.projects.find_by_name("Conecta tu corazón con Medellín")
+    #@proj_med = @campaign.projects.first
+    @proj_med = @campaign.projects.find_by_name("Conecta tu corazón con Medellín")
     @proj_cali = @campaign.projects.find_by_name("Conecta tu corazón con Cali")
     @proj_bog = @campaign.projects.find_by_name("Conecta tu corazón con Bogotá")
     @proj_neiva = @campaign.projects.find_by_name("Conecta tu corazón con Neiva")
