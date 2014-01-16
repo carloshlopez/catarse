@@ -11,28 +11,28 @@ describe RewardsController do
   end
 
   shared_examples_for "POST rewards create" do
-    before { post :create, project_id: project.id, reward: { description: 'Lorem ipsum', minimum_value: 10 }, locale: :pt }
+    before { post :create, project_id: project.id, reward: { description: 'Lorem ipsum', minimum_value: 10, days_to_delivery: 10 }, locale: :pt }
     it { project.rewards.should_not be_empty}
   end
 
   shared_examples_for "POST rewards create without permission" do
-    before { post :create, project_id: project.id, reward: { description: 'Lorem ipsum', minimum_value: 10 }, locale: :pt }
+    before { post :create, project_id: project.id, reward: { description: 'Lorem ipsum', minimum_value: 10, days_to_delivery: 10 }, locale: :pt }
     it { project.rewards.should be_empty}
   end
 
   shared_examples_for "PUT rewards update" do
     before { put :update, project_id: project.id, id: reward.id, reward: { description: 'Amenori ipsum' }, locale: :pt }
-    it { 
+    it {
       reward.reload
-      reward.description.should == 'Amenori ipsum' 
+      reward.description.should == 'Amenori ipsum'
     }
   end
 
   shared_examples_for "PUT rewards update without permission" do
     before { put :update, project_id: project.id, id: reward.id, reward: { description: 'Amenori ipsum' }, locale: :pt }
-    it { 
+    it {
       reward.reload
-      reward.description.should == 'Foo bar' 
+      reward.description.should == 'Foo bar'
     }
   end
 
@@ -73,6 +73,17 @@ describe RewardsController do
           reward.minimum_value.should_not eq(15.0)
         }
       end
+
+      context "can update the description and maximum backers" do
+        before do
+          put :update, project_id: project.id, id: reward.id, reward: { maximum_backers: 99, description: 'lorem ipsum'}, locale: :pt
+          reward.reload
+        end
+
+        it { expect(reward.description).to eq('lorem ipsum') }
+        it { expect(reward.maximum_backers).to eq(99) }
+      end
+
     end
   end
 

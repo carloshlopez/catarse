@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_found: "Ese correo no existe en súmame. Por favor intenta de nuevo, o registrate."
+              taken: "Este correo ya fue ingresado, solo ingresa"
+              invalid: "Email invalido"
+            password:
+              too_short: "Tu contraseña es muy corta"
+              confirmation: "La contraseña no es la misma que la confirmación"

@@ -1,0 +1,111 @@
+$sumame-blue: #2AA2BA
+$sumame-blue-light: #4CC5D7
+
+header
+  padding: .8em 0
+  // min-hwight is defined to make the header have the same size with or without the user avatar
+  min-height: 85px
+  border-bottom: 2px solid $border-gray
+  h1
+    margin: 0
+
+.user-dropdown
+  height: 30px
+  width: 125px
+.user-dropdown:hover ul
+  display: block
+  top: 15px
+  margin-top: 20px
+.logo
+  background: url("/assets/sumame/logo.png") no-repeat 0px -10px transparent
+  background-size: 300px
+  display: block
+  float: left
+  height: 75px
+  text-indent: -9999em
+  width: 295px
+  transition: 0.4s all
+  &:hover
+    opacity: 0.5  
+  margin-left: -25px
+.logo-old
+  background: url("/assets/catarse_bootstrap/catarse-assets.png") repeat scroll -32px -14px transparent
+  display: block
+  float: left
+  height: 50px
+  text-indent: -9999em
+  width: 151px
+  transition: 0.4s all
+  &:hover
+    opacity: 0.5
+
+.logo-image
+  background: url("/assets/catarse_bootstrap/catarse-assets.png") repeat scroll -32px 90px transparent
+  display: block
+  float: left
+  height: 64px
+  text-indent: -9999em
+  width: 48px
+  transition: 0.4s all
+  &:hover
+    opacity: 0.5
+
+.call-to-action
+  margin-top: 30px
+  padding-left: 10px
+  a
+    padding-left: 25px
+    color: $sumame-blue
+    font-weight: bold
+    font-size: 14px
+.user-utilities
+  // this margin 0 is here to make the user avatar fit without pushing the header down
+  margin-bottom: 0
+  margin-top: 25px
+  padding-left: 0
+  li
+    padding-left: 10px
+  a
+    padding-left: 15px
+    color: $blue-two
+    font-size: 13px
+  .locales
+    a
+      text-transform: uppercase
+      color: $blue-two
+      &:first-child
+        border-right: 1px solid $blue-two
+        padding: 0 6px 0 0
+        margin: 0 2px 0 0
+
+.discover-form
+  margin-top: 20px
+  position: relative
+  width: 100%
+  height: 36px
+  .discover-form-input
+    +border-radius(3px)
+    border: none
+    height: 34px
+    left: 32px
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    border: 1px $border-gray solid
+    font-size: 13px
+    padding: 1px 1px 1px 30px
+    transition: 0.4s all
+    &:focus
+      border: 1px solid $orange
+  input[type="submit"]
+    background: url("/assets/catarse_bootstrap/catarse-assets.png") no-repeat scroll -60px -81px transparent
+    border: medium none
+    height: 20px
+    margin: 3px 5px 0 0
+    position: absolute
+    left: 6px
+    top: 6px
+    text-indent: -9999em
+    width: 20px
+

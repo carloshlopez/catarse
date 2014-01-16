@@ -1,10 +1,12 @@
+# encoding: utf-8
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "Catarse <system@catarse.me>"
+  config.mailer_sender = "Súmame <hola@sumame.co>"
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
@@ -164,7 +166,7 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
-  config.reset_password_within = 6.hours
+  config.reset_password_within = 48.hours
 
   # ==> Configuration for :encryptable
   # Allow you to use another encryption algorithm besides bcrypt (default). You can use
@@ -215,9 +217,11 @@ Devise.setup do |config|
     config.omniauth 'facebook', 'dummy_key', 'dummy_secret', scope: ''
   else
     begin
-      OauthProvider.all.each do |p|
-        config.omniauth p.name, p.key, p.secret, scope: p.scope
-      end 
+      if ActiveRecord::Base.connection.table_exists? 'oauth_providers'
+        OauthProvider.all.each do |p|
+          config.omniauth p.name, p.key, p.secret, scope: p.scope
+        end
+      end
     rescue Exception => e
       puts "problem while using OauthProvider model:\n '#{e.message}'"
     end
@@ -231,6 +235,10 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
+
+  #config.warden do |manager|
+  #  manager.failure_app = DeviseCustomFailure
+  #end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine

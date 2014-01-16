@@ -1,21 +1,36 @@
 es:
+  bad_browser:
+    title: "Actualiza tu navegador"
+    text: "Para tener la mejor experiencia en súmame y garantizar que todo funcione bien le recomendamos instalar alguno de estos navegadores:"
+
+  not_found:
+    title: "No pudimos encontrar esa dirección: ("
+    text: "Es posible que haya escrito mal la dirección o la página se puedo haber movido."
+  sending: 'Enviando...'
+  failure_title: 'Por favor, corrija los siguientes errores:'
+  uservoice_gadget:
+    user:
+      name: 'Usuario'
+      location: 'Ciudad / Departamento'
+      confirmed_backers: 'Apoyos confirmados'
+      created_projects: 'Proyectos creados'
   current_update: 'Ultima actualización hecha en: '
   'no': "No"
   'yes': "Si"
   or: "o"
 
   site:
-    title: "La mejor plataforma de financiamento colectivo de Colombia!"
+    title: ":: Súmame :: La mejor plataforma de financiamento colectivo de Colombia!"
     meta_title:  "%{title} · %{company_name}"
-    description: "Todos ponen, todos ganan!"
-    keywords: "catarse, crowdfunding, proyecto, comunidades, financiamiento"
+    description: "Todos suman, todos ganan!"
+    keywords: "sumame, crowdfunding, proyecto, comunidades, financiamiento, financiamiento colectivo"
 
   backer_report_to_project_owner:
     reward_description: 'Descripción de recompensa'
     confirmed_at: 'Datos de confirmación de pago'
     value: 'Valor de apoyo'
-    service_fee: 'Tarifa de Catarse'
-    user_email: 'Email perfil Catarse'
+    service_fee: 'Tarifa de Súmame'
+    user_email: 'Email perfil Súmame'
     user_name: 'Nombre de apoyador'
     payer_email: 'Email del medio de pago'
     payment_method: 'Medio de pago'
@@ -30,12 +45,15 @@ es:
   edit_project: 'Editar proyecto'
   days: 'dias'
   controllers:
+    updates:
+      create:
+        notice: 'Novedad enviada con éxito!'
     rewards:
       create:
-        notice: 'Recompensa agregada exitosamente!'
-        alert: 'Ops! no fue posible agregar la recompensa.'
-  facebook_locale: 'pt_BR'
-  newsletter_ok_header: "Archivo efetuado!"
+        notice: 'Recompensa adicionada con éxito!'
+        alert: 'Ups! no fue posible adicionar la recompensa.'
+  facebook_locale: 'es_CO'
+  newsletter_ok_header: "Inscripción efectuada!"
   newsletter_ok_body: "Su email fue archivado exitosamente, gracias!"
   newsletter_error_header: "Ooops! Ocurrió un error."
   newsletter_error_body: "Su email no fue archivado, intente nuevamente más tarde!"
@@ -58,50 +76,64 @@ es:
   count_backed_projects: "Apoyo %{total} proyectos"
   footer:
     titles:
-      info: "informaciones útiles"
-      opendata: "estatísticas bacanas"
-      social: "Le gusto catarse?"
-      newsletter: "reciba nuestro newsletter"
-    stats:
-      backers: Apoyadores
-      backs: Apoyos
-      total_backed: Recaudatos
-      users: Usuários
-      funded_projects: "Proyectos exitosos"
-      active_projects: "Proyectos al aire"
+      about: "Sobre nosotros"
+      social: "Redes sociales"
+      sitemap: "Navegue"
+      newsletter: "Suscribete a nuestras noticias"
+      contact: "Mantente en contacto"
     links:
-      how_works: "Ayuda"
-      faq: "FAQ/Ayuda"
-      about: "Quiénes Somos"
-      terms: "Términos de Uso"
-      policy: "Política de Privacidad"
-      terms_link: 'http://suporte.catarse.me/knowledgebase/articles/161100-termos-de-uso'
-      policy_link: 'http://suporte.catarse.me/knowledgebase/articles/161103-pol%C3%ADtica-de-privacidade'
-      contact: Contacto
+      about: "Quienes somos"
+      faq: "Ayuda"
+      feedback: "Feedback"
+      support: "Soporte"
+      terms: "Terminos de uso"
+      privacy: "Privacidad"
+      press: "Prensa"
+      twitter: "Twitter"
+      facebook: "Facebook"
+      instagram: "Instagram"
+      github: "Github"
+      blog: "Blog"
+      contact: "Contacto"
+      recommended: "Recomendados"
+      near: "Próximos a terminar"
+      expiring: "En la recta final"
+      recents: "Recientes"
+      submit: "Envia tu proyeto"
+      discover: "Descubra proyectos"
+    texts:
+      copyleft: "Hecho con amor."
   main:
+    banner: "Conoce la investigación"
     links:
-      selected: "explore más proyectos seleccionados"
-      expiring: "explore más proyectos en la recta final"
-      recents: "explore más proyectos recientes"
+      channels: "Descubre el canal de alas"
+      recommended: "Descubra los proyetos recomendados"
+      expiring: "Descubra los proyetos en la recta final"
+      recents: "Descubra los proyetos recientes"
+      near: "Descubra los proyetos cerca tuyo"
   sidebar:
     titles:
       blog: blog
-      facebook: "Ya le dio like en Facebook?"
-      newsletter: "quiere novedades?"
-      faq: "Tiene alguna duda?"
+      facebook: "Ya nos encontráste en facebook?"
+      newsletter: "Suscribete a nuestras noticias"
+      faq: "tienes preguntas?"
       schedule: agenda
+    placeholders:
+      email: "Escribe tu email"
     buttons:
-      newsletter: asignar
+      newsletter: Enviar
   sections:
-    selection:
-      title: selección
+    near:
+      title: 'Próximos a terminar'
+    recommended:
+      title: 'Recomendados'
     expiring:
-      title: "en la recta final"
+      title: "En la recta final"
     recents:
-      title: "nuevos y fresquitos"
-    partners:
-      title: Amigos
-  accept_terms_html: "Eu li e estou de acordo com os %{link}."
+      title: "Recientes"
+    channels:
+      title: 'Canal de Alas'
+  accept_terms_html: "Yo leí y estoy de acuerdo con los %{link}."
   activerecord:
     errors:
       models:
@@ -125,7 +157,7 @@ es:
         video_url: "URL del video"
         permalink: 'URL de su proyecto'
         more_links: 'Algún otro link para conocer más sobre su proyecto?'
-        how_know: 'Como supo de Catarse?'
+        how_know: 'Como supo de Súmame?'
       reward:
         description: Descripcion
         maximum_backers: "Máximo de apoyadores"
@@ -176,7 +208,7 @@ es:
   credits:
     modal:
       title: 'Quiere solicitar el reembolso de su apoyo?'
-      text: "Sepa cómo funciona el proceso de reembolso en Catarse:"
+      text: "Sepa cómo funciona el proceso de reembolso en Súmame:"
       link: "Reglas y Funcionamento de los reembolsos / cancelaciones"
       reject_btn: "No, deseo mantener mis créditos"
       accept_btn: "Si, deseo solicitar el reembolso de mi apoyo"
@@ -246,7 +278,7 @@ es:
         category: "Antes de enviar su proyecto, explore e inspirese con otros proyectos que estuvieron en la plataforma."
         expires_at: "Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
         online_days: " Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
-        goal: "Es importante saber que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='http://blog.catarse.me/sua-campanha-no-catarse-precisa-de-um-empurrazinho' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Catarse es fundamental pensar en su capacidad de mobilizar por lo menos 50% del valor dentro de su red de contactos."
+        goal: "Es importante saber que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='http://blog.catarse.me/sua-campanha-no-catarse-precisa-de-um-empurrazinho' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de mobilizar por lo menos 50% del valor dentro de su red de contactos."
         headline: "Resuma en 140 caracteres su proyecto. Esta frase será el primer contacto de las personas con su proyecto, antes incluso de ver el video. Sea creativo, transparente y directo :)"
         name: "Cuanto más directo mejor. Deje para describir su proyecto encima y en el Vídeo."
         uploaded_image: "Aqui usted sube una imagen(.jpg) con tamaño 512x400."
@@ -276,31 +308,31 @@ es:
         uploaded_image: "Thumbnail del proyecto"
         more_links: "Lista de Links relacionados con su proyecto *"
         first_backers: "Lista con los primeiros apoyadores *"
-        how_know: "Como se enteró de Catarse? *"
+        how_know: "Como se enteró de Súmame? *"
       reward:
         maximum_backers: "Máximo de apoyadores (opcional)"
     optional: " (opcional)"
   found_plural: Encontrados
   found_singular: Encontrado
   here: aqui
-  i_backed: "Yo apoyé el proyecto %{name} en @catarse"
-  i_just_backed: "Yo acabo de apoyar el proyecto %{name} en @catarse"
+  i_backed: "Yo apoyé el proyecto %{name} en @sumamecolombia"
+  i_just_backed: "Yo acabo de apoyar el proyecto %{name} en @sumamecolombia"
   layouts:
     login:
-      login_with_facebook: "entre com su cuenta de facebook"
-      remember_me: "Acordarse de mi y mantenerme conectado."
+      login_with_facebook: "ingresa con tu cuenta de facebook"
+      remember_me: "Recordarme y mantenerme conectado."
     header:
-      blog: blog
-      help: ayuda
+      blog: Blog
+      help: Ayuda
       faq: FAQ
-      signup: registrarse
-      signin: ingresa
-      explore: explora
-      submit_project: envíe
-      profile: "mi perfil"
-      account: "mi cuenta"
+      signup: Registrarse
+      signin: Ingresar
+      discover: Explorar
+      submit: Envía tu proyecto
+      profile: "Mi Perfil"
+      account: "Mi Cuenta"
     user:
-      logout: Salir
+      logout: Sair
       my_credits: "Mis créditos"
   not_informed: "no informado"
   notify_locale: "Identificamos su idioma por su navegador. En caso que usted prefiera otro, haga click en una de los iconos a su derecha."
@@ -324,20 +356,20 @@ es:
       site_title: "Recuperar contraseña"
   project:
     start:
-      email_subject: "Su proyecto fue recibido por el equipo de Catarse"
-      email_text: "Muchas gracias por confiar en Catarse y enviarnos su proyecto:) <br><br> Antes que nada, queremos recordarle como funciona cada paso de la selección de los proyectos en Catarse. Mire la lógica, son 4 pasos: <br><br> 1 – Usted lleno aquel formulario lindo y nosotros lo acabamos de recibir; <br><br> 2 – Nuestro equipo de atención le va a responder en menos de 4 dias hábiles. No es una cuestión de Si o NO, con certeza vamos a intercambiar un par de email antes que el proyecto salga al aire.  <br><br> 3 – Cuando el proyecto este afinado, vamos a enviarle un link especial para que usted registre su proyecto en el modo que va a salir al aire; <br><br> 4 – Usted nos avisara cuando haya hecho el registro y nosotros autorizaremos el proyecto para que quede disponible, asi todos los seres humanos que tengan acceso a internet puedan divulgarlo y apoyarlo ( si ellos quieren, no?).  <br><br> <strong> Una información importante</strong>: Si usted olvido enviar algo en el formulario que usted lleno, no hay problema, usted podrá agregar información ( o cambiaralgo) cuando el equipo de atención se ponga en contacto con usted, ok?  <br><br> Encuanto a eso, vale a pena conocer los proyectos que estan al aire (<a href='%{explore_link}' style='color: #E75297 !important;'>%{explore_link}</a>) y – si le gusta alguno- apoyelo! Esa es la mejor manera de mostrar que usted cree en la cultura del financiamento colectivo en Colombia y fomentar el ecosistema que se está  formando al rededor de Catarse. Ademas, es claro, que al ver y apoyar otros proyectos usted se inspira para su proyecto.  <br> Mantengase informado de nuestras novedades en <a href='%{facebook}' style='color: #E75297 !important;'>Facebook</a> y en <a href='%{twitter}' style='color: #E75297 !important;'>Twitter</a> y conosca más sobre  Catarse leyendo nuestros posts en <a href='%{blog}' style='color: #E75297 !important;'>blog</a>.  <br> Si quedo con alguna duda, contactenos en: %{email}"
-      notification_text: " Su proyecto fue recibido por el equipo de Catarse"
+      email_subject: "Su proyecto fue recibido por el equipo de Súmame"
+      email_text: "Muchas gracias por confiar en Súmame y enviarnos su proyecto:) <br><br> Antes que nada, queremos recordarle como funciona cada paso de la selección de los proyectos en Súmame. Mire la lógica, son 4 pasos: <br><br> 1 – Usted lleno aquel formulario lindo y nosotros lo acabamos de recibir; <br><br> 2 – Nuestro equipo de atención le va a responder en menos de 4 dias hábiles. No es una cuestión de Si o NO, con certeza vamos a intercambiar un par de email antes que el proyecto salga al aire.  <br><br> 3 – Cuando el proyecto este afinado, vamos a enviarle un link especial para que usted registre su proyecto en el modo que va a salir al aire; <br><br> 4 – Usted nos avisara cuando haya hecho el registro y nosotros autorizaremos el proyecto para que quede disponible, asi todos los seres humanos que tengan acceso a internet puedan divulgarlo y apoyarlo ( si ellos quieren, no?).  <br><br> <strong> Una información importante</strong>: Si usted olvido enviar algo en el formulario que usted lleno, no hay problema, usted podrá agregar información ( o cambiaralgo) cuando el equipo de atención se ponga en contacto con usted, ok?  <br><br> Encuanto a eso, vale a pena conocer los proyectos que estan al aire (<a href='%{explore_link}' style='color: #E75297 !important;'>%{explore_link}</a>) y – si le gusta alguno- apoyelo! Esa es la mejor manera de mostrar que usted cree en la cultura del financiamento colectivo en Colombia y fomentar el ecosistema que se está  formando al rededor de Súmame. Ademas, es claro, que al ver y apoyar otros proyectos usted se inspira para su proyecto.  <br> Mantengase informado de nuestras novedades en <a href='%{facebook}' style='color: #E75297 !important;'>Facebook</a> y en <a href='%{twitter}' style='color: #E75297 !important;'>Twitter</a> y conosca más sobre  Súmame leyendo nuestros posts en <a href='%{blog}' style='color: #E75297 !important;'>blog</a>.  <br> Si quedo con alguna duda, contactenos en: %{email}"
+      notification_text: " Su proyecto fue recibido por el equipo de Súmame"
     finish:
       successful:
-        email_subject: "Uhuu! el proyecto %{project_name} fue exitoso en Catarse"
-        email_text: "El proyecto %{project_link}, que usted apoyó, fue financiado exitosamente en Catarse! Hora de celebrar o/<br><br>el proyecto tuvo, incluyendolo, %{project_total_backers} maravillosos apoyadores, recaudo %{project_pleged} y alcanzó %{project_process}% de la meta de captacion =D<br><br>Ahh, una información importante: el equipo de Catarse  se demora hasta 3 dias hábiles en pasarle la lista de contacto de todos los apoyadores a los productores del proyecto. Por eso, el realizador entrará en contato con usted para agradecerle y para hablar sobre las recompensas en unos días, ok?<br><br>En cuanto a eso, comparta con todo el mundo este trinfo!<br><br><div style='text-align:center;'>%{facebook_button}%{twitter_button}</div><br><br>Si quiere entrar en contato com %{project_owner_name}, realizador del proyecto, mande un email a %{project_owner_email}.<br><br>Si tiene alguna otra duda, ingrese a nuestro FAQ: <a href='http://www.catarse.me/faq' style='color: #008800;'>www.catarse.me/faq</a> o mande un email a <a href='mail_to:contato@catarse.me' style='color: #008800;'>contato@catarse.me</a><br>"
-        facebook_text: "Uhuu! el proyecto '%{name}', que apoyé, fue exitoso en Catarse!"
+        email_subject: "Uhuu! el proyecto %{project_name} fue exitoso en Súmame"
+        email_text: "El proyecto %{project_link}, que usted apoyó, fue financiado exitosamente en Súmame! Hora de celebrar o/<br><br>el proyecto tuvo, incluyendolo, %{project_total_backers} maravillosos apoyadores, recaudo %{project_pleged} y alcanzó %{project_process}% de la meta de captacion =D<br><br>Ahh, una información importante: el equipo de Súmame  se demora hasta 3 dias hábiles en pasarle la lista de contacto de todos los apoyadores a los productores del proyecto. Por eso, el realizador entrará en contato con usted para agradecerle y para hablar sobre las recompensas en unos días, ok?<br><br>En cuanto a eso, comparta con todo el mundo este trinfo!<br><br><div style='text-align:center;'>%{facebook_button}%{twitter_button}</div><br><br>Si quiere entrar en contato com %{project_owner_name}, realizador del proyecto, mande un email a %{project_owner_email}.<br><br>Si tiene alguna otra duda, ingrese a nuestro FAQ: <a href='http://www.sumame.co/faq' style='color: #008800;'>www.sumame.co/faq</a> o mande un email a <a href='mail_to:hola@sumame.co' style='color: #008800;'>hola@sumame.co</a><br>"
+        facebook_text: "Uhuu! el proyecto '%{name}', que apoyé, fue exitoso en Súmame!"
         notification_text: "Uhuu! el proyecto %{link} que usted apoyo, fue exitoso! Corra la voz!"
         reward_notification_text: "En breve, %{link} va a entrar en contato con usted para entregarle su recompensa. Disfrute!"
-        twitter_text: "Uhuu! El proyecto '%{name}', que yo apoyé, fue exitoso @catarse! %{short_url}"
+        twitter_text: "Uhuu! El proyecto '%{name}', que yo apoyé, fue exitoso @súmamecolombia! %{short_url}"
       unsuccessful:
         email_subject: "el proyecto %{project_name} no fue financiado - algunas informaciones útiles"
-        email_text: 'Desafortunadamente el proyecto %{project_link}, que usted apoyó,  no alcanzó la meta establecida y no fue financiado en Catarse.<br><br>En funcion de esto, usted recibio <strong>%{value}</strong> en créditos para apoyar otros proyectos. Usted puede conocer más proyectos de %{project_category} %{explore_category_link}.<br><br> En caso que prefiera, usted puede pedir el reembolso de su dinero %{credits_link}. Recuerde que  su registro en el sitio fue hecho a través de <b>%{user_provider}.</b> Y a través de él es que usted debe entrar para acceder a su cuenta.  En caso que usted  tenga alguna dificulta en el proceso, envie un correo a financeiro@catarse.me con asunto "Reembolso - problema con login".<br><br> En caso que usted prefiera solicitar un reembolso, solo para recordarle, como consta en los %{link_to_term} de Catarse, que si el apoyo fue hecho con tarjeta de crédito, el valor será devuleto en la próxima factura de la tarjeta. Si el apoyo fue hecho a través de transferencia bancaria o ticket, le enviaremos un mail con los procedimientos necesarios para devolverle el valor del aporte.<br><br>Si, por cualquier motivo, quiere entrar en contato com %{project_owner_name}, realizador del proyecto, mande un email a %{project_owner_email}.<br><br>Si tiene alguna otra duda, ingrese a nuestro FAQ o mande un email financeiro@catarse.me.<br>'
+        email_text: 'Desafortunadamente el proyecto %{project_link}, que usted apoyó,  no alcanzó la meta establecida y no fue financiado en Súmame.<br><br>En funcion de esto, usted recibio <strong>%{value}</strong> en créditos para apoyar otros proyectos. Usted puede conocer más proyectos de %{project_category} %{explore_category_link}.<br><br> En caso que prefiera, usted puede pedir el reembolso de su dinero %{credits_link}. Recuerde que  su registro en el sitio fue hecho a través de <b>%{user_provider}.</b> Y a través de él es que usted debe entrar para acceder a su cuenta.  En caso que usted  tenga alguna dificulta en el proceso, envie un correo a hola@sumame.co con asunto "Reembolso - problema con login".<br><br> En caso que usted prefiera solicitar un reembolso, solo para recordarle, como consta en los %{link_to_term} de Súmame, que si el apoyo fue hecho con tarjeta de crédito, el valor será devuleto en la próxima factura de la tarjeta. Si el apoyo fue hecho a través de transferencia bancaria o ticket, le enviaremos un mail con los procedimientos necesarios para devolverle el valor del aporte.<br><br>Si, por cualquier motivo, quiere entrar en contato com %{project_owner_name}, realizador del proyecto, mande un email a %{project_owner_email}.<br><br>Si tiene alguna otra duda, ingrese a nuestro FAQ o mande un email hola@sumame.co.<br>'
         notification_text: "Usted recibió %{value} en créditos para apoyar otros proyectos. En caso que prefiera, usted puede pedir su dinero de vuelta %{link}."
         unsuccessful_text: "El proyecto %{link} que uste apoyó no fue financiado. Quien sabe de pronto en una próxima vez?"
     video_regex_validation: "solamente URLs de Vimeo son aceptadas"
@@ -350,8 +382,10 @@ es:
       waiting_funds: esperando
       not_reached_goal: esperando
   projects:
+    send_to_analysis: 'Tu proyecto fue enviado a nuestro equipo.'
     box:
       by: por
+      when: en
     admin_fields:
       title: "Campos para el admin"
     back_project:
@@ -425,7 +459,7 @@ es:
       success: "Su proyecto fue creado exitosamente! Luego nos pondremos en contacto con usted. Muchas gracias!"
     form:
       permalink_hint: 'Simplifique el URL de su proyecto.Imagine que su apoyador  se tiene que acordar de la dirección para divulgar el proyecto hablando con sus amigos en el bar.'
-      important_html: "Recuerde la tasa del 13% descontada por Catarse en caso que su proyecto sea exitoso."
+      important_html: "Recuerde la tasa del 13% descontada por Súmame en caso que su proyecto sea exitoso."
       add_reward: "Agregar nueva recompensa"
       project_warning:
         content_html: "Quiere aumentar la probabilidad de que su proyecto sea seleccionado? No deje de leer %{link}."
@@ -441,7 +475,7 @@ es:
       suggest_for_you: "sugerido para usted"
       highlight_project: "proyecto destacado"
       guidelines: "Como Funciona"
-      guidelines_subtitle: "Entienda  Catarse"
+      guidelines_subtitle: "Entienda  Súmame"
     pending:
       can_finish: "Podra finalizar?"
       finished: Finalizado?
@@ -484,7 +518,7 @@ es:
       empty: " Nadia ha apoyado este proyecto aun. Que tal ser el primero?"
     project_header:
       subtitle_html: "Un proyecto de %{link}"
-      without_city: "Un proyecto de %{category_name} por %{author}"
+      without_city: "Un proyecto de"
       with_city: "Un proyecto de %{category_name} por %{author} en %{city}"
     project_updates:
       empty: "Este proyecto aun no tiene novedades. Espere =D"
@@ -504,7 +538,7 @@ es:
     show:
       rejected: "Este proyecto no se ajusta a nuestros <a href='https://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank'>critérios de seleccion.</a>"
       waiting: "Este proyecto está en fase de borrador y luego sabremos si entra a  . Se está viendo el proyecto, y no el dueño... aprovecha para mandar tu opinión al realizador."
-      waiting_owner: "<i>ATENCION! Su proyecto aun no está al aire... Bienvenido al borrador! </i><br><br>Ese es el espacion para que usted construya su proyecto. <br>Ninguna información debajo es definitiva hasta que el proyecto entre al aire. Por eso, aproveche! <br><br> Para editar las informaciones en la pagina del proyecto, solo hay que hacer click en edición. <br>Las recompensas se editan en su misma columna:D <br>Comparta con sus amigos y reuna sugerencias.<br><br><b>Recordando que:</b> Catarse es una plataforma supervisada, lo que significa que vamos a avalar el foco, la viabilidad y la consistencia de su proyecto durante el proceso de borrador. Si vemos que su proyecto no esta de acuerdo con nuestros <a href='http://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank'>Critérios de Seleccion</a>, puede ser rechazados por el equipo de supervision."
+      waiting_owner: "<i>ATENCION! Su proyecto aun no está al aire... Bienvenido al borrador! </i><br><br>Ese es el espacion para que usted construya su proyecto. <br>Ninguna información debajo es definitiva hasta que el proyecto entre al aire. Por eso, aproveche! <br><br> Para editar las informaciones en la pagina del proyecto, solo hay que hacer click en edición. <br>Las recompensas se editan en su misma columna:D <br>Comparta con sus amigos y reuna sugerencias.<br><br><b>Recordando que:</b> Súmame es una plataforma supervisada, lo que significa que vamos a avalar el foco, la viabilidad y la consistencia de su proyecto durante el proceso de borrador. Si vemos que su proyecto no esta de acuerdo con nuestros <a href='http://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank'>Critérios de Seleccion</a>, puede ser rechazados por el equipo de supervision."
       about_title: "el proyecto"
       no_rewards_warning_title: 'Cree aqui sus recompensas'
       no_rewards_warning: 'No viaje! Pinse en como irá a entregarlas y colóquelo en la descripción. Prometio algo?! CUMPLA! :D'
@@ -535,11 +569,11 @@ es:
       introduction_html: "Llene el formulario debajo de la forma más objetiva, pues cuanto más<br/>completo recibamos su proyecto, más rápido entrará en la plataforma online."
       permalink_important: 'Intente no usar guion o guion al piso etc.'
       permalink_hint: 'Simplifique la URL de su proyecto. Imagine que su apoyador necesitara acordarse de ka dirección para divulgar el proyecto en el bar.'
-      important_html: "Acuerdese de la tasa de 13% cobrada por Catarse en caso que su proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
+      important_html: "Acuerdese de la tasa de 13% cobrada por Súmame en caso que su proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
       about: " Discriba su proyecto y com el $ será utilizado "
       how_much_you_need: "Cuanto pretende recaudar?"
-      how_much_hint_html: "Es importante recordar que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='%{href}' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Catarse es fundamental pensar en su capacidad de movilizar por lo menos 50% del valor dentro de su red de contactos."
-      how_much_important: " Acuerdese de la tasa de 13% cobrada por Catarse en caso que su proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
+      how_much_hint_html: "Es importante recordar que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='%{href}' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de movilizar por lo menos 50% del valor dentro de su red de contactos."
+      how_much_important: " Acuerdese de la tasa de 13% cobrada por Súmame en caso que su proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
       days: "En cuantos dias?"
       days_hint: "En promedio los proyectos permanecen al aire por 40 días."
       days_important: "El plazo máximo para permanecer en el aire es de 60 días."
@@ -565,7 +599,7 @@ es:
       facebook_hint: "http://facebook.com/__________"
       twitter_hint: "http:// twitter.com/____________"
       social_important: " Es muy importante utilizar su social media para respaldar la noticia sobre su proyecto y involucrar a du red en el éxito del proyecto."
-      know_us_via: "Como supo de Catarse?"
+      know_us_via: "Como supo de Súmame?"
       knowus_important: "Oba! Llegamos a la ultima pregunta! Imaginate, amigo;)"
       how_works: "Como pretende mobilizar apoyadores para recaudar el $ necesario para la ejecucion?"
       project_warning:
@@ -578,15 +612,67 @@ es:
       send_project: "Quiero enviar mi proyecto."
       subtitle: "La hora de montar su proyecto es ahora. Estamos locos por saber lo que usted tiene casi listo..."
       title: "Ahooora si! Envie su proyecto, campeon."
-      legend_html: "Luego de llenar el formulario debajo, usted recibirá una pagina de proyecto en borrador. Ahí usted agregará las recompensas y podrá compartirla con sus amigos para tener un proyecto más fuerte.<br><br>Las información llenada debajo no es definitiva, pero recuerde que cuanto más consistente este el proyecto en este envio, más rápido se pondrá al aire.<br><br><b>Importante</b> <i> Catarse es una plataforma supervisada, lo que significa que vamos a avalar el foco, la viabilidad y la consistencia de su proyecto durante el proceso de borrador. Si vemos que su proyecto no esta de acuerdo con nuestros <a href='https://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank' >Critérios de Seleccion</a>, puede ser rechazado por el equipo de supervision.</i>"
+      legend_html: "Luego de llenar el formulario debajo, usted recibirá una pagina de proyecto en borrador. Ahí usted agregará las recompensas y podrá compartirla con sus amigos para tener un proyecto más fuerte.<br><br>Las información llenada debajo no es definitiva, pero recuerde que cuanto más consistente este el proyecto en este envio, más rápido se pondrá al aire.<br><br><b>Importante</b> <i> Súmame es una plataforma supervisada, lo que significa que vamos a avalar el foco, la viabilidad y la consistencia de su proyecto durante el proceso de borrador. Si vemos que su proyecto no esta de acuerdo con nuestros <a href='https://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank' >Critérios de Seleccion</a>, puede ser rechazado por el equipo de supervision.</i>"
     twitter:
-      take_a_look: "Vea el proyecto %{name} en @catarse"
+      take_a_look: "Vea el proyecto %{name} en @sumamecolombia"
     video_embed:
       a_project_by_html: "Un proyecto de %{link} en"
   projects_mailer:
     start_project_email:
       subject: "Proyecto enviado por %{name}"
       subject_html: "Proyecto enviado por %{link}"
+  channels:
+    subscribed: "+ %{count} seguidores"
+    header:
+      submit: "Envía el proyecto"
+      how_works: "Cómo funciona"
+      what_is_channel: "Qué es un canal?"
+      contact: "Contacto"
+      profile: "Mi perfil"
+      my_credits: "Mis créditos"
+      logout: "Salir"
+      signup: "Registrarse"
+      signin: "Ingresar"
+    footer:
+      terms: "Términos"
+      privacy_policy: "Privacidad"
+      how_works: "Cómo funciona"
+      contact: "Contacto"
+      what_is_channel: "Qué es un canal?"
+    admin:
+      statistics:
+        title: "Seguidores"
+        download: "Lista de descargas"
+      management:
+        title: "Administracion"
+        total: "proyectos"
+      filter:
+        title: "Filtro"
+        by_id: "Por ID"
+        between_created_at: "Creado Entre"
+        pg_search: "Proyecto"
+        with_state: "Con estado"
+        user_name_contains: "Usuario"
+        order_table: "Order table"
+        submit: "Filtro"
+      table:
+        name: "Título"
+        category: "Categoria"
+        user_id: "Usuario"
+        goal: "Meta"
+        pledged: "Alcanzado"
+        total_backs: "Apoyos"
+        recommended: "Recomendar"
+        online_date: "Publicación"
+        expires_at: "Término"
+        state: "Estado"
+        approve: "Aprovar"
+        reject: "Rechazar"
+        send_to_draft: "Enviar para borrador"
+        send_to_trash: "ELIMINAR"
+        confirmation: "Seguro que quiere eliminar este proyecto?"
+    edit: "Actualizar canal"
+
   registrations:
     new:
       site_title: Regístrese
@@ -614,15 +700,15 @@ es:
     faq:
       title: "Preguntas frequentes"
     guidelines_start:
-      accept: "Leí y entendí como funciona Catarse."
+      accept: "Leí y entendí como funciona Súmame."
       explore_curious: "Estoy aqui de curioso!"
       explore_projects: "Quiero explorar los proyectos."
       submit: "Próximo Paso!"
       send_project: "Quiero enviar mi proyecto."
-      subtitle: "Entienda, paso a paso, como hacer para viabilizar su proyecto a través de Catarse."
-      title: "Como funciona  Catarse?"
-      introduction: "Catarse es una herramienta diferente – es colaborativa – para sacar su proyecto del papel."
-      legend_html: "Preste atención al paso-a-paso y a las preguntas respondidas para decidir si <br>Catarse es el camino para financiar su proyecto."
+      subtitle: "Entienda, paso a paso, como hacer para viabilizar su proyecto a través de Súmame."
+      title: "Como funciona  Súmame?"
+      introduction: "Súmame es una herramienta diferente – es colaborativa – para sacar su proyecto del papel."
+      legend_html: "Preste atención al paso-a-paso y a las preguntas respondidas para decidir si <br>Súmame es el camino para financiar su proyecto."
       title_one: "Envie su proyecto"
       step_one: "Proyectos son acciones! Y estamos con los brazos abiertos para recibir acciones pequeñas, grandes, divertidas, serias, tradicionales, innovadoras... Adoramos proyectos que necesitan de poco dinero y que generan un gran impacto en sus comunidades."
       title_two: "Administracion"
@@ -631,22 +717,22 @@ es:
       step_three: " Cuando su proyecto ya este a punto, es hora de salir al aire y ejecutar el plan de campaña. Durante ese tiempo usted debea atraer al máximo de personas posibles para que su proyecto cumpla la meta de recaudo."
       title_four: "Es todo o nada"
       step_four: " En caso que su proyecto no alcance la meta establecida dentro del plazo, sus apoyadores recibirán un reembolso en forma de créditos para apoyar otros proyectos, o si prefieren, recibirán el dinero de vuelta."
-      title_requirements: "Requisitos para enviar proyectos para  Catarse"
+      title_requirements: "Requisitos para enviar proyectos para  Súmame"
       creative: "Creativo y Finito"
       colective: "Benefícios Colectivos"
       nonprofit: "Recompensas no-financieras"
       donation: "No ser un proyecto “financie mi vida” o caridad"
       video: "Hacer um vídeo"
-      more_questions: "OK, Pero explíqueme más de Catarse..."
+      more_questions: "OK, Pero explíqueme más de Súmame..."
       title_magic: "Nuestra fórmula mágica"
-      magic: "Crremeo que propiciar encuentros entre personas que compartan el costo de un proyecto es la mejor forma de volverlo realidad y hasta incrementar su potencial. Por  eso , utilize catarse como un canal para direccionar su red de contactos hacia un objetivo COMÚN."
+      magic: "Crremeo que propiciar encuentros entre personas que compartan el costo de un proyecto es la mejor forma de volverlo realidad y hasta incrementar su potencial. Por  eso , utilize súmame como un canal para direccionar su red de contactos hacia un objetivo COMÚN."
       title_money: "De donde viene el dinero que financia los proyectos?"
-      money: "Por lo menos el 50% vendrá de su red de contactos. De esa manera, catarse es una forma para que usted se acerque a las personas que gustan y creen en su trabajo y expandir esa red a través de redes socialsm periódicos, blogs y , por supuesto, los bares de la vida."
+      money: "Por lo menos el 50% vendrá de su red de contactos. De esa manera, súmame es una forma para que usted se acerque a las personas que gustan y creen en su trabajo y expandir esa red a través de redes socialsm periódicos, blogs y , por supuesto, los bares de la vida."
       title_work: "Cuesta mucho trabajo?"
       work: "Muuuuuuuuucho! NO tiene nada de “dinero fácil en Internet”. Usted tendrá que trabajar bastante antes, durante y después del periodo de recaudo, pero le garantizamos que valdrá la pena. Ese proceso le ayudará, además de realizar su proyecto, a fortalecer su red de contacto con personas que creen y están dispuestas a invertir en su trabajo."
-      title_costs: "Cuanto cuesta usar Catarse?"
-      costs: "Enviar un proyecto no cuesta nada. Ahora, estando al aire  y alcanzando (o superando) la meta, catarse se queda con el 13%, siendo que este valor incluye tanto comisión como la tasa de medios de pago que procesa las transacciones, ok?"
-      why: "Por que Catarse?"
+      title_costs: "Cuanto cuesta usar Súmame?"
+      costs: "Enviar un proyecto no cuesta nada. Ahora, estando al aire  y alcanzando (o superando) la meta, súmame se queda con el 13%, siendo que este valor incluye tanto comisión como la tasa de medios de pago que procesa las transacciones, ok?"
+      why: "Por que Súmame?"
       intro: "Antes que nada, es muy bacano que usted sepa porqué creemos en esta nueva via pata financiar proyectos es sensacional:"
       why_one: "Poca burocracia y bajo riesgo financiero; sin intereses, sin venta de patrimonio, sin costos para salir al aire. Pero con mucha emoción y diversión."
       why_two: "Un buen esfuerzo en la comunicación de su proyecto puede difundir su idea a muchísima gente, expandiendo su red de contactos y fortaleciendo su base de apoyadores."
@@ -659,7 +745,7 @@ es:
       title_one: "Qué lo inspiro a hacer este proyecto?"
       tip_one: "Las personas solo se involucran cuando perciben la importancia de una causa para la sociedad o para la persona que lidera la campaña. Por eso, tenga bien clara cual es su inspiración y expongala en la descripción del proyecto."
       title_two: "Cual es el foco?"
-      tip_two: "Catarsees una herramienta excelentra para dar inicio a sus ideas o para incrementar su desarrollo. Definir objetivamente donde usted quiere llegar es una de las mejores formas de movilizar personas. Eso incluye conocer bien el publico que se verá beneficiado por su iniciativa"
+      tip_two: "Súmame es una herramienta excelentra para dar inicio a sus ideas o para incrementar su desarrollo. Definir objetivamente donde usted quiere llegar es una de las mejores formas de movilizar personas. Eso incluye conocer bien el publico que se verá beneficiado por su iniciativa"
       title_three: "Cual es su meta?"
       tip_three: "Para definir sus objetivos financieros; incremente los costos de la ejecución de su propuestay procure estimar los gastos de producción y entrega de las recompensas ofrecidas. Siempre teniendo en cuenta su potencial de movilización de personas."
       title_four: "Cual es su plazo de recaudo?"
@@ -676,11 +762,11 @@ es:
       explore_projects: "Quiero explorar los proyectos."
       submit: "Próximo Paso!"
       send_project: "Quiero enviar mi proyecto."
-      guide: "descargue aquí una guía completa con consejos estratégicos para elaborar un proyecto exitoso en Catarse."
+      guide: "descargue aquí una guía completa con consejos estratégicos para elaborar un proyecto exitoso en Súmame."
     guidelines_backers:
       title: "Quiero apoyar un proyecto!"
-      subtitle: "Entienda paso-a-paso como apoyar un proyecto en Catarse."
-      introduction: "Catarse es una excelente manera de involucrarse en causas en las que usted cree."
+      subtitle: "Entienda paso-a-paso como apoyar un proyecto en Súmame."
+      introduction: "Súmame es una excelente manera de involucrarse en causas en las que usted cree."
       legend_html: "Creemos que hacer parte de un proyecto hace parte de ese tipo de cosa, que a veces <br>no sabes muy bien porqué, pero estas haciendo un bien."
       title_one: "Explore el proyecto"
       step_one: "El primer paso es entender el proyecto. Vea el video , lea la descripción, navegue por los links. Si tiene la certeza que ese proyecto no se puede quedar en el papel, avance eja o vídeo, leia a descrição, navegue pelos links. Se você tiver certeza de que esse proyecto não pode ficar só no papel, avance una casilla!"
@@ -690,26 +776,26 @@ es:
       step_three: "llene y revise sus datos! Y decida cual forma de pago se adapta mejor a sus necesidades."
       title_four: "Montese al bus!"
       step_four: "Ahora usted esta en el mismo bus que el realizador del proyecto. Difunda el proyecto por las redes sociales y este atento a las novedades y llamados en la recta final."
-      title_requirements: "Recuerde que Catarse es 'todo o nada'"
+      title_requirements: "Recuerde que Súmame es 'todo o nada'"
       sucessfull_title: "Si el proyecto alcanzo o superó la meta de recaudo ..."
       sucessfull: "el proyecto es considerado exitoso! El realizador recibe el dinero y los contactos de los apoyadores  ."
       not_sucess_title: "Si el proyecto no alcanza la meta..."
       not_sucess: "Usted recibe el valor del apoyo integral en forma de créditos (para apoyar otro proyecto). Si eso no es de su agrado, puede solicitar el dinero de vuelta, según las reglas de <a href='%{terms}' target='_blank'>terminos de uso</a>."
       title_not_funded: "Si el proyecto no alcanzó la meta, comó utilizo mis créditos?"
-      not_funded: "Usted recibirá los créditos en su perfil de Catarse. En el momento en que escoja otro proyecto para apoyar, en el momento de escoger la recompensa, tendrá un campo para utilizar sus créditos."
+      not_funded: "Usted recibirá los créditos en su perfil de Súmame. En el momento en que escoja otro proyecto para apoyar, en el momento de escoger la recompensa, tendrá un campo para utilizar sus créditos."
       more_questions: "Estoy listo para apoyar un proyecto, hay algo más que deba saber?"
       title_backer: "Como sé que mi apoyo fue exitoso?"
       backer: "Usted recibirá un mail de confirmación. Y quedese pendiente de la Você receberá um email de confirmacion. Y esté [endiente de la ficha de apoyadores del proyecto que usted apoyó."
       title_rewards: "Si el proyecto fue financiado, como recibo mis recompensas?"
       rewards: "Es la obligación de realizador del proyecto, contactar y acordar con usted como le entregará la recompensa escogida. Si esto no sucede, debe escribirle un mail cobrándole la recompensa! Si ni asi responde, mandenos un mail y nosotros le jalamos las orejas =D"
       title_credits: " Si el proyecto no alcanzó la meta, comó utilizo mis créditos?"
-      credits: " Usted recibirá los créditos en su perfil de Catarse. En el momento en que escoja otro proyecto para apoyar, en el momento de escoger la recompensa, tendrá un campo para utilizar sus créditos."
+      credits: " Usted recibirá los créditos en su perfil de Súmame. En el momento en que escoja otro proyecto para apoyar, en el momento de escoger la recompensa, tendrá un campo para utilizar sus créditos."
       title_money: "Y si no quiero usar los créditos?"
       money: "NO hay problema! Solamente debe entrar a su perfil (Mis créditos) t solicitar la devolucion. Si pago con debito o con ticket, solo debe abrir una cuenta en MOip. Tarjeta de crédito, le haremos la devolución con su próxima factura."
       other_backers: "QUIERO MÁS! PUEDO APOYAR DE OTRAS FORMAS?"
       intro: "Conozca las otras formas de ayudar al proyecto que usted cree que será exitoso."
       other_one: "Traga mais dois amigos para apoiar com o mesmo valor que você apoiou."
-      other_two: "Fale para todo mundo, quando estiver no bar, sobre quão legal é o proyecto que apoiou no Catarse."
+      other_two: "Fale para todo mundo, quando estiver no bar, sobre quão legal é o proyecto que apoiou no Súmame."
       other_three: "Tem um amigo jornalista? Cave uma matéria ou um post no blog dele sobre o proyecto."
       other_four: "Faça um vídeo de apoio ao proyecto (como esse pessoal aqui ó: http://vimeo.com/46233018)."
       other_five: "Mande um email para o realizador do proyecto perguntando de qual outra forma você pode ajudar."
@@ -718,10 +804,10 @@ es:
       explore_curious: "Tâmo junto!"
       explore_projects: "Quero apoiar um proyecto"
     guidelines:
-      title: "Como Funciona o Catarse"
-      subtitle: "Conheça melhor o que é o Catarse."
-      introduction_html: "O Catarse é um espaço de trocas entre indivíduos que, juntos, <br>viabilizam a realização de proyectos criativos."
-      legend_html: "Acreditamos que conectar pessoas que compartilham valor a respeito de uma causa, uma ideia, um proyecto é uma das melhores formas de fazer com que elas se tornem realidade. <br><br> Seja muito bem-vindo! Esse espaço é tão seu cuanto nosso, afinal, Catarse acontece, diariamente,  do encontro de pessoas em busca de novos caminhos para dar vida a mais iniciativas da própria sociedade. Entendemos ser essa uma alternativa  a recursos governamentais, ao patrocínio de empresas e ao não dos bancos. =D"
+      title: "Como Funciona o Súmame"
+      subtitle: "Conheça melhor o que é o Súmame."
+      introduction_html: "O Súmame é um espaço de trocas entre indivíduos que, juntos, <br>viabilizam a realização de proyectos criativos."
+      legend_html: "Acreditamos que conectar pessoas que compartilham valor a respeito de uma causa, uma ideia, um proyecto é uma das melhores formas de fazer com que elas se tornem realidade. <br><br> Seja muito bem-vindo! Esse espaço é tão seu cuanto nosso, afinal, Súmame acontece, diariamente,  do encontro de pessoas em busca de novos caminhos para dar vida a mais iniciativas da própria sociedade. Entendemos ser essa uma alternativa  a recursos governamentais, ao patrocínio de empresas e ao não dos bancos. =D"
       submit: "Enviar um proyecto"
       send_project: "Saiba como enviar seu proyecto"
       explore_curious: "Apoiar um proyecto"
@@ -740,7 +826,7 @@ es:
       title_three: "Aprendiz de Faz Acontecer"
       text_three: "Caiçara paulistana da gema, entusiasta da cor e do contraste. Poeta e desenhista por natureza, curiosa por cultura, curadora por acaso."
       name_four: "Renato Garcia"
-      title_four: "Silvio Santos do Catarse"
+      title_four: "Silvio Santos do Súmame"
       text_four: "Coletivista. Acredita na colaboração de um por um, sem existência de autoridade, por um mundo mais justo. Fanático por futebol e skate. Tudo isso sempre ao som de um bom samba ou rap nacional."
       name_five: "Rodrigo Maia"
       title_five: "Remixador de Informações"
@@ -810,22 +896,22 @@ es:
       other_link: "link da sua página na internet"
       change_password: "Alterar minha senha"
       current_password_hint: "<i>Para que a senha seja alterada você precisa confirmar a sua senha atual.</i>"
-      email_hint: "Seu email será utilizado apenas para envio de comunicações do Catarse e dos proyectos que você apoiar. Ele não estará visível em seu perfil. Quando você apoiar um proyecto, nós daremos seu email para o dono do proyecto para que ele possa providenciar as recompensas."
+      email_hint: "Seu email será utilizado apenas para envio de comunicações do Súmame e dos proyectos que você apoiar. Ele não estará visível em seu perfil. Quando você apoiar um proyecto, nós daremos seu email para o dono do proyecto para que ele possa providenciar as recompensas."
       email_tooltip: "Clique aqui para preencher seu email..."
       gravatar_hint_html: "Você também pode mudar a sua foto usando o %{link} com seu email. <br>É tão simples cuanto enviar uma imagem e já funciona para outros sites também ;)"
       local_avatar: "Meu avatar"
       submit_text: "Escolha sua imagem"
       submit: "Enviar"
       my_data: "Meus datos"
-      newsletter: "Quero receber novedades do Catarse por email"
+      newsletter: "Quero receber novedades do Súmame por email"
       password_hint: "<i>Deixe em branco caso você não queira trocar sua senha.</i>"
     header:
       bio_tooltip: "Clique aqui para escrever sobre você..."
       name_tooltip: "Clique aqui para preencher seu nome..."
     projects:
       here: 'aqui'
-      no_projects: "%{name} ainda não realizou nenhum proyecto no Catarse. Será que a inspiração vai bater uma hora dessas?"
-      no_projects_current_user_html: "Você ainda não realizou nenhum proyecto no Catarse. Deixe a inspiração bater e clique %{link} para começar!"
+      no_projects: "%{name} ainda não realizou nenhum proyecto no Súmame. Será que a inspiração vai bater uma hora dessas?"
+      no_projects_current_user_html: "Você ainda não realizou nenhum proyecto no Súmame. Deixe a inspiração bater e clique %{link} para começar!"
       title: "Proyectos de %{name}"
       title_current_user: "Meus proyectos"
   users_mailer:
@@ -833,10 +919,10 @@ es:
       alt: "Você deve habilitar imagens para visualizar corretamente essa mensagem."
       forward: "Encaminhar para amigos"
       hello: Olá
-      intro: "Você está recebendo esta mensagem pois se cadastrou no Catarse"
+      intro: "Você está recebendo esta mensagem pois se cadastrou no Súmame"
       mailee: "Mensagem entregue pelo Mailee.me"
       salutation: "Um grande abraço,"
-      signature: "Equipe do Catarse"
+      signature: "Equipe do Súmame"
       unsubscribe: "Descadastrar da lista"
       unsubscribe_long: "Se não quiser mais receber estes emails"
       weblink: "Ver na web"

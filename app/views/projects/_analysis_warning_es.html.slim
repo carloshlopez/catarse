@@ -1,0 +1,28 @@
+br
+- if can? :update, @project
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i El proyecto está en fase de revisión.
+      #toggle_warning
+        = link_to '(minimizar esta información)', '#'
+      #project_warning_text
+        br/
+        br/
+        | Estamos evaluando la información del proyecto, nos pondremos en contacto contigo dentro de unos días :)
+        br/
+        | Recuerde que debes llenar toda la información de #{link_to 'tu perfil', user_path(@project.user)} en Súmame
+        br/
+        br/
+        strong Solución de problemas:
+        br/
+        = mail_to 'hola@sumame.co', 'Ya ha pasado mucho tiempo y no he recibido información', subject: 'Mucho tiempo en análisis'
+- else
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i Atención! Este proyecto todavía no está al aire! El responsable está ajustando los últimos detalles! 
+      #toggle_warning
+        = link_to '(minimizar esta información)', '#'
+      #project_warning_text
+        br/
+        br/
+        | Aprovecha la oportunidad para hecharle una ojeada a la página y dejar tus comentarios en la <strong>Pestaña de Comentarios</strong>. Ayuda a mejorar el proyecto con tu opinión! 

@@ -1,0 +1,17 @@
+br
+#project_warning.bootstrap-alert
+  .alert.alert-warning
+    i Este proyecto ha sido rechazado
+    #toggle_warning
+      = link_to '(minimizar esta información)', '#'
+    #project_warning_text
+      br/
+      br/
+      | Nuestro equipo piensa que este proyecto no tiene perfil que estamos buscando.
+      br/
+      br/
+      | Recuerda que tener un proyecto rechazado no significa que no puedas hacer cambios o enviar nuevos proyectos.
+      br/
+      br/
+      | Levantate, a sacudir el polvo y da una vuelta! Estudia nuestro #{link_to 'Centro de ayuda', ::Configuration[:support_forum]} para que te enteres de todos los requisitos previos para la construcción de su próximo proyecto.
+      = mail_to 'hola@sumame.co', 'Si tienes más preguntas no dudes en escribirnos', subject: 'Preguntas luego de proyecto rechazado'

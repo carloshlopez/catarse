@@ -1,0 +1,29 @@
+- if can? :update, @project
+  br
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i Este proyecto está AL AIRE!
+      #toggle_warning
+        = link_to '(minimizar esta información)', '#'
+      #project_warning_text
+        br/
+        strong Importante!
+        br/
+        | - Las contribuiciones pueden demorar hasta 3 dias hábiles para ser confirmadas.
+        br/
+        | - El plazo se cierra a las 23h59 del último día de la campaña.
+        br/
+        | - Para hablar directamente con sus seguidores puede hacerlo por medio de los mensajes en la <strong>pestaña Noticias</strong>. Todo lo que se publica allí será enviado a la dirección de e-mail de sus seguidores.
+        br/
+        | - En la <strong>#{link_to 'pestaña de Reportes', project_by_slug_path(permalink: @project.permalink, anchor: 'reports')}</strong> puede descargar hojas de cálculo con la información acerca de sus seguidores y apoyadores como: Recompensa | valor contribuido | Fecha de confirmación de la transacción | Nombre | Email | Dirección.
+        br/
+        br/
+        strong Solución de problemas:
+        br/
+        = mail_to 'hola@sumame.co','¿Cómo puedo saber si mi proyecto está yendo bien?', subject: 'Le está yendo bien a mi proyecto?'
+        br/
+        = mail_to 'hola@sumame.co', '¿Cúales son los puntos más destacados de los proyectos?', subject: 'Puntos más destacados'
+        br/
+        = mail_to 'hola@sumame.co', 'Ayuda! | Errores en los reportes de los apoyadores', subject: 'Error en los reportes de apoyadores del proyecto'
+        br/
+        = mail_to 'hola@sumame.co', 'Ayuda! | Las personas tienen probelmas para al intentar apoyar mi proyecto', subject: 'Error al apoyar proyecto'

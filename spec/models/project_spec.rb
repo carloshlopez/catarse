@@ -4,7 +4,7 @@ require 'spec_helper'
 describe Project do
   let(:project){ build(:project, goal: 3000) }
   let(:user){ create(:user) }
-  let(:channel){ create(:channel, email: user.email, trustees: [ user ]) }
+  let(:channel){ create(:channel, email: user.email, users: [ user ]) }
   let(:channel_project){ create(:project, channels: [ channel ]) }
 
   describe "associations" do
@@ -24,41 +24,104 @@ describe Project do
     end
     it{ should ensure_length_of(:headline).is_at_most(140) }
     it{ should allow_value('http://vimeo.com/12111').for(:video_url) }
+    it{ should allow_value('vimeo.com/12111').for(:video_url) }
     it{ should allow_value('https://vimeo.com/12111').for(:video_url) }
+    it{ should allow_value('http://youtube.com/watch?v=UyU-xI').for(:video_url) }
+    it{ should allow_value('youtube.com/watch?v=UyU-xI').for(:video_url) }
+    it{ should allow_value('https://youtube.com/watch?v=UyU-xI').for(:video_url) }
     it{ should_not allow_value('http://www.foo.bar').for(:video_url) }
+    it{ should allow_value('testproject').for(:permalink) }
+    it{ should_not allow_value('users').for(:permalink) }
+  end
+
+  describe ".with_backers_confirmed_today" do
+    let(:project_01) { create(:project, state: 'online') }
+    let(:project_02) { create(:project, state: 'online') }
+    let(:project_03) { create(:project, state: 'online') }
+
+    subject { Project.with_backers_confirmed_today }
+
+    before do
+      project_01
+      project_02
+      project_03
+    end
+
+    context "when have confirmed backers today" do
+      before do
+
+        #TODO: need to investigate this timestamp issue when
+        # use DateTime.now or Time.now
+        create(:backer, state: 'confirmed', project: project_01, confirmed_at: Time.now )
+        create(:backer, state: 'confirmed', project: project_02, confirmed_at: 2.days.ago )
+        create(:backer, state: 'confirmed', project: project_03, confirmed_at: Time.now )
+      end
+
+      it { should have(2).items }
+      it { subject.include?(project_02).should be_false }
+    end
+
+    context "when does not have any confirmed backer today" do
+      before do
+        create(:backer, state: 'confirmed', project: project_01, confirmed_at: 1.days.ago )
+        create(:backer, state: 'confirmed', project: project_02, confirmed_at: 2.days.ago )
+        create(:backer, state: 'confirmed', project: project_03, confirmed_at: 5.days.ago )
+      end
+
+      it { should have(0).items }
+    end
+  end
+
+  describe ".visible" do
+    before do
+      [:draft, :rejected, :deleted, :in_analysis].each do |state|
+        create(:project, state: state)
+      end
+      @project = create(:project, state: :online)
+    end
+    subject{ Project.visible }
+    it{ should == [@project] }
   end
 
   describe '.state_names' do
-    let(:states) { [:draft, :rejected, :online, :successful, :waiting_funds, :failed] }
+    let(:states) { [:draft, :rejected, :online, :successful, :waiting_funds, :failed, :in_analysis] }
 
     subject { Project.state_names }
 
     it { should == states }
   end
 
-  describe '.by_state' do
+  describe '.near_of' do
     before do
-      @project_01 = create(:project, state: 'online')
-      @project_02 = create(:project, state: 'failed')
-      @project_03 = create(:project, state: 'successful')
+      mg_user = create(:user, address_state: 'MG')
+      sp_user = create(:user, address_state: 'SP')
+      3.times { create(:project, user: mg_user) }
+      6.times { create(:project, user: sp_user) }
     end
 
-    context 'get all projects that is online' do
-      subject { Project.by_state('online') }
+    let(:state) { 'MG' }
 
-      it { should == [@project_01] }
+    subject { Project.near_of(state) }
+
+    it { should have(3).itens }
+  end
+
+  describe "by_permalink" do
+    context "when project is deleted" do
+      before do
+        @p = create(:project, permalink: 'foo', state: 'deleted')
+        create(:project, permalink: 'bar')
+      end
+      subject{ Project.by_permalink('foo') }
+      it{ should == [] }
     end
-
-    context 'get all projects that is failed' do
-      subject { Project.by_state('failed') }
-
-      it { should == [@project_02] }
-    end
-
-    context 'get all projects that is successful' do
-      subject { Project.by_state('successful') }
-
-      it { should == [@project_03] }
+    context "when project is not deleted" do
+      before do
+        @p = create(:project, permalink: 'foo')
+        create(:project, permalink: 'bar')
+      end
+      subject{ Project.by_permalink('foo') }
+      it{ should == [@p] }
     end
   end
 
@@ -79,6 +142,53 @@ describe Project do
     it { should have(2).itens }
   end
 
+  describe '.by_goal' do
+    subject { Project.by_goal(200) }
+
+    before do
+      @project_01 = create(:project, goal: 100)
+      @project_02 = create(:project, goal: 200)
+
+    end
+
+    it { should = [@project_02] }
+  end
+
+  describe '.by_online_date' do
+    subject { Project.by_online_date(Time.now.to_date.to_s) }
+
+    before do
+      @project_01 = create(:project, online_date: Time.now.to_s)
+      @project_02 = create(:project, online_date: 2.weeks.ago)
+
+    end
+
+    it { should = [@project_01] }
+  end
+
+  describe '.by_expires_at' do
+    subject { Project.by_expires_at('10/10/2013') }
+
+    before do
+      @project_01 = create(:project, online_date: '10/10/2013', online_days: 0)
+      @project_02 = create(:project, online_date: '09/10/2013', online_days: 0)
+    end
+
+    it { should = [@project_01] }
+  end
+
+  describe '.order_by' do
+    subject { Project.last.name }
+
+    before do
+      create(:project, name: 'lorem')
+      #testing for sql injection
+      Project.order_by("goal asc;update projects set name ='test';select * from projects ").first #use first so the sql is actually executed
+    end
+
+    it { should == 'lorem' }
+  end
+
   describe '.between_created_at' do
     let(:start_at) { '17/01/2013' }
     let(:ends_at) { '20/01/2013' }
@@ -93,55 +203,46 @@ describe Project do
     it { should == [@project_01] }
   end
 
+  describe '.goal_between' do
+    let(:start_at) { 100 }
+    let(:ends_at) { 200 }
+    subject { Project.goal_between(start_at, ends_at).order(:id) }
+
+    before do
+      @project_01 = create(:project, goal: 100)
+      @project_02 = create(:project, goal: 200)
+      @project_03 = create(:project, created_at: 300)
+    end
+
+    it { should == [@project_01, @project_02] }
+  end
+
+
   describe '.between_expires_at' do
     let(:start_at) { '17/01/2013' }
     let(:ends_at) { '21/01/2013' }
-    subject { Project.between_expires_at(start_at, ends_at) }
+    subject { Project.between_expires_at(start_at, ends_at).order("id desc") }
 
     let(:project_01) { create(:project) }
     let(:project_02) { create(:project) }
     let(:project_03) { create(:project) }
 
     before do
-      project_01.update_attributes({ expires_at: '19/01/2013'.to_time })
-      project_02.update_attributes({ expires_at: '23/01/2013'.to_time })
-      project_03.update_attributes({ expires_at: '26/01/2013'.to_time })
+      project_01.update_attributes({ online_date: '17/01/2013'.to_time, online_days: 0 })
+      project_02.update_attributes({ online_date: '21/01/2013'.to_time, online_days: 0 })
+      project_03.update_attributes({ online_date: '23/01/2013'.to_time, online_days: 0 })
     end
 
-    it { should == [project_01] }
+    it { should == [project_02, project_01] }
   end
 
-  describe '.finish_projects!' do
+  describe '.to_finish' do
     before do
-      @project_01 = create(:project, online_days: -1, goal: 300, state: 'online')
-      @project_02 = create(:project, online_days: 5, goal: 300, state: 'online')
-      @project_03 = create(:project, online_days: -7, goal: 300, state: 'online')
-      backer = create(:backer, project: @project_03, value: 3000, state: 'confirmed')
-      @project_03.update_attributes state: 'waiting_funds'
-      pending_backer = create(:backer, project: @project_01, value: 340, state: 'waiting_confirmation')
-      @project_04 = create(:project, online_days: -7, goal: 300, state: 'waiting_funds')
-      Project.finish_projects!
-      @project_01.reload
-      @project_02.reload
-      @project_03.reload
-      @project_04.reload
+      Project.should_receive(:expired).and_call_original
+      Project.should_receive(:with_states).with(['online', 'waiting_funds']).and_call_original
     end
-
-
-    it 'should turn state to waiting funds' do
-      @project_01.waiting_funds?.should be_true
-    end
-
-    it 'should not change state when project is not expired and already reached the goal' do
-      @project_02.online?.should be_true
-    end
-
-    it 'should change state to successful when project already in waiting funds and reached the goal' do
-      @project_03.successful?.should be_true
-    end
-
-    it 'should change state to failed when project already in waiting funds and not reached the goal' do
-      @project_04.failed?.should be_true
+    it "should call scope expired and filter states that can be finished" do
+      Project.to_finish
     end
   end
 
@@ -159,52 +260,6 @@ describe Project do
     end
     subject{ Project.backed_by(@user.id) }
     it{ should == [@project] }
-  end
-
-  describe ".recommended_for_home" do
-    subject{ Project.recommended_for_home }
-
-    before do
-      Project.should_receive(:includes).with(:user, :category, :project_total).and_return(Project)
-      Project.should_receive(:recommended).and_return(Project)
-      Project.should_receive(:visible).and_return(Project)
-      Project.should_receive(:not_expired).and_return(Project)
-      Project.should_receive(:order).with('random()').and_return(Project)
-      Project.should_receive(:limit).with(4)
-    end
-
-    it{ should be_empty }
-  end
-
-  describe ".expiring_for_home" do
-    subject{ Project.expiring_for_home(1) }
-
-    before do
-      Project.should_receive(:includes).with(:user, :category, :project_total).and_return(Project)
-      Project.should_receive(:visible).and_return(Project)
-      Project.should_receive(:expiring).and_return(Project)
-      Project.should_receive(:order).with("date(online_date + (online_days::text||' days')::interval), random()").and_return(Project)
-      Project.should_receive(:where).with("coalesce(id NOT IN (?), true)", 1).and_return(Project)
-      Project.should_receive(:limit).with(3)
-    end
-
-    it{ should be_empty }
-  end
-
-  describe ".recent_for_home" do
-    subject{ Project.recent_for_home(1) }
-
-    before do
-      Project.should_receive(:includes).with(:user, :category, :project_total).and_return(Project)
-      Project.should_receive(:visible).and_return(Project)
-      Project.should_receive(:recent).and_return(Project)
-      Project.should_receive(:not_expiring).and_return(Project)
-      Project.should_receive(:order).with('random()').and_return(Project)
-      Project.should_receive(:where).with("coalesce(id NOT IN (?), true)", 1).and_return(Project)
-      Project.should_receive(:limit).with(3)
-    end
-
-    it{ should be_empty }
   end
 
   describe ".expired" do
@@ -227,8 +282,8 @@ describe Project do
 
   describe ".expiring" do
     before do
-      @p = create(:project, online_days: 14)
-      create(:project, online_days: -1)
+      @p = create(:project, online_date: Time.now, online_days: 13)
+      create(:project, online_date: Time.now, online_days: -1)
     end
     subject{ Project.expiring }
     it{ should == [@p] }
@@ -252,30 +307,14 @@ describe Project do
     it{ should == [@p] }
   end
 
-  describe ".online" do
+  describe ".from_channels" do
+    let(:channel){create(:channel)}
     before do
-      @p = create(:project, state: 'online')
-      create(:project, state: 'draft')
+      @p = create(:project, channels: [channel])
+      create(:project, channels: [])
     end
-    subject{ Project.online}
+    subject{ Project.from_channels([channel.id]) }
     it{ should == [@p] }
-  end
-
-  describe '#can_go_to_second_chance?' do
-    let(:project) { create(:project, goal: 100, online_days: -3) }
-    subject { project.can_go_to_second_chance? }
-
-    before { create(:backer, value: 20, state: 'confirmed', project: project) }
-
-    context 'when confirmed and pending backers reached 30% of the goal and in time to wait to wait' do
-      before { create(:backer, value: 10, state: 'waiting_confirmation', project: project) }
-
-      it { should be_true }
-    end
-
-    context 'when confirmed and pending backers reached less of 30% of the goal' do
-      it { should be_false }
-    end
   end
 
   describe '#reached_goal?' do
@@ -321,34 +360,15 @@ describe Project do
     end
   end
 
-  describe "#progress" do
-    subject{ project.progress }
-    let(:pledged){ 0.0 }
-    let(:goal){ 0.0 }
+  describe "#pledged_and_waiting" do
+    subject{ project.pledged_and_waiting }
     before do
-        project.stub(:pledged).and_return(pledged)
-        project.stub(:goal).and_return(goal)
+      @confirmed = create(:backer, value: 10, state: 'confirmed', project: project)
+      @waiting = create(:backer, value: 10, state: 'waiting_confirmation', project: project)
+      create(:backer, value: 100, state: 'refunded', project: project)
+      create(:backer, value: 1000, state: 'pending', project: project)
     end
-
-    context "when goal == pledged > 0" do
-      let(:goal){ 10.0 }
-      let(:pledged){ 10.0 }
-      it{ should == 100 }
-    end
-
-    context "when goal is > 0 and pledged is 0.0" do
-      let(:goal){ 10.0 }
-      it{ should == 0 }
-    end
-
-    context "when goal is 0.0 and pledged > 0.0" do
-      let(:pledged){ 10.0 }
-      it{ should == 100 }
-    end
-
-    context "when goal is 0.0 and pledged is 0.0" do
-      it{ should == 0 }
-    end
+    it{ should == @confirmed.value + @waiting.value }
   end
 
   describe "#pledged" do
@@ -366,6 +386,25 @@ describe Project do
         project.stub(:project_total).and_return(project_total)
       end
       it{ should == 10.0 }
+    end
+  end
+
+  describe "#total_payment_service_fee" do
+    subject { project.total_payment_service_fee }
+
+    context "when project_total is nil" do
+      before { project.stub(:project_total).and_return(nil) }
+      it { should == 0 }
+    end
+
+    context "when project_total exists" do
+      before do
+        project_total = mock()
+        project_total.stub(:total_payment_service_fee).and_return(4.0)
+        project.stub(:project_total).and_return(project_total)
+      end
+
+      it { should == 4.0 }
     end
   end
 
@@ -387,111 +426,35 @@ describe Project do
     end
   end
 
-  describe "#video" do
-    subject { project }
-
-    context "video_url is blank" do
-      before { project.video_url = ''}
-
-      its(:video){ should be_nil}
-    end
-
-    context 'video_url is defined' do
-      before { project.video_url = "http://vimeo.com/17298435" }
-
-      context 'video_url is a Vimeo url' do
-        its(:video){ should be_an_instance_of(VideoInfo::Providers::Vimeo) }
-      end
-
-      context 'video_url is an YouTube url' do
-        before { project.video_url = "http://www.youtube.com/watch?v=Brw7bzU_t4c" }
-
-        its(:video){ should be_an_instance_of(VideoInfo::Providers::Youtube) }
-      end
-
-      it 'caches the response object' do
-        video_obj = VideoInfo.get(project.video_url)
-        VideoInfo.should_receive(:get).once.and_return(video_obj)
-        5.times { project.video }
-      end
-    end
-
-    context 'video_url changes' do
-      before { project.video_url = 'http://vimeo.com/17298435' }
-
-      it 'maintain cached version' do
-        project.video_url = 'http://vimeo.com/59205360'
-        project.video.video_id = '17298435'
-      end
-    end
-  end
-
   describe "#expired?" do
     subject{ project.expired? }
 
+    context "when online_date is nil" do
+      let(:project){ Project.new online_date: nil, online_days: 0 }
+      it{ should be_false }
+    end
+
     context "when expires_at is in the future" do
-      let(:project){ Project.new expires_at: 2.days.from_now }
+      let(:project){ Project.new online_date: 2.days.from_now, online_days: 0 }
       it{ should be_false }
     end
 
     context "when expires_at is in the past" do
-      let(:project){ Project.new expires_at: 2.seconds.ago }
+      let(:project){ Project.new online_date: 2.days.ago, online_days: 0 }
       it{ should be_true }
     end
   end
 
-  describe "#in_time?" do
-    subject{ project.in_time? }
-    context "when expires_at is in the future" do
-      let(:project){ Project.new expires_at: 2.days.from_now }
-      it{ should be_true }
+  describe "#expires_at" do
+    subject{ project.expires_at }
+    context "when we do not have an online_date" do
+      let(:project){ build(:project, online_date: nil, online_days: 0) }
+      it{ should be_nil }
     end
-
-    context "when expires_at is in the past" do
-      let(:project){ Project.new expires_at: 2.seconds.ago }
-      it{ should be_false }
+    context "when we have an online_date" do
+      let(:project){ build(:project, online_date: Time.now, online_days: 0) }
+      it{ should == Time.zone.now.end_of_day }
     end
-  end
-
-  it "should return time_to_go acording to expires_at" do
-    p = build(:project)
-    time = Time.now
-    Time.stub(:now).and_return(time)
-    p.expires_at = 30.days.from_now
-    p.time_to_go[:time].should == 30
-    p.time_to_go[:unit].should == pluralize_without_number(30, I18n.t('datetime.prompts.day').downcase)
-    p.expires_at = 1.day.from_now
-    p.time_to_go[:time].should == 1
-    p.time_to_go[:unit].should == pluralize_without_number(1, I18n.t('datetime.prompts.day').downcase)
-=begin
-    p.expires_at = 23.hours.from_now + 59.minutes + 59.seconds
-    p.time_to_go[:time].should == 24
-    p.time_to_go[:unit].should == pluralize_without_number(24, I18n.t('datetime.prompts.hour').downcase)
-    p.expires_at = 1.hour.from_now
-    p.time_to_go[:time].should == 1
-    p.time_to_go[:unit].should == pluralize_without_number(1, I18n.t('datetime.prompts.hour').downcase)
-    p.expires_at = 59.minutes.from_now
-    p.time_to_go[:time].should == 59
-    p.time_to_go[:unit].should == pluralize_without_number(59, I18n.t('datetime.prompts.minute').downcase)
-    p.expires_at = 1.minute.from_now
-    p.time_to_go[:time].should == 1
-    p.time_to_go[:unit].should == pluralize_without_number(1, I18n.t('datetime.prompts.minute').downcase)
-    p.expires_at = 59.seconds.from_now
-    p.time_to_go[:time].should == 59
-    p.time_to_go[:unit].should == pluralize_without_number(59, I18n.t('datetime.prompts.second').downcase)
-    p.expires_at = 1.second.from_now
-    p.time_to_go[:time].should == 1
-    p.time_to_go[:unit].should == pluralize_without_number(1, I18n.t('datetime.prompts.second').downcase)
-    p.expires_at = 0.seconds.from_now
-    p.time_to_go[:time].should == 0
-    p.time_to_go[:unit].should == pluralize_without_number(0, I18n.t('datetime.prompts.second').downcase)
-    p.expires_at = 1.second.ago
-    p.time_to_go[:time].should == 0
-    p.time_to_go[:unit].should == pluralize_without_number(0, I18n.t('datetime.prompts.second').downcase)
-    p.expires_at = 30.days.ago
-    p.time_to_go[:time].should == 0
-    p.time_to_go[:unit].should == pluralize_without_number(0, I18n.t('datetime.prompts.second').downcase)
-=end
   end
 
   describe '#selected_rewards' do
@@ -509,18 +472,11 @@ describe Project do
     it { should == [reward_01, reward_03] }
   end
 
-  describe "#download_video_thumbnail" do
-    let(:project){ build(:project) }
-    before do
-      project.should_receive(:download_video_thumbnail).and_call_original
-      project.should_receive(:open).and_return(File.open("#{Rails.root}/spec/fixtures/image.png"))
-      project.save!
-    end
-
-    it "should open the video_url and store it in video_thumbnail" do
-      project.video_thumbnail.url.should == "/uploads/project/video_thumbnail/#{project.id}/image.png"
-    end
-
+  describe "#last_channel" do
+    let(:channel){ create(:channel) }
+    let(:project){ create(:project, channels: [ create(:channel), channel ]) }
+    subject{ project.last_channel }
+    it{ should == channel }
   end
 
   describe '#pending_backers_reached_the_goal?' do
@@ -553,177 +509,21 @@ describe Project do
       it{ should == @user }
     end
 
-    context "when project does belong to a channel" do
+    context "when project belongs to a channel" do
       let(:project) { channel_project }
       it{ should == user }
     end
   end
 
-  describe "#new_draft_project_notification_type" do
-    subject{ project.new_draft_project_notification_type }
-
+  describe "#notification_type" do
+    subject { project.notification_type(:foo) }
     context "when project does not belong to any channel" do
-      it{ should == :new_draft_project }
+      it { should eq(:foo) }
     end
 
     context "when project does belong to a channel" do
       let(:project) { channel_project }
-      it{ should == :new_draft_project_channel }
+      it{ should eq(:foo_channel) }
     end
   end
-
-  describe "#new_project_received_notification_type" do
-    subject{ project.new_project_received_notification_type }
-
-    context "when project does not belong to any channel" do
-      it{ should == :project_received }
-    end
-
-    context "when project does belong to a channel" do
-      let(:project) { channel_project }
-      it{ should == :project_received_channel }
-    end
-  end
-
-  describe "state machine" do
-    let(:project) { create(:project, state: 'draft') }
-
-    describe '#draft?' do
-      subject { project.draft? }
-      context "when project is new" do
-        it { should be_true }
-      end
-    end
-
-    describe '.push_to_draft' do
-      subject do
-        project.reject
-        project.push_to_draft
-        project
-      end
-      its(:draft?){ should be_true }
-    end
-
-    describe '#rejected?' do
-      subject { project.rejected? }
-      before do
-        project.reject
-      end
-      context 'when project is not accepted' do
-        it { should be_true }
-      end
-    end
-
-    describe '#reject' do
-      subject do
-        project.should_receive(:after_transition_of_draft_to_rejected)
-        project.reject
-        project
-      end
-      its(:rejected?){ should be_true }
-    end
-
-    describe '#approve' do
-      subject do
-        project.should_receive(:after_transition_of_draft_to_online)
-        project.approve
-        project
-      end
-      its(:online?){ should be_true }
-      it('should call after transition method to notify the project owner'){ subject }
-      it 'should persist the date of approvation' do
-        project.approve
-        project.online_date.should_not be_nil
-      end
-    end
-
-    describe '#online?' do
-      before { project.approve }
-      subject { project.online? }
-      it { should be_true }
-    end
-
-    describe '#finish' do
-      let(:main_project) { create(:project, goal: 30_000, online_days: -1) }
-      subject { main_project }
-
-      context 'when project is not approved' do
-        before do
-          main_project.update_attributes state: 'draft'
-        end
-        its(:finish) { should be_false }
-      end
-
-      context 'when project is expired and the sum of the pending backers and confirmed backers dont reached the goal' do
-        before do
-          create(:backer, value: 100, project: main_project, created_at: 2.days.ago)
-          main_project.finish
-        end
-
-        its(:failed?) { should be_true }
-      end
-
-      context 'when project is expired and the sum of the pending backers and confirmed backers reached 30% of the goal' do
-        before do
-          create(:backer, value: 100, project: main_project, created_at: 2.days.ago)
-          create(:backer, value: 9_000, project: main_project, state: 'waiting_confirmation')
-          main_project.finish
-        end
-
-        its(:waiting_funds?) { should be_true }
-      end
-
-      context 'when project is expired and have recent backers without confirmation' do
-        before do
-          create(:backer, value: 30_000, project: subject, state: 'waiting_confirmation')
-          main_project.finish
-        end
-
-        its(:waiting_funds?) { should be_true }
-      end
-
-      context 'when project already hit the goal and passed the waiting_funds time' do
-        before do
-          main_project.update_attributes state: 'waiting_funds'
-          subject.stub(:pending_backers_reached_the_goal?).and_return(true)
-          subject.stub(:reached_goal?).and_return(true)
-          subject.expires_at = 2.weeks.ago
-          subject.finish
-        end
-        its(:successful?) { should be_true }
-      end
-
-      context 'when project already hit the goal and still is in the waiting_funds time' do
-        before do
-          subject.stub(:pending_backers_reached_the_goal?).and_return(true)
-          subject.stub(:reached_goal?).and_return(true)
-          create(:backer, project: main_project, user: user, value: 20, state: 'waiting_confirmation')
-          main_project.update_attributes state: 'waiting_funds'
-          subject.finish
-        end
-        its(:successful?) { should be_false }
-      end
-
-      context 'when project not hit the goal' do
-        let(:user) { create(:user) }
-        let(:backer) { create(:backer, project: main_project, user: user, value: 20, payment_token: 'ABC') }
-
-        before do
-          backer
-          subject.expires_at = 2.weeks.ago
-          subject.finish
-        end
-
-        its(:failed?) { should be_true }
-
-        it "should generate credits for users" do
-          backer.confirm!
-          user.reload
-          user.credits.should == 20
-        end
-      end
-    end
-
-  end
-
 end

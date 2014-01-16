@@ -1,9 +1,13 @@
+# encoding: utf-8
+
 # coding: utf-8
+
+puts 'Seeding the database...'
 
 [
   { pt: 'Arte', en: 'Art', es: 'Arte' },
   { pt: 'Artes plásticas', en: 'Visual Arts', es: 'Artes Visuales' },
-  { pt: 'Circo', en: 'Circus' },
+  { pt: 'Circo', en: 'Circus', es: 'Circo' },
   { pt: 'Comunidade', en: 'Community', es: 'Comunidad' },
   { pt: 'Humor', en: 'Humor', es: 'Humor' },
   { pt: 'Quadrinhos', en: 'Comicbooks', es: 'Cómics' },
@@ -29,60 +33,88 @@
   { pt: 'Negócios Sociais', en: 'Social Business', es: 'Negocios Sociales' },
   { pt: 'Projeitos Sociais', en: 'Social Proyects', es: 'Proyectos Sociales' },
   { pt: 'Educação', en: 'Education', es: 'Educación' },
-  { pt: 'Filmes', en: 'Films', es: 'Películas' },
+  { pt: 'Filmes', en: 'Films', es: 'Películas' }
 ].each do |name|
-   category = Category.find_or_initialize_by_name_pt name[:pt]
+   category = Category.find_or_initialize_by(name_pt: name[:pt])
    category.update_attributes({
      name_en: name[:en],
      name_es: name[:es]
    })
  end
 
-[
-  'confirm_backer','payment_slip','project_success','backer_project_successful',
-  'backer_project_unsuccessful','project_received', 'project_received_channel', 'updates','project_unsuccessful',
-  'project_visible','processing_payment','new_draft_project', 'new_draft_channel', 'project_rejected',
-  'pending_backer_project_unsuccessful', 'project_owner_backer_confirmed', 'adm_project_deadline',
-  'project_in_wainting_funds'
-].each do |name|
-  NotificationType.find_or_create_by_name name
-end
-
 {
-  company_name: 'Catarse',
-  host: 'catarse.me',
-  base_url: "http://catarse.me",
-  blog_url: "http://blog.catarse.me",
-  email_contact: 'contato@catarse.me',
-  email_payments: 'financeiro@catarse.me',
-  email_projects: 'projetos@catarse.me',
-  email_system: 'system@catarse.me',
-  email_no_reply: 'no-reply@catarse.me',
-  facebook_url: "http://facebook.com/catarse.me",
-  facebook_app_id: '173747042661491',
-  twitter_username: "catarse",
-  mailchimp_url: "http://catarse.us5.list-manage.com/subscribe/post?u=ebfcd0d16dbb0001a0bea3639&amp;id=149c39709e",
+  company_name: 'Súmame',
+  company_logo: 'http://www.sumame.co/uploads/8/6/4/5/8645542/2060767_orig.png',
+  host: 'sumame.co',
+  base_url: "http://sumame.co",
+  email_contact: 'hola@sumame.co',
+  email_payments: 'hola@sumame.co',
+  email_projects: 'hola@sumame.co',
+  email_system: 'hola@sumame.co',
+  email_no_reply: 'hola@sumame.co',
+  facebook_url: "http://facebook.com/sumame.co",
+  facebook_app_id: '1445226675695708',
+  twitter_url: 'http://twitter.com/sumamecolombia',
+  twitter_username: "sumamecolombia",
+  mailchimp_url: "http://eepurl.com/Msuy5",
   catarse_fee: '0.13',
-  support_forum: 'http://suporte.catarse.me/',
-  base_domain: 'localhost'
+  support_forum: 'http://soporte.sumame.co/',
+  base_domain: 'sumame.co',
+  uservoice_secret_gadget: 'change_this',
+  uservoice_key: 'uservoice_key',
+  faq_url: 'http://soporte.sumame.co/',
+  feedback_url: 'http://soporte.sumame.co/',
+  terms_url: 'http://sumame.co/legal',
+  privacy_url: 'http://sumame.co/legal',
+  about_channel_url: 'http://blog.sumame.co',
+  instagram_url: 'http://instagram.com/sumamecolombia',
+  blog_url: "http://blog.sumame.co",
+  github_url: 'http://github.com/catarse',
+  contato_url: 'http://soporte.sumame.co/'
 }.each do |name, value|
-   conf = Configuration.find_or_initialize_by_name name
+   conf = Configuration.find_or_initialize_by(name: name)
    conf.update_attributes({
      value: value
-   })
+   }) if conf.new_record?
 end
 
 
-Channel.find_or_create_by_name!(
-  name: "Channel name",
-  permalink: "sample-permalink",
-  description: "Lorem Ipsum"
-)
+Channel.find_or_create_by!(name: "Channel name") do |c|
+  c.permalink = "sample-permalink"
+  c.description = "Lorem Ipsum"
+end
 
 
-OauthProvider.find_or_create_by_name!(
-  name: 'facebook',
-  key: 'your_facebook_app_key',
-  secret: 'your_facebook_app_secret',
-  path: 'facebook'
-)
+OauthProvider.find_or_create_by!(name: 'facebook') do |o|
+  o.key = '1445226675695708'
+  o.secret = '330ff5d60302380cb60a2b356688829e'
+  o.path = 'facebook'
+end
+
+puts
+puts '============================================='
+puts ' Showing all Authentication Providers'
+puts '---------------------------------------------'
+
+OauthProvider.all.each do |conf|
+  a = conf.attributes
+  puts "  name #{a['name']}"
+  puts "     key: #{a['key']}"
+  puts "     secret: #{a['secret']}"
+  puts "     path: #{a['path']}"
+  puts
+end
+
+
+puts
+puts '============================================='
+puts ' Showing all entries in Configuration Table...'
+puts '---------------------------------------------'
+
+Configuration.all.each do |conf|
+  a = conf.attributes
+  puts "  #{a['name']}: #{a['value']}"
+end
+
+puts '---------------------------------------------'
+puts 'Done!'

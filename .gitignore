@@ -3,6 +3,8 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 config/database.yml
+db/seeds/my-seeds-local.rb
+db/seeds/my-seeds-heroku.rb
 db/development_structure.sql
 # Vim
 *.swp
@@ -20,3 +22,5 @@ db/structure.sql
 .sass-cache
 Cookbooks
 .vagrant
+.project
+.secret.rvmrc

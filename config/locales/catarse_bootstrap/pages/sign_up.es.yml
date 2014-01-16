@@ -1,0 +1,21 @@
+es:
+  pages:
+    sign_up:
+      have_account_html: "Ya tienes una cuenta? <strong>%{link}</strong>"
+      titles:
+        site: 'Registrate'
+        header: 'Registrate'
+      links:
+        login: "Ingresar"
+      form:
+        labels:
+          show_password: 'Mostrar contraseña'
+          name: 'Nombre'
+          password: 'Contraseña'
+          newsletter: 'Quiero inscribirme a las noticias de Súmame'
+        hint:
+          password_length: 'Debe ser de 6 caracteres.'
+        inputs:
+          submit: 'Registrarme'
+          facebook: 'Registrarme con Facebook'
+

@@ -12,15 +12,19 @@
 #
 src_files:
   - application.js
-  - app/assets/javascripts/lib/jquery-1.7.1.min.js
+  - app/assets/javascripts/lib/jquery.js
   - assets/jquery_ujs.js
-  - app/assets/javascripts/lib/underscore-min.js
-  - app/assets/javascripts/lib/backbone-min.js
+  - app/assets/javascripts/lib/underscore.js
+  - app/assets/javascripts/lib/backbone.js
+  - app/assets/javascripts/lib/skull.js
+  - app/assets/javascripts/lib/infinite_scroll.js
   - assets/best_in_place.js
   - app/assets/javascripts/lib/*.js
-  - app/assets/javascripts/app/catarse.js
-  - app/assets/javascripts/**/**/**/*.js
-  - app/assets/javascripts/**/**/*.js
+  - app/assets/javascripts/app/app.js
+  - app/assets/javascripts/app/project.js
+  - app/assets/javascripts/app/review.js
+  - app/assets/javascripts/app/registration.js
+  - app/assets/javascripts/app/updates.js
   - app/assets/javascripts/**/*.js
 
 asset_paths:

@@ -1,10 +1,9 @@
-- content_for :js_templates do
-  = render partial: 'backer'
-  = render partial: 'project_templates'
-  - if can?(:update, @project)
-    = render partial: 'sort_rewards'
-
 = content_for :meta_tags do
+  - if ['online', 'waiting_funds', 'successful'].include? @project.state
+    meta name="robots" content="index, follow"
+  - else
+    meta name="robots" content="noindex, nofollow"
+
   - if @update
     meta name="description" content=@update.title
     meta property="og:title" content=@update.title
@@ -24,13 +23,16 @@
   .container
 
     - if @project.draft?
-      = render "draft_warning"
+      = render "draft_warning_#{I18n.locale}"
+
+    - if @project.in_analysis?
+      = render "analysis_warning_#{I18n.locale}"
 
     - if @project.rejected?
-      = render "rejected_warning"
+      = render "rejected_warning_#{I18n.locale}"
 
     - if @project.online? && can?(:update, @project)
-      = render "online_warning"
+      = render "online_warning_#{I18n.locale}"
 
     - if @project.waiting_funds? && can?(:update, @project)
       = render "waiting_funds_warning"
@@ -41,46 +43,69 @@
     - if @project.failed? && can?(:update, @project)
       = render "failed_warning"
 
-    #project_description[data-project=@project.to_json]
+    #project_description
     .project_image
       = image_tag @project.display_image('project_thumb_small')
     .section_header
       h1= @project.name
-      h4= t('projects.project_header.without_city', category_name: link_to(@project.category, explore_path(anchor: @project.category.to_s.parameterize)), author: link_to(@project.user.display_name, user_path(@project.user))).html_safe
+      h4
+        = t('projects.project_header.without_city')
+        |&nbsp;
+        = link_to(@project.category, explore_path(anchor: "by_category_id/#{@project.category_id}"))
+        |&nbsp;
+        = t('projects.box.by')
+        |&nbsp;
+        = link_to(@project.user.display_name, user_path(@project.user))
+        |&nbsp;
+        - @project.channels.each do |c|
+          = link_to(c.name, root_url(subdomain: c.permalink), class: 'project-channel')
     .tab_container
       nav#project_menu
-        = link_to '#about', id: 'about_link', class: 'selected' do
+        = link_to '#about', 'id' => 'about_link', 'class' => 'selected', 'data-target' => '#project_about.content' do
           = t('.menu.about')
-        = link_to '#updates', id: 'updates_link' do
+        = link_to '#updates', 'id' => 'updates_link', 'data-target' => '#project_updates' do
           = t('.menu.updates')
-          span.count=" (#{@project.updates.count})"
-        = link_to '#backers', id: 'backers_link' do
+          span.count=" (#{@updates_count})"
+        = link_to '#backers', 'id' => 'backers_link', 'data-target' => '#project_backers' do
           = t('.menu.backers')
           span.count=" (#{@project.total_backers})"
-        = link_to '#comments', id: 'comments_link' do
+        = link_to '#comments', 'id' => 'comments_link', 'data-target' => '#project_comments' do
           = t('.menu.comments')
           | &nbsp; (
-          fb:comments-count href="#{request.url}"
+          / we need to remove the locale from the url
+          fb:comments-count href="#{request.base_url}/#{request.fullpath.split('/')[2]}"
           | )
         - if can? :update, @project
-          = link_to '#edit', id: 'edit_link' do
+          = link_to '#edit', 'id' => 'edit_link', 'data-target' => '#project_edit' do
             = t('.menu.edit')
-          = link_to '#reports', id: 'reports_link' do
+          = link_to '#reports', 'id' => 'reports_link', 'data-target' => '#project_reports' do
             = t('.menu.reports')
     .main
       #project_content
         - if can? :update, @project
-          #project_reports.content.hide= render 'project_reports'
-          #project_edit.content.hide= render 'project_edit'
+          #project_reports.content.hide
+            = render partial: 'project_reports'
+          #project_edit.content.hide
+            = render partial: 'project_edit'
 
-        #project_updates.content.hide= render 'project_updates'
-        .media_content_backers
-          #project_backers.content.hide
-        #project_comments.content.hide= render 'comments'
+        #project_updates.content.hide[data-path=project_updates_path(project_id: @project.id)]
+          - if can? :update, @project
+            = render template: 'projects/updates/new'
+          .results &nbsp;
+          .clearfix
+          #updates-loading.loading= image_tag "loading.gif"
+        #project_backers.content.hide[data-path=project_backers_path(project_id: @project.id)]
+          - if can?(:update, @project)
+            = radio_button_tag(:backer_state, "available_to_count", checked: true)
+            = label_tag(:backer_state, t('projects.project_backers.confirmed'))
+            = radio_button_tag(:backer_state, "waiting_confirmation")
+            = label_tag(:backer_state, t('projects.project_backers.pending'))
+          .results &nbsp;
+          .clearfix
+          #backers-loading.loading= image_tag "loading.gif"
+        #project_comments.content.hide
         #project_about.content= render 'project_about'
 
-        .clearfix
-        #loading= image_tag "loading.gif"
       .clearfix
     .sidebar
       .info
@@ -103,7 +128,7 @@
           #condition[class="#{@project.display_status}"]
             p
               = t("projects.back_project.display_status.#{@project.display_status}", goal: @project.display_goal, date: @project.display_expires_at)
-          - if @project.online? && @project.in_time?
+          - if @project.online? && !@project.expired?
             #pledge
               = form_tag(new_project_backer_path(@project), method: :get, id: 'back_project_form') do
                 fieldset
@@ -117,7 +142,7 @@
             #bio
               p= @project.user.bio
           #city
-            p.backer= t('count_backed_projects', total: @project.user.total_backs)
+            p.backer= t('count_backed_projects', total: @project.user.total_backed_projects)
             p.city
               | #{@project.user.address_city}
         .user_social
@@ -142,16 +167,22 @@
               h4.alert-header= t('.no_rewards_warning_title')
               p style="margin:0; padding:0;"
                 = t('.no_rewards_warning')
+              br/
+              .new_reward_content.hide
+                = image_tag 'loading.gif'
+
             .clearfix
-            = link_to t('.menu.add_reward'), 'javascript:void(0);', class: 'btn btn-success pull-right add_new_reward'
+            = link_to t('.menu.add_reward'), 'javascript:void(0);', data: {target: '.new_reward_content', path: new_project_reward_path(@project)}, class: 'btn btn-success pull-right show_reward_form'
             .clearfix
-            .well.new_reward_content.hide
-              = semantic_form_for [@project, Reward.new] do |f|
-                = f.input :minimum_value
-                = f.input :description
-                = f.input :maximum_backers
-                = f.submit class: 'btn'
-        #rewards= render 'project_rewards'
+
+            br/
+            /.skull-modal.new_reward_content.hide
+              .skull-modal-header
+                h3= t('projects.rewards.new_reward')
+                a class='skull-modal-close' href='javascript:void(0);' &times;
+              .skull-modal-body
+                = image_tag 'loading.gif'
+        #rewards[data-can_update="#{can?(:update, @project)}" data-index_path=project_rewards_path(@project)]
+          .reward-loader= image_tag 'loading.gif'
 
     .clearfix
-= render 'show_embed'

@@ -1,23 +1,24 @@
 # -*- encoding: utf-8 -*-
+# stub: cancan 2.0.0.alpha ruby lib
 
 Gem::Specification.new do |s|
   s.name = "cancan"
   s.version = "2.0.0.alpha"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.4") if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib"]
   s.authors = ["Ryan Bates"]
-  s.date = "2013-06-21"
+  s.date = "2014-01-15"
   s.description = "Simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location."
   s.email = "ryan@railscasts.com"
-  s.files = ["lib/cancan", "lib/cancan/exceptions.rb", "lib/cancan/ability.rb", "lib/cancan/inherited_resource.rb", "lib/cancan/controller_additions.rb", "lib/cancan/matchers.rb", "lib/cancan/rule.rb", "lib/cancan/controller_resource.rb", "lib/cancan/model_additions.rb", "lib/cancan/model_adapters", "lib/cancan/model_adapters/default_adapter.rb", "lib/cancan/model_adapters/active_record_adapter.rb", "lib/cancan/model_adapters/data_mapper_adapter.rb", "lib/cancan/model_adapters/mongoid_adapter.rb", "lib/cancan/model_adapters/abstract_adapter.rb", "lib/generators", "lib/generators/cancan", "lib/generators/cancan/ability", "lib/generators/cancan/ability/USAGE", "lib/generators/cancan/ability/ability_generator.rb", "lib/generators/cancan/ability/templates", "lib/generators/cancan/ability/templates/ability.rb", "lib/generators/cancan/ability/templates/ability_spec.rb", "lib/generators/cancan/ability/templates/ability_test.rb", "lib/cancan.rb", "spec/README.rdoc", "spec/cancan", "spec/cancan/inherited_resource_spec.rb", "spec/cancan/controller_resource_spec.rb", "spec/cancan/exceptions_spec.rb", "spec/cancan/controller_additions_spec.rb", "spec/cancan/ability_spec.rb", "spec/cancan/rule_spec.rb", "spec/cancan/matchers_spec.rb", "spec/cancan/model_adapters", "spec/cancan/model_adapters/mongoid_adapter_spec.rb", "spec/cancan/model_adapters/default_adapter_spec.rb", "spec/cancan/model_adapters/data_mapper_adapter_spec.rb", "spec/cancan/model_adapters/active_record_adapter_spec.rb", "spec/matchers.rb", "spec/spec_helper.rb", "Gemfile", "README.rdoc", "CHANGELOG.rdoc", "LICENSE", "Rakefile", "init.rb"]
+  s.files = ["CHANGELOG.rdoc", "Gemfile", "LICENSE", "README.rdoc", "Rakefile", "init.rb", "lib/cancan", "lib/cancan.rb", "lib/cancan/ability.rb", "lib/cancan/controller_additions.rb", "lib/cancan/controller_resource.rb", "lib/cancan/exceptions.rb", "lib/cancan/inherited_resource.rb", "lib/cancan/matchers.rb", "lib/cancan/model_adapters", "lib/cancan/model_adapters/abstract_adapter.rb", "lib/cancan/model_adapters/active_record_adapter.rb", "lib/cancan/model_adapters/data_mapper_adapter.rb", "lib/cancan/model_adapters/default_adapter.rb", "lib/cancan/model_adapters/mongoid_adapter.rb", "lib/cancan/model_additions.rb", "lib/cancan/rule.rb", "lib/generators", "lib/generators/cancan", "lib/generators/cancan/ability", "lib/generators/cancan/ability/USAGE", "lib/generators/cancan/ability/ability_generator.rb", "lib/generators/cancan/ability/templates", "lib/generators/cancan/ability/templates/ability.rb", "lib/generators/cancan/ability/templates/ability_spec.rb", "lib/generators/cancan/ability/templates/ability_test.rb", "spec/README.rdoc", "spec/cancan", "spec/cancan/ability_spec.rb", "spec/cancan/controller_additions_spec.rb", "spec/cancan/controller_resource_spec.rb", "spec/cancan/exceptions_spec.rb", "spec/cancan/inherited_resource_spec.rb", "spec/cancan/matchers_spec.rb", "spec/cancan/model_adapters", "spec/cancan/model_adapters/active_record_adapter_spec.rb", "spec/cancan/model_adapters/data_mapper_adapter_spec.rb", "spec/cancan/model_adapters/default_adapter_spec.rb", "spec/cancan/model_adapters/mongoid_adapter_spec.rb", "spec/cancan/rule_spec.rb", "spec/matchers.rb", "spec/spec_helper.rb"]
   s.homepage = "http://github.com/ryanb/cancan"
-  s.require_paths = ["lib"]
   s.rubyforge_project = "cancan"
-  s.rubygems_version = "1.8.25"
+  s.rubygems_version = "2.2.1"
   s.summary = "Simple authorization solution for Rails."
 
   if s.respond_to? :specification_version then
-    s.specification_version = 3
+    s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, ["~> 2.9.0"])

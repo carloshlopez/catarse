@@ -1,0 +1,43 @@
+es:
+  submit_project:
+    title: "Envía tu proyecto a %{channel}"
+    subtitle: "Después de llenar el formulario, encontrarás un borrador de la página de tu proyecto. Ahí agregarás las recompensas y podrás compartirla con tus amigos para pulir tu mensaje. La información que ingresas aquí no es definitiva, la puedes cambiar luego, pero recuerda que entre más concreto y conciso seas en tu información, más rápido saldrá tu proyecto al aire."
+    important: "<strong>Importante:</strong> %{channel} selecciona los proyectos basados en su criterio, esto implica que el proyecto puede ser rechazado por el equipo de curadores."
+
+    permalink: "sumame.co/"
+    permalink_hint: "La URL del proyecto es la dirección en internet de tu proyecto, mantenla simple. Intenta no utilizar rayas al piso, guiones u otros caracteres especiales"
+
+    name: "Nombre del Proyecto"
+    name_hint: "Se tan objetivo como puedas. Deja las explicaciones para la sección Acerca de."
+
+    about: "Acerca de tu proyecto. Cómo gastarás la plata?"
+    about_hint: "Cúentanos que te inspiró para crear este proyecto. Se objetivo y cautivador, presentale a los lectores algo que los mueva, siendo muy transparente con las espectativas de tu proyecto!"
+
+    headline: "Frase enganchadora"
+    headline_hint: "Resume tu proyecto en 140 caracteres. Esta frase será el primer contacto que las personas tendrán con tu proyecto, incluso antes de ver el video. Se creativo, claro y directo."
+
+    category_id: "Categoria"
+    category_id_hint: "Antes de categorizar tu proyecto <a href='%{href}' target='_blank'>explora otros</a> (successful) para inspirarte!"
+
+    goal: "Valor en pesos ($)"
+    goal_hint: "La mayor parte de tus apoyadores serán personas cercanas. Basado en esto, intenta pensar en tu capacidad de mobilizar cerca del 50% de tus redes. Recuerda el %13 de comisión de súmame. Solo divide su presupuesto final por 0,87 para tener el número final."
+
+    online_days: "Por cuántos días la campaña?"
+    online_days_hint: "Finalmente, escoge cuanto tiempo quieres tener la campaña al aire. De nuevo, este es un factor estratégico: si pones mucho tiempo, la gente perderá interés en el camino; si pones muy poco, de pronto no alcanzarás a alcanzar el mínicmo que necesitas."
+
+    video_url: "Video"
+    video_url_hint: "Copia y pega aquí la URL del video que subiste a Youtube o Vimeo."
+
+    more_links: "Lista de enlaces relacionados con el proyecto"
+    more_links_hint: "Que canales utilizarás para comunicarte y difundir tu proyuecto? Lista aquí tus enlaces en facebook/twitter/blog/sitio web/ y todos los demás enlaces que tengas para ayudarte."
+
+    first_backers: "Lista a los primeros apoyadores"
+    first_backers_hint: "Para alcanzar tu meta es indispensable enganchar a las personas más cercanas a ti y al proyecto. Entonces si puedes lograr tener una lista de los primeros 20 apoyadores, vas por buen camino!"
+
+    how_know: "Cómo te enteraste de nosotros?"
+    how_know_hint: "Cuéntanos como nos descubriste y lo que esperas de nosotros."
+
+    accept_terms: "Yo leí y estoy de acuerdo con %{link}."
+    terms: "términos de uso"
+
+    submit: "Guardar borrador"

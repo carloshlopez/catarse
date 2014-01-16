@@ -1,5 +1,8 @@
-rvm: 
-  - 1.9.3
+rvm:
+  - 2.1.0
+
+before_install:
+  - "gem install bundler -v '= 1.5.1'"
 
 before_script:
   - "cp config/database.sample.yml config/database.yml"
@@ -13,9 +16,8 @@ env:
 
 script:
   - "bundle exec rspec spec"
+    #- "bundle exec rake jasmine:ci" removed while jasmine has some bugs with ruby 2.1.0
 
 branches:
   only:
     - master
-    - production
-    - channels

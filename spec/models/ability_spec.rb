@@ -31,6 +31,9 @@ describe Ability do
       it { should be_able_to(:update, project, :headline) }
       it { should be_able_to(:update, project, :uploaded_image) }
       it { should be_able_to(:destroy, reward) }
+      it { should be_able_to(:update, reward, :days_to_delivery) }
+      it { should be_able_to(:update, reward, :description) }
+      it { should be_able_to(:update, reward, :maximum_backers) }
 
       context "and someone make a back and select a reward" do
         context "when backer is in time to confirm and not have confirmed backers" do
@@ -40,6 +43,7 @@ describe Ability do
           it { should_not be_able_to(:destroy, reward) }
           it { should be_able_to(:update, reward, :description) }
           it { should be_able_to(:update, reward, :maximum_backers) }
+          it { should be_able_to(:update, reward, :days_to_delivery) }
         end
 
         context "when backer is not in time to confirm and have confirmed backers" do
@@ -49,6 +53,7 @@ describe Ability do
           it { should_not be_able_to(:destroy, reward) }
           it { should be_able_to(:update, reward, :description) }
           it { should be_able_to(:update, reward, :maximum_backers) }
+          it { should be_able_to(:update, reward, :days_to_delivery) }
         end
 
         context "when backer is not in time to confirm and not have confirmed backers" do
@@ -58,6 +63,7 @@ describe Ability do
           it { should be_able_to(:destroy, reward) }
           it { should be_able_to(:update, reward, :description) }
           it { should be_able_to(:update, reward, :maximum_backers) }
+          it { should be_able_to(:update, reward, :days_to_delivery) }
         end
       end
     end
@@ -69,6 +75,7 @@ describe Ability do
       it { should be_able_to(:update, project, :uploaded_image) }
       it { should be_able_to(:update, project, :about) }
       it { should be_able_to(:update, project, :headline) }
+      it { should be_able_to(:update, reward, :days_to_delivery) }
     end
 
     describe "when project is failed" do
@@ -78,6 +85,7 @@ describe Ability do
       it { should be_able_to(:update, project, :uploaded_image) }
       it { should be_able_to(:update, project, :about) }
       it { should be_able_to(:update, project, :headline) }
+      it { should_not be_able_to(:update, reward, :days_to_delivery) }
     end
 
     describe "when project is successful" do
@@ -87,6 +95,7 @@ describe Ability do
       it { should be_able_to(:update, project, :uploaded_image) }
       it { should be_able_to(:update, project, :about) }
       it { should be_able_to(:update, project, :headline) }
+      it { should_not be_able_to(:update, reward, :days_to_delivery) }
     end
   end
 

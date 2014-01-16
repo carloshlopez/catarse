@@ -1,0 +1,37 @@
+br
+- if can? :update, @project
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i Bienvenidos al Proyecto!
+      #toggle_warning
+        = link_to '(minimizar esta información)', '#'
+      #project_warning_text
+        br/
+        br/
+        | Para editar la página de tu proyecto que está aquí debajo, lo puedes hacer en la pestaña que dice: Edición, realice cualquier cambio en el formulario y haga clic en <strong>MODIFICAR PROYECTO</strong>.
+        br/
+        | Las recompensas se pueden agregar directamente en la columna donde están expuestas a la derecha, simplemente haga clic en <strong>AGREGAR RECOMPENSA</strong>. 
+        br/
+        br/
+        strong Importante!
+        br/
+        | Su proyecto sólo será evaluada por nuestro personal al hacer clic en el botón <strong>ENVIAR PROYECTO</strong>. Vamos a analizar la coherencia de su proyecto basado sólo en la información proporcionada en este, 
+        | es por esto que tienes que ser bastante claro y objetivo en la construcción de esta campaña. El <strong>video</strong> no es necesario para la evaluación, sólo para que el proyecto salga al aire. 
+        | Si ya lo tienen, mejor. Cuanta más información esté en el proyecto es mejor para revisarlo. Asegúrese de estudiar los artículos
+        | de nuestro #{link_to 'Centro de Soporte!', ::Configuration[:support_forum], target: '__blank'} Allí usted puede aprender acerca de la mayor parte de los procesos que ocurren antes, durante y después de una campaña en Súmame!
+        br/
+      br/
+      br/
+      .bootstrap-twitter
+        = link_to 'Enviar proyecto', send_to_analysis_project_path(@project), class: 'btn btn-large'
+- else
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i Atención! Este proyecto se encuentra todavía como un borrador.
+      #toggle_warning
+        = link_to '(minimizar esta información)', '#'
+      #project_warning_text
+        br/
+        br/
+        | Este proyceto todavía no está listo para recibir contribuciones y la información de esta página no es la definitiva. 
+        | Si quieres apoyar desde ya, deja tus comentarios para los creadores en la <strong>Pestaña de Comentarios</strong>.
