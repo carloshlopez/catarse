@@ -56,7 +56,7 @@ puts 'Seeding the database...'
   facebook_app_id: '1445226675695708',
   twitter_url: 'http://twitter.com/sumamecolombia',
   twitter_username: "sumamecolombia",
-  mailchimp_url: "http://eepurl.com/Msuy5",
+  mailchimp_url: "http://eepurl.com/M1euf",
   catarse_fee: '0.13',
   support_forum: 'http://soporte.sumame.co/',
   base_domain: 'sumame.co',
@@ -70,7 +70,13 @@ puts 'Seeding the database...'
   instagram_url: 'http://instagram.com/sumamecolombia',
   blog_url: "http://blog.sumame.co",
   github_url: 'http://github.com/catarse',
-  contato_url: 'http://soporte.sumame.co/'
+  contato_url: 'http://soporte.sumame.co/',
+  aws_access_key: "AKIAIXB2TJDV6G27APVA", 
+  aws_secret_key: "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",
+  # sendgrid_user_name: "app11985741@heroku.com", 
+  sendgrid_user_name: "app16513360@heroku.com", 
+  aws_bucket: "sumametest"
+  # aws_bucket: "sumametest"
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by(name: name)
    conf.update_attributes({
@@ -79,9 +85,14 @@ puts 'Seeding the database...'
 end
 
 
-Channel.find_or_create_by!(name: "Channel name") do |c|
-  c.permalink = "sample-permalink"
-  c.description = "Lorem Ipsum"
+Channel.find_or_create_by!(name: "Recojo") do |c|
+  c.permalink = "recojo"
+  c.description = "Proyectos de la Red Colombiana de Jónvenes RECOJO"
+end
+
+Channel.find_or_create_by!(name: "Conectando Sonrisas") do |c|
+  c.permalink = "consonrisas"
+  c.description = "Proyectos de Conectando Sonrisas"
 end
 
 

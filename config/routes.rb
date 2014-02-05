@@ -31,7 +31,7 @@ Catarse::Application.routes.draw do
   mount CatarseMoip::Engine => "/", as: :catarse_moip
 
   # Channels
-  constraints subdomain: /^(?!www|secure|test|local|glacial-garden-5704|sumame.co|sumame|catarsecolombia)(\w+)/ do
+  constraints subdomain: /^(?!www|secure|test|local|glacial-garden-5704|sumame.co|sumame|catarsecolombia|recojo|consonrisas)(\w+)/ do
     namespace :channels, path: '' do
       namespace :admin do
         namespace :reports do
