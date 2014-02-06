@@ -70,13 +70,7 @@ puts 'Seeding the database...'
   instagram_url: 'http://instagram.com/sumamecolombia',
   blog_url: "http://blog.sumame.co",
   github_url: 'http://github.com/catarse',
-  contato_url: 'http://soporte.sumame.co/',
-  aws_access_key: "AKIAIXB2TJDV6G27APVA", 
-  aws_secret_key: "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",
-  # sendgrid_user_name: "app11985741@heroku.com", 
-  sendgrid_user_name: "app16513360@heroku.com", 
-  aws_bucket: "sumametest"
-  # aws_bucket: "sumametest"
+  contato_url: 'http://soporte.sumame.co/'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by(name: name)
    conf.update_attributes({
