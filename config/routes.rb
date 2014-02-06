@@ -29,6 +29,7 @@ Catarse::Application.routes.draw do
 
   mount CatarsePaypalExpress::Engine => "/", as: :catarse_paypal_express
   mount CatarseMoip::Engine => "/", as: :catarse_moip
+  # mount CatarsePayulatam::Engine => "/", :as => "catarse_payulatam"
 
   # Channels
   constraints subdomain: /^(?!www|secure|test|local|glacial-garden-5704|sumame.co|sumame|catarsecolombia|recojo|consonrisas)(\w+)/ do

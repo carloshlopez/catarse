@@ -31,7 +31,8 @@ gem 'chartkick'
 # Payment engines
 gem 'catarse_paypal_express', '~> 2.1.2'
 gem 'catarse_moip', '~> 2.2.0'
-
+# gem 'payulatam', git: 'git://github.com/danielweinmann/payulatam.git'
+# gem 'catarse_payulatam', git: 'git://github.com/danielweinmann/catarse_payulatam.git'
 # Decorators
 gem 'draper'
 
