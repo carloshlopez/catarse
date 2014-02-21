@@ -10,7 +10,7 @@ class RewardDecorator < Draper::Decorator
   end
 
   def display_remaining
-    I18n.t('reward.display_remaining', remaining: source.remaining, maximum: source.maximum_backers).html_safe
+    I18n.t('reward.display_remaining', remaining: source.remaining, maximum: source.maximum_contributions).html_safe
   end
 
   def name
@@ -32,11 +32,11 @@ class RewardDecorator < Draper::Decorator
   def last_description
     if source.versions.present?
       reward = source.versions.last.reify(has_one: true)
-      auto_html(reward.description) { simple_format; link(:target => '_blank') }
+      auto_html(reward.description) { simple_format; link(target: '_blank') }
     end
   end
 
   def display_description
-    auto_html(source.description){ simple_format; link(:target => '_blank') }
+    auto_html(source.description){ simple_format; link(target: '_blank') }
   end
 end

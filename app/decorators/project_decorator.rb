@@ -37,12 +37,6 @@ class ProjectDecorator < Draper::Decorator
     use_uploaded_image(version) || use_video_tumbnail(version)
   end
 
-  def display_video_embed_url
-    if source.video_embed_url
-      "//#{source.video_embed_url}?title=0&byline=0&portrait=0&autoplay=0"
-    end
-  end
-
   def display_expires_at
     source.expires_at ? I18n.l(source.expires_at.to_date) : ''
   end
@@ -68,11 +62,15 @@ class ProjectDecorator < Draper::Decorator
   end
 
 
-  def successful_flag
-    return nil unless source.successful?
-
-    content_tag(:div, class: [:successful_flag]) do
-      image_tag("channels/successful.png")
+  def status_flag
+    content_tag(:div, class: [:status_flag]) do
+      if source.successful?
+        image_tag "successful.#{I18n.locale}.png"
+      elsif source.failed?
+        image_tag "not_successful.#{I18n.locale}.png"
+      elsif source.waiting_funds?
+        image_tag "waiting_confirmation.#{I18n.locale}.png"
+      end
     end
 
   end

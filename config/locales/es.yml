@@ -190,10 +190,10 @@ es:
       category: Categoría
       project: Proyecto
       reward: Recompensa
-  backer:
+  contribution:
     display_confirmed_at: "Hace %{time_ago}"
     reward_must_be_from_project: "debe ser del mismo proyecto"
-    should_not_back_if_maximum_backers_been_reached: "ya obtuvo su número máximo de apoyadores"
+    should_not_contribute_if_maximum_contributions_been_reached: "ya obtuvo su número máximo de apoyadores"
     value_must_be_at_least_rewards_value: "debe ser por lo menos %{minimum_value} para la recompensa seleccionada"
     project_should_be_online: "Usted no puede apoyar un proyecto que no está al aire"
   project_plural: proyectos
@@ -203,6 +203,8 @@ es:
   click_here: "Haga click aqui"
   clicking_here: "haciendo click aqui"
   click_term: 'terminos de uso'
+  contribution_plural: apoyadores
+  contribution_singular: apoyador
   comment:
     display_time: "Hace %{time_ago}"
   credits:
@@ -457,6 +459,8 @@ es:
         pay_with: "Pagar con"
     create:
       success: "Su proyecto fue creado exitosamente! Luego nos pondremos en contacto con usted. Muchas gracias!"
+    update:
+      success: "Su proyecto fue actualizado exitosamente! Luego nos pondremos en contacto con usted. Muchas gracias!"      
     form:
       permalink_hint: 'Simplifique el URL de su proyecto.Imagine que su apoyador  se tiene que acordar de la dirección para divulgar el proyecto hablando con sus amigos en el bar.'
       important_html: "Recuerde la tasa del 13% descontada por Súmame en caso que su proyecto sea exitoso."

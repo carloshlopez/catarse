@@ -4,7 +4,7 @@ en:
     subtitle: "After filling out the form below, you will receive a draft project page. There you will add rewards and can share with your friends to have an even more sharp message. The information filled below are not definitive, but remember that the more consistent you are in your project submission, the faster it will air."
     important: "<strong>Important:</strong> The %{channel} selects the projects based on their own criteria, this implies that the project can be refused by the curators team."
 
-    permalink: "catarse.me/"
+    permalink: "Project Url"
     permalink_hint: "Project URL is the web address for your project, keep it simple. Try to not use underline, dash and special characters"
 
     name: "Project's Name"
@@ -31,8 +31,8 @@ en:
     more_links: "List project related links"
     more_links_hint: "Which channels will be used to spread the word about your project? List here your facebook/twitter/blog/site/ and what ever more links you have to help you."
 
-    first_backers: "List the first backers"
-    first_backers_hint: "To reach your financial goal it’s indispensable to engage the people who are close to you and the project. So if you can list here who will be your first 20 backers that would be a great sign."
+    first_contributions: "List the first contributions"
+    first_contributions_hint: "To reach your financial goal it’s indispensable to engage the people who are close to you and the project. So if you can list here who will be your first 20 contributions that would be a great sign."
 
     how_know: "Hou you discovered the channel?"
     how_know_hint: "Tell us how you discovered the channel and what you expect from us."

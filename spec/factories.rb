@@ -38,9 +38,14 @@ FactoryGirl.define do
     f.online_days 5
     f.how_know 'Lorem ipsum'
     f.more_links 'Ipsum dolor'
-    f.first_backers 'Foo bar'
+    f.first_contributions 'Foo bar'
     f.video_url 'http://vimeo.com/17298435'
     f.state 'online'
+  end
+
+  factory :channels_subscriber do |f|
+    f.association :user
+    f.association :channel
   end
 
   factory :unsubscribe do |f|
@@ -50,7 +55,7 @@ FactoryGirl.define do
 
   factory :notification do |f|
     f.association :user, factory: :user
-    f.association :backer, factory: :backer
+    f.association :contribution, factory: :contribution
     f.association :project, factory: :project
     f.template_name 'project_success'
     f.origin_name 'Foo Bar'
@@ -65,17 +70,18 @@ FactoryGirl.define do
     f.days_to_delivery 10
   end
 
-  factory :backer do |f|
+  factory :contribution do |f|
     f.association :project, factory: :project
     f.association :user, factory: :user
     f.confirmed_at Time.now
     f.value 10.00
     f.state 'confirmed'
     f.credits false
+    f.payment_id '1.2.3'
   end
 
   factory :payment_notification do |f|
-    f.association :backer, factory: :backer
+    f.association :contribution, factory: :contribution
     f.extra_data {}
   end
 
@@ -123,6 +129,14 @@ FactoryGirl.define do
   factory :state do
     name "RJ"
     acronym "RJ"
+  end
+
+  factory :channel_post do |f|
+    f.association :user, factory: :user
+    f.association :channel, factory: :channel
+    title "My title"
+    f.body "This is a comment"
+    f.body_html "<p>This is a comment</p>"
   end
 
 end

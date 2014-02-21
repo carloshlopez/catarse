@@ -15,7 +15,7 @@ class Project < ActiveRecord::Base
   mount_uploader :uploaded_image, ProjectUploader
 
   delegate :display_status, :progress, :display_progress, :display_image, :display_expires_at, :remaining_text, :time_to_go,
-    :display_pledged, :display_goal, :remaining_days, :progress_bar, :successful_flag,
+    :display_pledged, :display_goal, :remaining_days, :progress_bar, :status_flag,
     to: :decorator
 
   has_and_belongs_to_many :channels
@@ -76,16 +76,17 @@ class Project < ActiveRecord::Base
             END ASC, projects.online_date DESC, projects.created_at DESC")
   }
 
-  scope :backed_by, ->(user_id){
-    where("id IN (SELECT project_id FROM backers b WHERE b.state = 'confirmed' AND b.user_id = ?)", user_id)
+  scope :contributed_by, ->(user_id){
+    where("id IN (SELECT project_id FROM contributions b WHERE b.state = 'confirmed' AND b.user_id = ?)", user_id)
   }
+
 
   scope :from_channels, ->(channels){
     where("EXISTS (SELECT true FROM channels_projects cp WHERE cp.project_id = projects.id AND cp.channel_id = ?)", channels)
   }
 
-  scope :with_backers_confirmed_today, -> {
-    joins(:backers).merge(Backer.confirmed_today).uniq
+  scope :with_contributions_confirmed_today, -> {
+    joins(:contributions).merge(Contribution.confirmed_today).uniq
   }
 
   attr_accessor :accepted_terms
@@ -98,7 +99,6 @@ class Project < ActiveRecord::Base
   validates_numericality_of :online_days, less_than_or_equal_to: 60
   validates_uniqueness_of :permalink, allow_blank: true, case_sensitive: false
   validates_format_of :permalink, with: /\A(\w|-)*\z/, allow_blank: true
-  validates_format_of :video_url, with: /(https?\:\/\/|)(youtu(\.be|be\.com)|vimeo).*+/, message: I18n.t('project.video_regex_validation'), allow_blank: true
 
   [:between_created_at, :between_expires_at, :between_online_date, :between_updated_at].each do |name|
     define_singleton_method name do |starts_at, ends_at|
@@ -131,8 +131,8 @@ class Project < ActiveRecord::Base
     project_total.try(:pledged).to_f
   end
 
-  def total_backers
-    project_total.try(:total_backers).to_i
+  def total_contributions
+    project_total.try(:total_contributions).to_i
   end
 
   def total_payment_service_fee
@@ -140,7 +140,7 @@ class Project < ActiveRecord::Base
   end
 
   def selected_rewards
-    rewards.sort_asc.where(id: backers.with_state('confirmed').map(&:reward_id))
+    rewards.sort_asc.where(id: contributions.with_state('confirmed').map(&:reward_id))
   end
 
   def reached_goal?
@@ -152,15 +152,15 @@ class Project < ActiveRecord::Base
   end
 
   def in_time_to_wait?
-    backers.with_state('waiting_confirmation').count > 0
+    contributions.with_state('waiting_confirmation').count > 0
   end
 
-  def pending_backers_reached_the_goal?
+  def pending_contributions_reached_the_goal?
     pledged_and_waiting >= goal
   end
 
   def pledged_and_waiting
-    backers.with_states(['confirmed', 'waiting_confirmation']).sum(:value)
+    contributions.with_states(['confirmed', 'waiting_confirmation']).sum(:value)
   end
 
   def new_draft_recipient
@@ -178,6 +178,10 @@ class Project < ActiveRecord::Base
 
   def should_fail?
     expired? && !reached_goal?
+  end
+
+  def state_warning_template
+    "#{state}_warning"
   end
 
   private

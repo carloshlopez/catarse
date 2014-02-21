@@ -71,7 +71,12 @@ class ProjectObserver < ActiveRecord::Observer
   end
 
   def from_in_analysis_to_rejected(project)
+    project.update_attributes({ rejected_at: DateTime.now })
     deliver_default_notification_for(project, :project_rejected)
+  end
+
+  def from_in_analysis_to_draft(project)
+    project.update_attributes({ sent_to_draft_at: DateTime.now })
   end
 
   def from_in_analysis_to_online(project)
@@ -88,12 +93,12 @@ class ProjectObserver < ActiveRecord::Observer
   def from_online_to_failed(project)
     notify_users(project)
 
-    project.backers.with_state('waiting_confirmation').each do |backer|
+    project.contributions.with_state('waiting_confirmation').each do |contribution|
       Notification.notify_once(
-        :pending_backer_project_unsuccessful,
-        backer.user,
-        {backer_id: backer.id},
-        {backer: backer, project: project }
+        :pending_contribution_project_unsuccessful,
+        contribution.user,
+        {contribution_id: contribution.id},
+        {contribution: contribution, project: project }
       )
     end
 
@@ -114,16 +119,16 @@ class ProjectObserver < ActiveRecord::Observer
   end
 
   def notify_users(project)
-    project.backers.with_state('confirmed').each do |backer|
-      unless backer.notified_finish
+    project.contributions.with_state('confirmed').each do |contribution|
+      unless contribution.notified_finish
         Notification.notify_once(
-          (project.successful? ? :backer_project_successful : :backer_project_unsuccessful),
-          backer.user,
-          {backer_id: backer.id},
-          backer: backer,
+          (project.successful? ? :contribution_project_successful : :contribution_project_unsuccessful),
+          contribution.user,
+          {contribution_id: contribution.id},
+          contribution: contribution,
           project: project,
         )
-        backer.update_attributes({ notified_finish: true })
+        contribution.update_attributes({ notified_finish: true })
       end
     end
   end

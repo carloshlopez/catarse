@@ -29,10 +29,11 @@ gem 'schema_associations'
 gem 'chartkick'
 
 # Payment engines
-gem 'catarse_paypal_express', '~> 2.1.2'
-gem 'catarse_moip', '~> 2.2.0'
+gem 'catarse_paypal_express', '~> 2.2.0'
+gem 'catarse_moip', '~> 2.3.1'
 # gem 'payulatam', git: 'git://github.com/danielweinmann/payulatam.git'
 # gem 'catarse_payulatam', git: 'git://github.com/danielweinmann/catarse_payulatam.git'
+
 # Decorators
 gem 'draper'
 
@@ -50,6 +51,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook', '1.4.0'
 gem 'devise', '~> 3.0.2'
 gem 'ezcrypto'
+gem 'pundit'
 
 # See https://github.com/ryanb/cancan/tree/2.0 for help about this
 # In resume: this version of cancan allow checking for authorization on specific fields on the model

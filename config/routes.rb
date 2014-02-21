@@ -29,7 +29,10 @@ Catarse::Application.routes.draw do
 
   mount CatarsePaypalExpress::Engine => "/", as: :catarse_paypal_express
   mount CatarseMoip::Engine => "/", as: :catarse_moip
+
   # mount CatarsePayulatam::Engine => "/", :as => "catarse_payulatam"
+  # mount CatarseWepay::Engine => "/", as: :catarse_wepay
+
 
   # Channels
   constraints subdomain: /^(?!www|secure|test|local|glacial-garden-5704|sumame.co|sumame|catarsecolombia|recojo|consonrisas)(\w+)/ do
@@ -38,6 +41,7 @@ Catarse::Application.routes.draw do
         namespace :reports do
           resources :subscriber_reports, only: [ :index ]
         end
+        resources :posts
         resources :followers, only: [ :index ]
         resources :projects, only: [ :index, :update] do
           member do
@@ -48,6 +52,8 @@ Catarse::Application.routes.draw do
           end
         end
       end
+
+      resources :posts
       get '/', to: 'profiles#show', as: :profile
       get '/how-it-works', to: 'profiles#how_it_works', as: :about
       resource :profile
@@ -67,17 +73,17 @@ Catarse::Application.routes.draw do
   get "/explore" => "explore#index", as: :explore
 
   namespace :reports do
-    resources :backer_reports_for_project_owners, only: [:index]
+    resources :contribution_reports_for_project_owners, only: [:index]
   end
 
-  resources :projects do
+  resources :projects, only: [:index, :create, :update, :new, :show] do
     resources :updates, controller: 'projects/updates', only: [ :index, :create, :destroy ]
     resources :rewards, only: [ :index, :create, :update, :destroy, :new, :edit ] do
       member do
         post 'sort'
       end
     end
-    resources :backers, controller: 'projects/backers' do
+    resources :contributions, controller: 'projects/contributions' do
       member do
         put 'credits_checkout'
       end
@@ -95,10 +101,14 @@ Catarse::Application.routes.draw do
   end
   resources :users do
     resources :projects, controller: 'users/projects', only: [ :index ]
+    member do
+      get :unsubscribe_notifications
+      get :credits
+    end
     collection do
       get :uservoice_gadget
     end
-    resources :backers, controller: 'users/backers', only: [:index] do
+    resources :contributions, controller: 'users/contributions', only: [:index] do
       member do
         get :request_refund
       end
@@ -126,7 +136,7 @@ Catarse::Application.routes.draw do
     resources :statistics, only: [ :index ]
     resources :financials, only: [ :index ]
 
-    resources :backers, only: [ :index, :update, :show ] do
+    resources :contributions, only: [ :index, :update, :show ] do
       member do
         put 'confirm'
         put 'pendent'
@@ -140,7 +150,7 @@ Catarse::Application.routes.draw do
     resources :users, only: [ :index ]
 
     namespace :reports do
-      resources :backer_reports, only: [ :index ]
+      resources :contribution_reports, only: [ :index ]
     end
   end
 

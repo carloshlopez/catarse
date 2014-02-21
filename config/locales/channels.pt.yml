@@ -9,7 +9,6 @@ pt:
     following: "Seguindo"
     unfollow: "Deixar de seguir"
     subscribed: "%{count} seguindo o canal"
-    curator: 'Curador'
     admin:
       menu: "Moderação de Canais"
       followers_menu: "Seguidores"
@@ -27,6 +26,8 @@ pt:
         one: "<span>%{count} %{unit}</span> restante"
         other: "<span>%{count} %{unit}</span> restantes"
       pledged_html: "<span>%{value}</span> levantados"
+    posts:
+      title: "Novidades"
     how_it_works:
       title: "Como funciona o %{channel}?"
     footer:
