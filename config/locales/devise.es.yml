@@ -5,27 +5,27 @@ es:
     confirmations:
       confirmed: "Cuenta confirmada!. Ya esta registrado."
       send_instructions: "Recibira un email con instrucciones de como confirmar su cuenta en unos minutos."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+      send_paranoid_instructions: "Si tu email existe en nuestras bases de datos, recibirás un mensaje con instrucciones de como confirmar tu cuenta."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account was not activated yet."
-      invalid: "Invalid email or password."
-      invalid_token: "Invalid authentication token."
-      locked: "Your account is locked."
-      not_found_in_database: "Invalid email or password."
-      timeout: "Your session expired, please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
+      already_authenticated: "Ya has ingresado."
+      inactive: "Tu cuenta no estaba activada."
+      invalid: "email or contraseña invalida"
+      invalid_token: "Tocken de autenticación no valido."
+      locked: "Tu cuenta está bloqueada."
+      not_found_in_database: "Email o contraseña invalida."
+      timeout: "Tu sesión ha expirado, porfavor ingresa de nuevo."
+      unauthenticated: "Necesitas ingresar o registrarte para continuar."
+      unconfirmed: "Tienes que confirmar tu cuenta antes de continuar."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "Instrucciones de confirmación"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "Instrucciones para cambiar la contraseña"
       unlock_instructions:
-        subject: "Unlock Instructions"
+        subject: "Instrucciones para desbloquear"
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: "No pudimos autenticarte desde %{kind} por \"%{reason}\"."
+      success: "Autenticado exitosamente desde una cuenta de %{kind}."
     passwords:
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
