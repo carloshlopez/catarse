@@ -406,7 +406,7 @@ es:
         waiting_funds: "Esperando la confirmacion de tickets para saber si este proyecto será financiado."
         draft: "Ese proyecto es apenas un rasguño y aun no esta abierto para recibir apoyos."
       reached_of: "Alcanzados de"
-      submit: "Súmame a este proyecto"
+      submit: "SÚMAME"
     contributions:
       contribution:
         anonymous_contribution: "Apoyador anónimo"

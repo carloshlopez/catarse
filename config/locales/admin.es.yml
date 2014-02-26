@@ -1,4 +1,4 @@
-pt:
+es:
   admin: &admin
     confirm_dialog: 'Estás seguro?'
     financials:
