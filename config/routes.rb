@@ -35,7 +35,7 @@ Catarse::Application.routes.draw do
 
 
   # Channels
-  constraints subdomain: /^(?!www|secure|test|local|sumame-test|sumame.co|sumame|recojo|consonrisas)(\w+)/ do
+  constraints subdomain: /^(?!www|secure|test|local|sumame-test|sumame.co|sumame|recojo|consonrisas|localhost|localhost:3000)(\w+)/ do
     namespace :channels, path: '' do
       namespace :admin do
         namespace :reports do

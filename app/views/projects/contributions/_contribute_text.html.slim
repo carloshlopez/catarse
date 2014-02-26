@@ -1,11 +1,11 @@
-h2 I want to contribute, what’s next?
-h3 How can I contribute this project?
-p First, define the value of your contribution and choose a reward. Then click on “Review and make a payment”  to redirect you to the next page to complete your payment.
-h3 When payment is effected?
-p Once the MoIP or Paypal confirm the transaction (card and bank transfer confirmation is on the same day, lead slips to 4 working days to be confirmed). Then, if the project does not reach #{@project.display_goal} by #{@project.display_expires_at}, you will receive your money back in the form of credits on #{Configuration[:company_name]}.
-h3 Then I get my money back if the project does not go out?
-p Yes! You receive back 100% of what you paid in the form of credits to support other projects on #{Configuration[:company_name]}.
-h3 And if I do not want to use the credits in #{Configuration[:company_name]}?
-p No problem. Just enter the #{link_to t('credits.title'), user_path(current_user, anchor: :credits), :target => :_blank} tab, 60 days after their support and request a chargeback. If you have paid by credit card, the reversal will be done on your next bill. If you paid with debit or bank, the only way to do the chargeback is you open an account on MoIP. Then we transfer the value of our account to yours and from there you transfer to your bank account.
-h3 If the project is funded, how do I get my reward?
-p When your reward is ready, #{link_to @project.user.display_name, user_path(@project.user)} will contact you to arrange delivery.
+h2 Yo quiero apoyar, cuál es el siguiente paso?
+h3 Cómo puedo contribuir a este proyecto?
+p Primero, define el valor con el cual quieres apoyar y escoge una recompensa. Luego haz click en "Revisar y Realizar pago" para ir a la siguiente página para completar tu aporte.
+h3 Cuando es efectuado el aporte?
+p Una vez el proveedore de pago que escogas, (PayU, etc) confirme la transaccion (generalmente no se debería tardar más de 4 días para confirmar). Luego, si el proyecto no es existoso o no alcanza su meta de #{@project.display_goal} el #{@project.display_expires_at}, tu reribirás tu plata de vuelta en forma de créditos en #{Configuration[:company_name]}.
+h3 Entonces reibo mi plata si el proyecto no es exitoso?
+p Si! Recibes el 100% de tu aporte en forma de crétidos para que puedas apoyar otros proyectos en #{Configuration[:company_name]}.
+h3 Y si no quiero utilizar los créditos en #{Configuration[:company_name]}?
+p No hay problema. Solo ingresa a la pestaña #{link_to t('credits.title'), user_path(current_user, anchor: :credits), :target => :_blank}, 60 días después y pide un reembolso. Si pagaste por tarjeta de crédito, el reembolso se hará en tu siguiente recibo de pago. Si pagaste por débito deberás escribirnos a info@sumame.co con tus datos.
+h3 Si el proyecto es exitoso, como consigo mi recompensa?
+p Cuando tu recompensa esté lista, #{link_to @project.user.display_name, user_path(@project.user)} se pondrá en contacto contigo para cuadrar la entrega.

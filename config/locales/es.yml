@@ -299,11 +299,11 @@ es:
         maximum_backers: "Si su recompensa es limitada, informe el máximo de personas."
         minimum_value: "Este es el valor mínimo de apoyo para escoger esta recompensa."
     labels:
-      backer:
+      contribution:
         anonymous: "Quiero que mi apoyo sea anónimo."
         credits: "Quiero usar mis créditos para este apoyo."
         reward: "Seleccione su recompensa"
-        value: "Con cuanto quiere apoyar?"
+        value: "¿Con cuanto quieres apoyar? (Pesos Colombianos COP)"
       comment:
         comment: "Deje su comentário sobre este proyecto"
       project:
@@ -396,7 +396,7 @@ es:
       when: en
     admin_fields:
       title: "Campos para el admin"
-    back_project:
+    contribute_project:
       display_status:
         reached_goal: "Este proyecto será exitoso y financiado en %{date}"
         not_reached_goal: "Este proyecto solo será financiado si por lo menos %{goal} son alcanzados al %{date}"
@@ -406,12 +406,12 @@ es:
         waiting_funds: "Esperando la confirmacion de tickets para saber si este proyecto será financiado."
         draft: "Ese proyecto es apenas un rasguño y aun no esta abierto para recibir apoyos."
       reached_of: "Alcanzados de"
-      submit: "Apoyar este proyecto"
-    backer:
-      anonymous_backer: "Apoyador anónimo"
-      anonymous_description: "Opto por permanecer incógnito"
-      no_reward: "Este apoyador no seleciono ninguna recompensa"
-    backers:
+      submit: "Súmame a este proyecto"
+    contributions:
+      contribution:
+        anonymous_contribution: "Apoyador anónimo"
+        anonymous_description: "Optó por permanecer incógnito"
+        no_reward: "Este apoyador no selecionó ninguna recompensa"    
       show:
         error: "Ooops. Usted solo puede ingresar a esta página, después de apoya un proyecto."
         moip_message: "La  verificacion de su transaccion está en proceso y el código Moip es “%{code}″.<br>En caso que tenga alguna duda referente a la transacción, póngase en contacto con Moip. Un email le será enviado cuando el pago haya sido confirmado."
@@ -432,7 +432,7 @@ es:
         no_reward: "Gracias. Yo solo quiero ayudar al proyecto."
         submit: "Revisar y realizar pago"
         title: "Apoye a %{name}"
-      create:
+      edit:
         brazil_address_title: 'llena los campos debajo si su apoyo es nacional'
         credits_notice_html: "Este apoyo será pagado con sus créditos. Después de la confirmación, usted quedará con un saldo de <strong>%{credits}</strong> en créditos para apoyar otros proyectos."
         live_in_brazil: 'Vivo en Colombia. ( Desmarque en caso que su apoyo sea internacional )'
@@ -676,9 +676,30 @@ es:
       statistics:
         title: "Seguidores"
         download: "Lista de descargas"
+      posts_menu: 'Gerenciar novedades'
+      confirmations:
+        destroy: 'Seguro que deseas eliminar?'
+      posts:
+        save_submit: 'Salvar y visualizar'
+        warning_html: 'Recordando que todas las noticias publicadas va directamente a la dirección de correo electrónico de sus seguidores. Por lo tanto, revise bien el texto antes de enviarlo.'
+        back_to_list: '← Volver a gerenciar novedades'
+        update:
+          published_message: 'La novedad fue publicada y enviada por email a los seguidores del canal.'
+        index:
+          title: 'Gerenciar novedades'
+          new_post_button: 'Crear novedad'
+          table:
+            title: 'Título de la novedad'
+            created_at: 'Creado en'
+            published_at: 'Publicado en'
+            actions: 'Acciones'        
+      followers:
+        title: "Seguidores"
+        download: "Bajar lista"        
       management:
         title: "Administracion"
         total: "proyectos"
+        no_posts: 'Ninguna novedad registrada'
       filter:
         title: "Filtro"
         by_id: "Por ID"
