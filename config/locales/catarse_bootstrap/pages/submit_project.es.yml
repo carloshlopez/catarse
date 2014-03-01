@@ -17,7 +17,7 @@ es:
     headline_hint: "Resume tu proyecto en 140 caracteres. Esta frase será el primer contacto que las personas tendrán con tu proyecto, incluso antes de ver el video. Se creativo, claro y directo."
 
     category_id: "Categoria"
-    category_id_hint: "Antes de categorizar tu proyecto <a href='%{href}' target='_blank'>explora otros</a> (successful) para inspirarte!"
+    category_id_hint: "Antes de categorizar tu proyecto <a href='%{href}' target='_blank'>explora otros</a> (exitosos) para inspirarte!"
 
     goal: "Valor en pesos ($)"
     goal_hint: "La mayor parte de tus apoyadores serán personas cercanas. Basado en esto, intenta pensar en tu capacidad de mobilizar cerca del 50% de tus redes. Recuerda el %13 de comisión de súmame. Solo divide su presupuesto final por 0,87 para tener el número final."

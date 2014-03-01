@@ -12,7 +12,7 @@ es:
     user:
       name: 'Usuario'
       location: 'Ciudad / Departamento'
-      confirmed_backers: 'Apoyos confirmados'
+      confirmed_contributions: 'Apoyos confirmados'
       created_projects: 'Proyectos creados'
   current_update: 'Ultima actualización hecha en: '
   'no': "No"
@@ -64,16 +64,16 @@ es:
       last: última
       truncate: "..."
   statistics:
-    backers:
+    contributions:
       subtitle: apoyadores
     goal:
       subtitle: "obtenidos de %{total}"
   project_by: "proyecto por"
   tell_about_this_back: "Cuentele al mundo sobre su apoyo!"
-  share_my_backs: "Comparta el proyecto "
+  share_my_contributions: "Comparta el proyecto "
   tell_about_this_project: " Cuentele al mundo sobre su proyecto!"
   share_my_projects: "Comparta el proyecto "
-  count_backed_projects: "Apoyo %{total} proyectos"
+  count_contributed_projects: "Apoyo %{total} proyectos"
   footer:
     titles:
       about: "Sobre nosotros"
@@ -166,8 +166,9 @@ es:
         how_know: 'Como supo de Súmame?'
       reward:
         description: Descripcion
-        maximum_backers: "Máximo de apoyadores"
+        maximum_contributions: "Máximo de apoyadores"
         minimum_value: "Valor mínimo"
+        days_to_delivery: "En cuantos días planeas entregar esta recompensa"
       user:
         moip_login: 'Login de MoIP'
         moip_login_hint: '(Como crear una cuenta)'
@@ -176,17 +177,17 @@ es:
         address_neighbourhood: Barrio
         address_number: Número
         address_state: Departamento
-        address_street: Logradouro
+        address_street: Dirección
         address_zip_code: Codigo Postal
-        cpf: 'CPF / CNPJ '
-        cpf_hint_title: 'Nota Fiscal será emitida para ese documento'
+        cpf: 'CC / NIT '
+        cpf_hint_title: 'Si necesitas un certificado de donación, este será emitido al número de documento que indiques'
         cpf_hint: '(?)'
-        state_inscription: 'Inscripcion Estatal'
+        state_inscription: 'Departamento'
         current_password: "Contraseña actual"
         email: Email
         full_name: "Nombre completo / Razón Social"
-        bio: 'Mini Bio'
-        name: Nickname
+        bio: 'Mini Biografía'
+        name: Usuario en súmeme.co
         id: 'ID'
         password: Contraseña
         password_confirmation: "Confirmacion de senha"
@@ -221,12 +222,13 @@ es:
       reject_btn: "No, deseo mantener mis créditos"
       accept_btn: "Si, deseo solicitar el reembolso de mi apoyo"
     index:
-      back_date: "Fecha del apoyo"
+      contribution_date: "Fecha del apoyo"
       current_credits_html: "Su saldo actual es de <span id=\"current_credits\">%{credits}</span> en créditos."
-      important_html: "Para saber todas las reglas sobre el funcionamento del reembolso, <a href='http://suporte.catarse.me/knowledgebase/articles/164746-regras-e-funcionamento-dos-reembolsos-estornos' target='_blank'>clique aqui</a>. Cualquier duda, ingrese a nuestro <a href='http://suporte.catarse.me' target='_blank'>suporte</a>."
+      important_html: "Para saber todas las reglas sobre el funcionamento del reembolso, <a href='http://www.sumame.co/reembolso' target='_blank'>clic aquí</a>. Cualquier duda, ingrese a nuestro <a href='http://soporte.sumame.co' target='_blank'>soporte</a>."
       project: Proyecto
-      refund_expration_date: "Plazo para devolución"
+      refund_expiration_date_html: "Plazo máximo para solicitar reembolso (<a target='__blank' href='http://www.sumame.co/reembolso'>?</a>)"
       refunded: "Reembolso solicitado exitosamente. Nuestro equipo se pondrá en contacto con usted en menos de dos días hábiles. "
+      insufficient_credits: "No tienes créditos suficientes para realizar este reembolso."
       refunds_title: "Apoyos que pueden tener devoluciones realizadas"
       request_refund: "Solicitar devolucion"
       requested_refund: "Devolucion solicitada"
@@ -286,17 +288,17 @@ es:
         category: "Antes de enviar su proyecto, explore e inspirese con otros proyectos que estuvieron en la plataforma."
         expires_at: "Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
         online_days: " Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
-        goal: "Es importante saber que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='http://blog.catarse.me/sua-campanha-no-catarse-precisa-de-um-empurrazinho' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de mobilizar por lo menos 50% del valor dentro de su red de contactos."
+        goal: "Es importante saber que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='http://blog.sumame.co' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de mobilizar por lo menos 50% del valor dentro de su red de contactos."
         headline: "Resuma en 140 caracteres su proyecto. Esta frase será el primer contacto de las personas con su proyecto, antes incluso de ver el video. Sea creativo, transparente y directo :)"
         name: "Cuanto más directo mejor. Deje para describir su proyecto encima y en el Vídeo."
         uploaded_image: "Aqui usted sube una imagen(.jpg) con tamaño 512x400."
         video_url: "El vídeo es la principal pieza del proyecto. Si aun no tiene video no está obligado a enviar... Pero vaya pensando en como hacer un video MATADOR!"
         more_links: "Cuales serán los canales de movilizacion? (Coloque links como Facebook, Twitter, Blogs... todo lo que le ayude a divulgar su proyecto)"
         online_days: "En promedio los proyectos permanecen al aire por 40 dias."
-        first_backers: "Para que su campaña sea exitosa, es fundamental contar con su red de contactos más cercana. Por esto, haga una lista de las personas que usted crea que serán sus primero 20 apoyadores"
+        first_contributions: "Para que su campaña sea exitosa, es fundamental contar con su red de contactos más cercana. Por esto, haga una lista de las personas que usted crea que serán sus primero 20 apoyadores"
       reward:
         description: " Describa su recompensa de una forma que despierte el interés de las personas para apoyar el proyecto. No sea tímido!"
-        maximum_backers: "Si su recompensa es limitada, informe el máximo de personas."
+        maximum_contributions: "Si su recompensa es limitada, informe el máximo de personas."
         minimum_value: "Este es el valor mínimo de apoyo para escoger esta recompensa."
     labels:
       contribution:
@@ -315,10 +317,10 @@ es:
         headline: 'Frase de efecto *'
         uploaded_image: "Thumbnail del proyecto"
         more_links: "Lista de Links relacionados con su proyecto *"
-        first_backers: "Lista con los primeiros apoyadores *"
+        first_contributions: "Lista con los primeiros apoyadores *"
         how_know: "Como se enteró de Súmame? *"
       reward:
-        maximum_backers: "Máximo de apoyadores (opcional)"
+        maximum_contributions: "Máximo de apoyadores (opcional)"
     optional: " (opcional)"
   found_plural: Encontrados
   found_singular: Encontrado
@@ -370,7 +372,7 @@ es:
     finish:
       successful:
         email_subject: "Uhuu! el proyecto %{project_name} fue exitoso en Súmame"
-        email_text: "El proyecto %{project_link}, que usted apoyó, fue financiado exitosamente en Súmame! Hora de celebrar o/<br><br>el proyecto tuvo, incluyendolo, %{project_total_backers} maravillosos apoyadores, recaudo %{project_pleged} y alcanzó %{project_process}% de la meta de captacion =D<br><br>Ahh, una información importante: el equipo de Súmame  se demora hasta 3 dias hábiles en pasarle la lista de contacto de todos los apoyadores a los productores del proyecto. Por eso, el realizador entrará en contato con usted para agradecerle y para hablar sobre las recompensas en unos días, ok?<br><br>En cuanto a eso, comparta con todo el mundo este trinfo!<br><br><div style='text-align:center;'>%{facebook_button}%{twitter_button}</div><br><br>Si quiere entrar en contato com %{project_owner_name}, realizador del proyecto, mande un email a %{project_owner_email}.<br><br>Si tiene alguna otra duda, ingrese a nuestro FAQ: <a href='http://www.sumame.co/faq' style='color: #008800;'>www.sumame.co/faq</a> o mande un email a <a href='mail_to:hola@sumame.co' style='color: #008800;'>hola@sumame.co</a><br>"
+        email_text: "El proyecto %{project_link}, que usted apoyó, fue financiado exitosamente en Súmame! Hora de celebrar o/<br><br>el proyecto tuvo, incluyendolo, %{project_total_contributions} maravillosos apoyadores, recaudo %{project_pleged} y alcanzó %{project_process}% de la meta de captacion =D<br><br>Ahh, una información importante: el equipo de Súmame  se demora hasta 3 dias hábiles en pasarle la lista de contacto de todos los apoyadores a los productores del proyecto. Por eso, el realizador entrará en contato con usted para agradecerle y para hablar sobre las recompensas en unos días, ok?<br><br>En cuanto a eso, comparta con todo el mundo este trinfo!<br><br><div style='text-align:center;'>%{facebook_button}%{twitter_button}</div><br><br>Si quiere entrar en contato com %{project_owner_name}, realizador del proyecto, mande un email a %{project_owner_email}.<br><br>Si tiene alguna otra duda, ingrese a nuestro FAQ: <a href='http://www.sumame.co/faq' style='color: #008800;'>www.sumame.co/faq</a> o mande un email a <a href='mail_to:hola@sumame.co' style='color: #008800;'>hola@sumame.co</a><br>"
         facebook_text: "Uhuu! el proyecto '%{name}', que apoyé, fue exitoso en Súmame!"
         notification_text: "Uhuu! el proyecto %{link} que usted apoyo, fue exitoso! Corra la voz!"
         reward_notification_text: "En breve, %{link} va a entrar en contato con usted para entregarle su recompensa. Disfrute!"
@@ -384,6 +386,7 @@ es:
     display_status:
       expired: "finalizado"
       rejected: "rechazado"
+      deleted: "eliminado"
       failed: "no financiado"
       successful: financiado
       waiting_confirmation: esperando
@@ -504,13 +507,13 @@ es:
       title: "Gerenciamento de proyectos"
       user: Usuário
       visible: Visíble?
-    pending_backers:
+    pending_contributions:
       anonymous: Anónimo?
       confirmed: Confirmado?
       credits: "Uso créditos?"
       id: Id
       key: Llave
-      no_backers: "Ningún apoyador encontrado."
+      no_contributions: "Ningún apoyador encontrado."
       project: Proyecto
       refunded: "Cancelacion realizada?"
       requested_refund: "Solicito cancelacion?"
@@ -518,16 +521,18 @@ es:
       submit: Buscar
       title: "Gerenciamento de apoyos"
       total_backed: Recaudados
-      total_backers: apoyadores
-      total_backs: apoyos
+      total_contributions: apoyadores
+      total_contributions: apoyos
       total_users: usuários
       user: Usuário
       value: Valor
     project:
       backed: Respaldados
       reached: alcanzados
-    project_backers:
-      empty: " Nadia ha apoyado este proyecto aun. Que tal ser el primero?"
+    project_contributions:
+      empty: " Nadie ha apoyado este proyecto aún. Que tal ser el primero?"
+      confirmed: "Confirmados"
+      pending: "Pendientes"
     project_header:
       subtitle_html: "Un proyecto de %{link}"
       without_city: "Un proyecto de"
@@ -536,12 +541,17 @@ es:
       empty: "Este proyecto aun no tiene novedades. Espere =D"
       submit: "Enviar Novedad"
       comment: "Texto de su Novedad"
+      exclusive: "Visible solo para apoyadores"
       title: "Título de su Novedad"
       destroy: "Remover Novedade"
       destroy_confirmation: "Desea remover esta novedad?"
+      warning: "Recordando que cada nuevo post va directamente a la dirección de correo electrónico de sus apoyadores. Por lo tanto, revise bien el texto antes de enviarlo"
     rewards:
+      new_reward: "Registrar recompensa"
+      edit_reward: "Editar recompensa"    
       reward_title: "Para %{minimum} o mas"
-      backs_to_confirm:
+      reward_deliver_time: "<b>Entrega estimada:</b> %{estimate}"
+      contributions_to_confirm:  
         one: "1 apoyo en plazo de confirmacion."
         other: "%{count} apoyos en plazo de confirmacion."
       title: "Apoye y gane..."
@@ -552,17 +562,17 @@ es:
       waiting: "Este proyecto está en fase de borrador y luego sabremos si entra a  . Se está viendo el proyecto, y no el dueño... aprovecha para mandar tu opinión al realizador."
       waiting_owner: "<i>ATENCION! Su proyecto aun no está al aire... Bienvenido al borrador! </i><br><br>Ese es el espacion para que usted construya su proyecto. <br>Ninguna información debajo es definitiva hasta que el proyecto entre al aire. Por eso, aproveche! <br><br> Para editar las informaciones en la pagina del proyecto, solo hay que hacer click en edición. <br>Las recompensas se editan en su misma columna:D <br>Comparta con sus amigos y reuna sugerencias.<br><br><b>Recordando que:</b> Súmame es una plataforma supervisada, lo que significa que vamos a avalar el foco, la viabilidad y la consistencia de su proyecto durante el proceso de borrador. Si vemos que su proyecto no esta de acuerdo con nuestros <a href='http://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank'>Critérios de Seleccion</a>, puede ser rechazados por el equipo de supervision."
       about_title: "el proyecto"
-      no_rewards_warning_title: 'Cree aqui sus recompensas'
+      no_rewards_warning_title: 'Cree aquí sus recompensas:'
       no_rewards_warning: 'No viaje! Pinse en como irá a entregarlas y colóquelo en la descripción. Prometio algo?! CUMPLA! :D'
       reports:
-        no_backs: 'Su proyecto aun no tiene ningún apoyo.'
+        no_contributions: 'Su proyecto aun no tiene ningún apoyo.'
         link_reports: 'Bajar reporte de'
-        all_backers: 'todos los apoyadores'
-        all_backers_without_reward: 'todos los apoyadores que no selecionaron una recompensa'
+        all_contributions: 'todos los apoyadores'
+        all_contributions_without_reward: 'todos los apoyadores que no selecionaron una recompensa'
         link_reward: 'Bajaar reporte de los apoyadores de recompensa de '
       menu:
         about: Sobre
-        backers: Apoyadores
+        contributions: Apoyadores
         comments: Comentários
         updates: Novedades
         edit: Edición
@@ -600,31 +610,31 @@ es:
       tags_important: "Revise ms proyectos relacionados con su categoría haciendo click en <a href='%{href}' target='_blank'>aqui!</a>."
       video: "Ya tiene video? Mandenos la URL!"
       video_hint: " El vídeo es la principal pieza del proyecto. Si aun no tiene video no está obligado a enviar... Pero vaya pensando en como hacer un video MATADOR!"
-      video_important: "Su vídeo debe estar hospedado en Vimeo. Pegue el link para todos!"
-      how_know_important: "Oba! Llegamos a la ultima pregunta."
+      video_important: "Copia y pega aquí la URL del video que subiste a Youtube o Vimeo. Compártelo con todos!"
+      how_know_important: "Excelente! Llegamos a la ultima pregunta."
       more_links_important: " Es muy importante utilizar su social media para respaldar la noticia sobre su proyecto y involucrar a du red en el éxito del proyecto."
-      first_backers_important: "Estas personas serán fundamentales para que su proyecto sea exitoso"
+      first_contributions_important: "Estas personas serán fundamentales para que su proyecto sea exitoso"
       online_days_important: El plazo máximo para permanecer en el aire es de 60 días.'
       headline_important: 'Es una breve descripción del proyecto, 140 caracteres máximo! :D'
       name_important: "No se pase de 50 caracteres"
       social: "Canales de Mobilización"
-      facebook_hint: "http://facebook.com/__________"
-      twitter_hint: "http:// twitter.com/____________"
+      facebook_hint: "http://facebook.com/sumame.co"
+      twitter_hint: "http:// twitter.com/sumamecolombia"
       social_important: " Es muy importante utilizar su social media para respaldar la noticia sobre su proyecto y involucrar a du red en el éxito del proyecto."
       know_us_via: "Como supo de Súmame?"
-      knowus_important: "Oba! Llegamos a la ultima pregunta! Imaginate, amigo;)"
+      knowus_important: "Excelente! Llegamos a la ultima pregunta! Imaginate, amigo;)"
       how_works: "Como pretende mobilizar apoyadores para recaudar el $ necesario para la ejecucion?"
       project_warning:
         content_html: "Quiere aumentar la probabilidad de ser seleccionado? No deje de leer %{link}."
         help_link: "Nuestra guia"
       rewards: "Como va a recompensar a sus apoyadores?"
       rewards_hint: "DIVIDA en cuotas! Nosotros sabemos que las recompensas ayudar al apoyador a definir con cuanto va a apoyar el proyecto. Todo el mundo adora las ediciones limitadas, cosas únicas e experiencias divertidas. Gaste un buen tiempo pensando en recompensas creativas y en las personas que estarán interesadas."
-      rewards_important: "No viaje! Piense en como irá a entregarlas y colóquelo en la descripción. Prometio algo?! CUMPLA! :D"
+      rewards_important: "No viaje! Piense en como irá a entregarlas y colóquelo en la descripción.ó Prometió algo?! CUMPLA! :D"
       submit: "Enviar el proyecto"
       send_project: "Quiero enviar mi proyecto."
       subtitle: "La hora de montar su proyecto es ahora. Estamos locos por saber lo que usted tiene casi listo..."
       title: "Ahooora si! Envie su proyecto, campeon."
-      legend_html: "Luego de llenar el formulario debajo, usted recibirá una pagina de proyecto en borrador. Ahí usted agregará las recompensas y podrá compartirla con sus amigos para tener un proyecto más fuerte.<br><br>Las información llenada debajo no es definitiva, pero recuerde que cuanto más consistente este el proyecto en este envio, más rápido se pondrá al aire.<br><br><b>Importante</b> <i> Súmame es una plataforma supervisada, lo que significa que vamos a avalar el foco, la viabilidad y la consistencia de su proyecto durante el proceso de borrador. Si vemos que su proyecto no esta de acuerdo con nuestros <a href='https://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank' >Critérios de Seleccion</a>, puede ser rechazado por el equipo de supervision.</i>"
+      legend_html: "Luego de llenar el formulario debajo, usted recibirá una pagina de proyecto en borrador. Ahí usted agregará las recompensas y podrá compartirla con sus amigos para tener un proyecto más fuerte.<br><br>Las información llenada debajo no es definitiva, pero recuerde que cuanto más consistente este el proyecto en este envio, más rápido se pondrá al aire.<br><br><b>Importante</b> <i> Súmame es una plataforma supervisada, lo que significa que vamos a avalar el foco, la viabilidad y la consistencia de su proyecto durante el proceso de borrador. Si vemos que su proyecto no esta de acuerdo con nuestros <a href='http://www.sumame.co/criterios' target='_blank' >Critérios de Seleccion</a>, puede ser rechazado por el equipo de supervision.</i>"
     twitter:
       take_a_look: "Vea el proyecto %{name} en @sumamecolombia"
     video_embed:
@@ -670,8 +680,8 @@ es:
       sidebar:
         title: "Navegue"
         login: "Login"
-        inicial: "Empurrão inicial - Dicas"
-        final: "Empurrão final - Gatilho"
+        inicial: "Empuje inicial - Consejos"
+        final: "Empuje final - Gatillo"
         participate: "Para participar"
         details: "Últimos detalhes"
     admin:
@@ -717,12 +727,12 @@ es:
         user_id: "Usuario"
         goal: "Meta"
         pledged: "Alcanzado"
-        total_backs: "Apoyos"
+        total_contributions: "Apoyos"
         recommended: "Recomendar"
         online_date: "Publicación"
         expires_at: "Término"
         state: "Estado"
-        approve: "Aprovar"
+        approve: "Aprobar"
         reject: "Rechazar"
         send_to_draft: "Enviar para borrador"
         send_to_trash: "ELIMINAR"
@@ -787,7 +797,7 @@ es:
       title_work: "Cuesta mucho trabajo?"
       work: "Muuuuuuuuucho! NO tiene nada de “dinero fácil en Internet”. Usted tendrá que trabajar bastante antes, durante y después del periodo de recaudo, pero le garantizamos que valdrá la pena. Ese proceso le ayudará, además de realizar su proyecto, a fortalecer su red de contacto con personas que creen y están dispuestas a invertir en su trabajo."
       title_costs: "Cuanto cuesta usar Súmame?"
-      costs: "Enviar un proyecto no cuesta nada. Ahora, estando al aire  y alcanzando (o superando) la meta, súmame se queda con el 13%, siendo que este valor incluye tanto comisión como la tasa de medios de pago que procesa las transacciones, ok?"
+      costs: "Enviar un proyecto no cuesta nada. Ahora, estando al aire  y alcanzando (o superando) la meta, súmame se queda con el 15%, siendo que este valor incluye tanto comisión como la tasa de medios de pago que procesa las transacciones, ok?"
       why: "Por que Súmame?"
       intro: "Antes que nada, es muy bacano que usted sepa porqué creemos en esta nueva via pata financiar proyectos es sensacional:"
       why_one: "Poca burocracia y bajo riesgo financiero; sin intereses, sin venta de patrimonio, sin costos para salir al aire. Pero con mucha emoción y diversión."
@@ -819,7 +829,7 @@ es:
       submit: "Próximo Paso!"
       send_project: "Quiero enviar mi proyecto."
       guide: "descargue aquí una guía completa con consejos estratégicos para elaborar un proyecto exitoso en Súmame."
-    guidelines_backers:
+    guidelines_contributions:
       title: "Quiero apoyar un proyecto!"
       subtitle: "Entienda paso-a-paso como apoyar un proyecto en Súmame."
       introduction: "Súmame es una excelente manera de involucrarse en causas en las que usted cree."
@@ -848,7 +858,7 @@ es:
       credits: " Usted recibirá los créditos en su perfil de Súmame. En el momento en que escoja otro proyecto para apoyar, en el momento de escoger la recompensa, tendrá un campo para utilizar sus créditos."
       title_money: "Y si no quiero usar los créditos?"
       money: "NO hay problema! Solamente debe entrar a su perfil (Mis créditos) t solicitar la devolucion. Si pago con debito o con ticket, solo debe abrir una cuenta en MOip. Tarjeta de crédito, le haremos la devolución con su próxima factura."
-      other_backers: "QUIERO MÁS! PUEDO APOYAR DE OTRAS FORMAS?"
+      other_contributions: "QUIERO MÁS! PUEDO APOYAR DE OTRAS FORMAS?"
       intro: "Conozca las otras formas de ayudar al proyecto que usted cree que será exitoso."
       other_one: "Traga mais dois amigos para apoiar com o mesmo valor que você apoiou."
       other_two: "Fale para todo mundo, quando estiver no bar, sobre quão legal é o proyecto que apoiou no Súmame."
@@ -920,67 +930,67 @@ es:
     show:
       attention: "Atenção"
       tabs:
-        backed_projects: "Proyectos apoiados"
-        created_projects: "Proyectos criados"
-        comments: Comentários
+        contributed_projects: "Proyectos apoyados"
+        created_projects: "Proyectos creados"
+        comments: Comentarios
         credits: Créditos
-        settings: Preferências
-        unsubscribes: Notificações
+        settings: Preferencias
+        unsubscribes: Notificaciones
       user_social:
         email: "Me envie um email"
-        facebook: "Perfil no facebook"
-        twitter: "Perfil no twitter"
-    backs:
-      anonymous: "Apoio anônimo."
-      no_backs: "%{name} ainda não apoiou nenhum proyecto. Mas a gente sabe que é só questão de tempo! :D"
-      no_backs_current_user_html: "Você ainda não apoiou nenhum proyecto. Que tal <a href=\"/\">começar agora</a>?"
-      no_reward: "Você não selecionou nenhuma recompensa"
-      title: "Proyectos que %{name} já apoiou"
-      title_current_user: "Proyectos que já apoiei"
-      your_reward: "Sua recompensa"
+        facebook: "Perfil de facebook"
+        twitter: "Perfil de twitter"
+    contributions:
+      anonymous: "Apoyo anónimo."
+      no_contributions: "%{name} todavía no haz apoyado ingún proyecto. Sabemos que es solo cuestión de tiempo! :D"
+      no_contributions_current_user_html: "No has apoyado ningún proyecto. Que tal <a href=\"/\">comezar ahora</a>?"
+      no_reward: "No escogiste ningúna recompensa"
+      title: "Proyectos que %{name} ya apoyaste"
+      title_current_user: "Proyectos que ya apoyé"
+      your_reward: "Recompensa"
     unsubscribes:
-      title: "Escolha de quais proyectos você deseja receber notificações:"
-      updates: "Eu quero receber atualizações dos proyectos"
+      title: "Elija qué proyectos quieres recibir notificaciones:"
+      updates: "Deseo recibir notificaciones de los proyectos"
     current_user_fields:
-      my_facebook: 'Integração com o facebook'
-      bio_limit: 'até 140 caracteres'
-      updated: "As suas informações foram atualizadas"
-      update_social_info: "Atualizar informações"
-      social_info: "Informações para contato"
-      twitter: "twitter ( usuário )"
-      facebook_link: "perfil do facebook (link completo)"
-      other_link: "link da sua página na internet"
-      change_password: "Alterar minha senha"
-      current_password_hint: "<i>Para que a senha seja alterada você precisa confirmar a sua senha atual.</i>"
-      email_hint: "Seu email será utilizado apenas para envio de comunicações do Súmame e dos proyectos que você apoiar. Ele não estará visível em seu perfil. Quando você apoiar um proyecto, nós daremos seu email para o dono do proyecto para que ele possa providenciar as recompensas."
-      email_tooltip: "Clique aqui para preencher seu email..."
-      gravatar_hint_html: "Você também pode mudar a sua foto usando o %{link} com seu email. <br>É tão simples cuanto enviar uma imagem e já funciona para outros sites também ;)"
-      local_avatar: "Meu avatar"
-      submit_text: "Escolha sua imagem"
+      my_facebook: 'Integración con facebook'
+      bio_limit: 'hasta 140 caracteres'
+      updated: "Tu información fue actualizada"
+      update_social_info: "Actualizar información"
+      social_info: "Información para contato"
+      twitter: "Twitter ( usuario )"
+      facebook_link: "Perfil de Facebook (link completo)"
+      other_link: "Tu página de Internet"
+      change_password: "Cambiar mi contraseña"
+      current_password_hint: "<i>Para cambiar tu contraseña, necesitamos validar la actual.</i>"
+      email_hint: "Tu email sólo se utiliza para el envío de comunicaciones Súmame y Proyectos usted apoya. Él no será visible en su perfil. Cuando alguien apoya a un Proyecto, vamos a darle a su correo electrónico al dueño del proyecto para que que pueda ofrecer las recompensas."
+      email_tooltip: "Clic aquí para escribir el email..."
+      gravatar_hint_html: "Puedes cambiar tu foto usanndo el %{link} con tu email. <br>Es tan simple, solo tienes que enviar una imagen y funciona para otros sitios también ;)"
+      local_avatar: "Mi avatar"
+      submit_text: "Escogue tu imagen"
       submit: "Enviar"
-      my_data: "Meus datos"
-      newsletter: "Quero receber novedades do Súmame por email"
-      password_hint: "<i>Deixe em branco caso você não queira trocar sua senha.</i>"
+      my_data: "Mis datos"
+      newsletter: "Quiero recibir novedades de Súmame por email"
+      password_hint: "<i>Dejar en blanco si no desea cambiar su contraseña.</i>"
     header:
-      bio_tooltip: "Clique aqui para escrever sobre você..."
-      name_tooltip: "Clique aqui para preencher seu nome..."
+      bio_tooltip: "Clic aquí para escribir sobre ti..."
+      name_tooltip: "Clic aquí para escribir tu nombre..."
     projects:
-      here: 'aqui'
-      no_projects: "%{name} ainda não realizou nenhum proyecto no Súmame. Será que a inspiração vai bater uma hora dessas?"
-      no_projects_current_user_html: "Você ainda não realizou nenhum proyecto no Súmame. Deixe a inspiração bater e clique %{link} para começar!"
+      here: 'aquí'
+      no_projects: "%{name} todavía no haz realizado ningún proyecto en Súmame. Será que la inspiración está por llegar?"
+      no_projects_current_user_html: "Todavía no haz realizado ningún proyecto en Súmame. Empieza a inspirarte %{link} !"
       title: "Proyectos de %{name}"
-      title_current_user: "Meus proyectos"
+      title_current_user: "Mis proyectos"
   users_mailer:
     notification_email:
-      alt: "Você deve habilitar imagens para visualizar corretamente essa mensagem."
-      forward: "Encaminhar para amigos"
-      hello: Olá
-      intro: "Você está recebendo esta mensagem pois se cadastrou no Súmame"
-      mailee: "Mensagem entregue pelo Mailee.me"
-      salutation: "Um grande abraço,"
-      signature: "Equipe do Súmame"
-      unsubscribe: "Descadastrar da lista"
-      unsubscribe_long: "Se não quiser mais receber estes emails"
-      weblink: "Ver na web"
-      whitelist: "Agregar contato"
-      whitelist_long: "Adicione nosso email a seus contatos"
+      alt: "Debes habilitar las imágines para visualizar correctamente este mensaje."
+      forward: "Reenviar a mis amigos"
+      hello: Hola
+      intro: "Estás recibiendo este mensaje por que estás registrado en Súmame.co"
+      mailee: "Mensaje entregado por Mailee.me"
+      salutation: "Un abrazo grande,"
+      signature: "Equipo do Súmame"
+      unsubscribe: "Darse de baja de la lista"
+      unsubscribe_long: "si usted no desea recibir estos mensajes de correo electrónico"
+      weblink: "Ver en un explorador"
+      whitelist: "Agregar contacto"
+      whitelist_long: "Añada nuestra dirección de correo electrónico a sus contactos"
