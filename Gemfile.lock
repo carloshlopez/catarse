@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/carloshlopez/catarse_pagosonline.git
-  revision: 466324c8f72036c759c8a6e6eac9ee2329e127b0
+  revision: 52265f2e46fba593cb6fad90c7c722a3c4e21fab
   specs:
     catarse_pagosonline (0.1.10)
       pagosonline
@@ -77,8 +77,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
-    arel (4.0.1)
-    atomic (1.1.14)
+    arel (4.0.2)
+    atomic (1.1.15)
     auto_html (1.4.2)
       RedCloth
       redcarpet
@@ -234,7 +234,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    multi_json (1.8.4)
+    multi_json (1.9.0)
     multipart-post (1.2.0)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -278,7 +278,7 @@ GEM
       cliver (~> 0.3.1)
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
-    polyglot (0.3.3)
+    polyglot (0.3.4)
     postgres-copy (0.8.0)
       activerecord (~> 4.0)
       pg
@@ -403,7 +403,7 @@ GEM
       activemodel (>= 3.0.0)
     spreadsheet (0.9.6)
       ruby-ole (>= 1.0)
-    sprockets (2.10.1)
+    sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -420,8 +420,8 @@ GEM
     term-ansicolor (1.2.2)
       tins (~> 0.8)
     thor (0.18.1)
-    thread_safe (0.1.3)
-      atomic
+    thread_safe (0.2.0)
+      atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
     timers (1.1.0)
     tins (0.13.1)
@@ -430,7 +430,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.38)
+    tzinfo (0.3.39)
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
