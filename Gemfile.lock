@@ -8,6 +8,21 @@ GIT
       rails (~> 4)
 
 GIT
+  remote: git://github.com/carloshlopez/catarse_pagosonline.git
+  revision: 466324c8f72036c759c8a6e6eac9ee2329e127b0
+  specs:
+    catarse_pagosonline (0.1.10)
+      pagosonline
+      rails
+
+GIT
+  remote: git://github.com/carloshlopez/pagosonline.git
+  revision: f7f33d53f4977f34d47e122134eb08374de9cc34
+  specs:
+    pagosonline (0.0.1)
+      hashie
+
+GIT
   remote: git://github.com/catarse/catarse_mailchimp
   revision: 2ed4f3931dfa292e5c1c62619772f04e41c68629
   ref: 2ed4f39
@@ -46,17 +61,6 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    active_utils (2.0.1)
-      activesupport (>= 2.3.11)
-      i18n
-    activemerchant (1.42.4)
-      active_utils (~> 2.0, >= 2.0.1)
-      activesupport (>= 2.3.14, < 5.0.0)
-      builder (>= 2.1.2, < 4.0.0)
-      i18n (~> 0.5)
-      json (~> 1.7)
-      money (< 7.0.0)
-      nokogiri (~> 1.4)
     activemodel (4.0.2)
       activesupport (= 4.0.2)
       builder (~> 3.1.0)
@@ -97,14 +101,6 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
-    catarse_moip (2.3.1)
-      enumerate_it
-      libxml-ruby (~> 2.6.0)
-      rails (~> 4.0)
-    catarse_paypal_express (2.2.0)
-      activemerchant (>= 1.34.0)
-      rails (~> 4.0)
-      slim-rails
     celluloid (0.15.2)
       timers (~> 1.1.0)
     chartkick (1.2.1)
@@ -153,8 +149,6 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0.3)
-    enumerate_it (1.2.0)
-      activesupport (>= 3.0.0)
     erubis (2.7.0)
     excon (0.31.0)
     execjs (2.0.2)
@@ -228,7 +222,6 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.2.0)
       launchy (~> 2.2)
-    libxml-ruby (2.6.0)
     loofah (1.2.1)
       nokogiri (>= 1.4.4)
     mail (2.5.4)
@@ -241,10 +234,6 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    monetize (0.1.3)
-    money (6.0.1)
-      i18n (~> 0.6.4)
-      monetize (~> 0.1.3)
     multi_json (1.8.4)
     multipart-post (1.2.0)
     net-scp (1.1.2)
@@ -476,8 +465,7 @@ DEPENDENCIES
   capybara (~> 2.1.0)
   carrierwave (~> 0.8.0)
   catarse_mailchimp!
-  catarse_moip (~> 2.3.1)
-  catarse_paypal_express (~> 2.2.0)
+  catarse_pagosonline!
   chartkick
   coffee-rails (~> 4.0.0)
   compass-960-plugin
@@ -499,7 +487,7 @@ DEPENDENCIES
   heroku-deflater (>= 0.4.1)
   high_voltage
   http_accept_language
-  httparty (~> 0.6.1)
+  httparty
   httpclient (>= 2.2.5)
   inherited_resources (~> 1.4.1)
   jasmine
@@ -513,6 +501,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook (= 1.4.0)
   omniauth-twitter
+  pagosonline!
   paper_trail (>= 3.0.0.rc2)
   pg
   pg_search

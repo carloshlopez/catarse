@@ -2,6 +2,9 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+vendor/cache/*
+vendor/bundle/*
+vendor/rails/*
 config/database.yml
 db/seeds/my-seeds-local.rb
 db/seeds/my-seeds-heroku.rb

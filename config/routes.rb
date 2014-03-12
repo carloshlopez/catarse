@@ -27,9 +27,9 @@ Catarse::Application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  mount CatarsePaypalExpress::Engine => "/", as: :catarse_paypal_express
-  mount CatarseMoip::Engine => "/", as: :catarse_moip
-
+  # mount CatarsePaypalExpress::Engine => "/", as: :catarse_paypal_express
+  # mount CatarseMoip::Engine => "/", as: :catarse_moip
+  mount CatarsePagosonline::Engine => "/", :as => "catarse_pagosonline"
   # mount CatarsePayulatam::Engine => "/", :as => "catarse_payulatam"
   # mount CatarseWepay::Engine => "/", as: :catarse_wepay
 

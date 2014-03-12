@@ -29,10 +29,14 @@ gem 'schema_associations'
 gem 'chartkick'
 
 # Payment engines
-gem 'catarse_paypal_express', '~> 2.2.0'
-gem 'catarse_moip', '~> 2.3.1'
+# gem 'catarse_paypal_express', '~> 2.2.0'
+# gem 'catarse_moip', '~> 2.3.1'
 # gem 'payulatam', git: 'git://github.com/danielweinmann/payulatam.git'
 # gem 'catarse_payulatam', git: 'git://github.com/danielweinmann/catarse_payulatam.git'
+# gem 'pagosonline', git: 'git://github.com/sagmor/pagosonline.git'
+# gem 'catarse_pagosonline'
+gem 'pagosonline', git: 'git://github.com/carloshlopez/pagosonline.git'
+gem 'catarse_pagosonline', git: 'git://github.com/carloshlopez/catarse_pagosonline.git'
 
 # Decorators
 gem 'draper'
@@ -79,7 +83,7 @@ gem 'inherited_resources',        '~> 1.4.1'
 gem 'has_scope', '~> 0.6.0.rc'
 gem 'spectator-validates_email',  require: 'validates_email'
 gem 'video_info', '>= 1.1.1'
-gem 'httparty', '~> 0.6.1' # this version is required by moip gem, otherwise payment confirmation will break
+gem 'httparty'#, '~> 0.6.1' # this version is required by moip gem, otherwise payment confirmation will break
 
 # Translations
 gem 'http_accept_language'

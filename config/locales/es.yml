@@ -429,6 +429,7 @@ es:
       checkout:
         no_credits: " Usted no posee créditos suficientes para realizar este apoyo."
         success: " Su apoyo fue exitoso. Muchas gracias!"
+        pagosonline_error: "Error confirmando la transacción con PagosOnLine, intenta de nuevo"
       new:
         cannot_back: " No es posible apoyar este proyecto en el momento. Por favor, apoye otros proyectos."
         header:
