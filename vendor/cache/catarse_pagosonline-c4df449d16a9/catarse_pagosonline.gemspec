@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-# stub: catarse_pagosonline 0.1.10 ruby lib
+# stub: catarse_pagosonline 0.1.11 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "catarse_pagosonline"
-  s.version = "0.1.10"
+  s.version = "0.1.11"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
