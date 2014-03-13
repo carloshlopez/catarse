@@ -568,10 +568,10 @@ es:
       no_rewards_warning: 'No viaje! Pinse en como irá a entregarlas y colóquelo en la descripción. Prometio algo?! CUMPLA! :D'
       reports:
         no_contributions: 'Su proyecto aun no tiene ningún apoyo.'
-        link_reports: 'Bajar reporte de'
-        all_contributions: 'todos los apoyadores'
-        all_contributions_without_reward: 'todos los apoyadores que no selecionaron una recompensa'
-        link_reward: 'Bajaar reporte de los apoyadores de recompensa de '
+        link_reports: 'Bajar reportes en:'
+        all_contributions: 'Todos los apoyadores'
+        all_contributions_without_reward: 'Reporte de todos los apoyadores que no selecionaron recompensa: '
+        link_reward: 'Bajar reporte de los apoyadores que escogieron alguna recompensa en: '
       menu:
         about: Sobre
         contributions: Apoyadores
