@@ -6,7 +6,7 @@ es:
         site: 'Registrate'
         header: 'Registrate'
       links:
-        login: "Ingresar"
+        login: "Ingresa"
       form:
         labels:
           show_password: 'Mostrar contraseña'

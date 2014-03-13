@@ -25,7 +25,7 @@ es:
     description: "Todos suman, todos ganan!"
     keywords: "sumame, crowdfunding, proyecto, comunidades, financiamiento, financiamiento colectivo"
 
-  backer_report_to_project_owner:
+  contribution_report_to_project_owner:
     reward_description: 'Descripción de recompensa'
     confirmed_at: 'Datos de confirmación de pago'
     value: 'Valor de apoyo'
@@ -69,7 +69,7 @@ es:
     goal:
       subtitle: "obtenidos de %{total}"
   project_by: "proyecto por"
-  tell_about_this_back: "Cuentele al mundo sobre su apoyo!"
+  tell_about_this_contribution: "Cuentele al mundo sobre su apoyo!"
   share_my_contributions: "Comparta el proyecto "
   tell_about_this_project: " Cuentele al mundo sobre su proyecto!"
   share_my_projects: "Comparta el proyecto "
@@ -144,7 +144,7 @@ es:
     attributes:
       unsubscribe:
         update: "Recibir actualizaciones del proyecto"
-      backer:
+      contribution:
         value: Valor
       channel:
         name: Nombre
@@ -193,7 +193,7 @@ es:
         password_confirmation: "Confirmacion de senha"
         phone_number: "Telefono (fijo o celular)"
     models:
-      backer: Apoyador
+      contribution: Apoyador
       category: Categoría
       project: Proyecto
       reward: Recompensa
@@ -204,8 +204,8 @@ es:
     value_must_be_at_least_rewards_value: "debe ser por lo menos %{minimum_value} para la recompensa seleccionada"
     project_should_be_online: "Usted no puede apoyar un proyecto que no está al aire"
   project_plural: proyectos
-  backer_plural: apoyadores
-  backer_singular: apoyador
+  contribution_plural: apoyadores
+  contribution_singular: apoyador
   project_singular: proyecto
   click_here: "Haga click aqui"
   clicking_here: "haciendo click aqui"
@@ -251,9 +251,9 @@ es:
       payer_email: 'E-mail usado en el medio de pago'
       payer_name: 'Nombre usado en el medio de pago'
       project: 'Proyecto'
-      backer_key: 'Llave del apoyo'
+      contribution_key: 'Llave del apoyo'
       payment_id: 'ID del medio de pago'
-      backer_value: 'Valor del apoyoo'
+      contribution_value: 'Valor del apoyoo'
       payment_method: 'Medio de pago'
       payment_choice: 'Forma de pago'
       created_at: 'Iniciado en'
@@ -261,7 +261,7 @@ es:
     index:
       title: "Páginas curadas"
     show:
-      backed: Respaldatos
+      contributed: Respaldatos
       reached: Obtenido
   error: "Ooops! Ocurrió un error. Por favor, intente nuevamente."
   explore:
@@ -279,7 +279,7 @@ es:
       empty: "Hey, no encontramos ningún proyecto con el texto que usted buscó. Qué tal experimentar con otras palabras? =D"
   formtastic:
     hints:
-      backer:
+      contribution:
         credits: "Usted posee <strong>%{credits}</strong> en créditos y puede apoyar hasta este valor sin tener que realizar un nuevo pago."
         value: "Usted escoge el valor ;) a partir de $20.000 es óptimo."
       project:
@@ -325,8 +325,8 @@ es:
   found_plural: Encontrados
   found_singular: Encontrado
   here: aqui
-  i_backed: "Yo apoyé el proyecto %{name} en @sumamecolombia"
-  i_just_backed: "Yo acabo de apoyar el proyecto %{name} en @sumamecolombia"
+  i_contributed: "Yo apoyé el proyecto %{name} en @sumamecolombia"
+  i_just_contributed: "Yo acabo de apoyar el proyecto %{name} en @sumamecolombia"
   layouts:
     login:
       login_with_facebook: "ingresa con tu cuenta de facebook"
@@ -336,7 +336,7 @@ es:
       help: Ayuda
       faq: FAQ
       signup: Registrarse
-      signin: Ingresar
+      signin: Ingresa
       discover: Explorar
       submit: Envía tu proyecto
       profile: "Mi Perfil"
@@ -392,6 +392,7 @@ es:
       waiting_confirmation: esperando
       waiting_funds: esperando
       not_reached_goal: esperando
+      draft: borrador
   projects:
     send_to_analysis: 'Tu proyecto fue enviado a nuestro equipo.'
     box:
@@ -407,7 +408,7 @@ es:
         rejected: "Este proyecto fue rechazado"
         successful: "Este proyecto fue exitoso y fue financiado en %{date}"
         waiting_funds: "Esperando la confirmacion de tickets para saber si este proyecto será financiado."
-        draft: "Ese proyecto es apenas un rasguño y aun no esta abierto para recibir apoyos."
+        draft: "Este proyecto es apenas un borrador y aun no esta abierto para recibir apoyos."
       reached_of: "Alcanzados de"
       submit: "SÚMAME a este proyecto"
     contributions:
@@ -656,7 +657,7 @@ es:
       my_credits: "Mis créditos"
       logout: "Salir"
       signup: "Registrarse"
-      signin: "Ingresar"
+      signin: "Ingresa"
     subscribed: "+ %{count} seguidores"
     footer:
       terms: "Términos"

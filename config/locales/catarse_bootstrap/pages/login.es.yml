@@ -12,5 +12,5 @@ es:
         labels:
           remember_me: 'Recordarme'
         inputs:
-          submit: 'Ingresar'
-          facebook: 'Ingresar con Facebook'
+          submit: 'Ingresa'
+          facebook: 'Ingresa con Facebook'

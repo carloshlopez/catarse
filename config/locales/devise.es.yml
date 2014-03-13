@@ -1,6 +1,14 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 es:
   devise:
+    feedback_tab:
+      title: 'Feedback y Ayuda'
+      header_html: 'Bienvenido a Súmame'
+      blog_button: 'Lee más en el blog'
+      form_feedback_link: 'Enviar feedback'
+      contact_link: 'Contáctanos'
+    links:
+      forgot_password: Olvidé mi contraseña  
     confirmations:
       confirmed: "Cuenta confirmada!. Ya esta registrado."
       send_instructions: "Recibira un email con instrucciones de como confirmar su cuenta en unos minutos."
@@ -51,10 +59,10 @@ es:
       updated: "Actualizaste tu cuenta exitosamente."
     sessions:
       new:
-        site_title: "Ingresar"
-        submit: "Ingresar"
+        site_title: "Ingresa"
+        submit: "Ingresa"
         title: "Ingresa utilizando tu correo electrónico"
-        login_title: Ingresar
+        login_title: Ingresa
         login_subtitle: "Si ya tienes una cuenta"
         register_title: "Registrate"
         register_subtitle: "Usa tu cuenta de correo"
