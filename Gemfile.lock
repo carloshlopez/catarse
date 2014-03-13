@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/carloshlopez/catarse_pagosonline.git
-  revision: 797f9323c7efaa7c622387787f7904c660d5d2cd
+  revision: fe58e70f15eb22240ee02933d9533dca7a4f0433
   specs:
     catarse_pagosonline (0.1.11)
       pagosonline
