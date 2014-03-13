@@ -19,14 +19,6 @@
         .projects
           == render @recommends
 
-      section.channel_projects.list
-        header
-          h2.list-title
-            = link_to t('sections.channels.title'), root_url(subdomain: 'asas')
-          = link_to t('main.links.channels'), root_url(subdomain: 'asas'), class: "more-projects"
-        .projects
-          == render @channel_projects
-
       section.expiring_projects.list
         header
           h2.list-title
@@ -42,6 +34,14 @@
           = link_to t('main.links.recents'), explore_path(anchor: :recent), class: "more-projects"
         .projects
           == render @recent
+
+      section.channel_projects.list
+        header
+          h2.list-title
+            = link_to t('sections.channels.title'), root_url(subdomain: 'recojo')
+          = link_to t('main.links.channels'), root_url(subdomain: 'recojo'), class: "more-projects"
+        .projects
+          == render @channel_projects          
 
     aside.main-sidebar
       section.main-sidebar-division

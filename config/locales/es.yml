@@ -102,11 +102,11 @@ es:
       submit: "Envia tu proyeto"
       discover: "Descubra proyectos"
     texts:
-      copyleft: "Hecho con amor."
+      copyleft: "Hecho con amor. Gracias al código de:"
   main:
     banner: "Conoce la investigación"
     links:
-      channels: "Descubre el canal de alas"
+      channels: "Descubra más proyectos de este validador"
       recommended: "Descubra los proyetos recomendados"
       expiring: "Descubra los proyetos en la recta final"
       recents: "Descubra los proyetos recientes"
@@ -132,7 +132,7 @@ es:
     recents:
       title: "Recientes"
     channels:
-      title: 'Canal de Alas'
+      title: 'Proyectos de nuestros Validadores'
   accept_terms_html: "Yo leí y estoy de acuerdo con los %{link}."
   activerecord:
     errors:
@@ -281,7 +281,7 @@ es:
     hints:
       backer:
         credits: "Usted posee <strong>%{credits}</strong> en créditos y puede apoyar hasta este valor sin tener que realizar un nuevo pago."
-        value: "Usted escoge el valor ;) a partir de $20.000 10 es óptimo."
+        value: "Usted escoge el valor ;) a partir de $20.000 es óptimo."
       project:
         video_url_edit: 'Pegue aqui el link de su video alojado en Vimeo'
         about: "Cuentenos un poco sobre su inspiración para realizar el proyecto, su história y lo que será el producto final. Sea conciso y huya de las formalidades formalidades de avisos. Nada de OBJETIVO, JUSTIFICACION, DESTINATARIOS... Presentele a sus lectores algo que los conmueva y sea muy transparente con su expectativa del proyecto."
@@ -428,8 +428,8 @@ es:
         title: "Muchas gracias"
       checkout:
         no_credits: " Usted no posee créditos suficientes para realizar este apoyo."
-        success: " Su apoyo fue exitoso. Muchas gracias!"
-        pagosonline_error: "Error confirmando la transacción con PagosOnLine, intenta de nuevo"
+        success: " Su donación fue exitosa. Muchas gracias!"
+        pagosonline_error: "Error confirmando la transacción con PagosOnLine.  "
       new:
         cannot_back: " No es posible apoyar este proyecto en el momento. Por favor, apoye otros proyectos."
         header:
