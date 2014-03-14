@@ -69,14 +69,14 @@ es:
     goal:
       subtitle: "obtenidos de %{total}"
   project_by: "proyecto por"
-  tell_about_this_contribution: "Cuentele al mundo sobre su apoyo!"
+  tell_about_this_contribution: "Cuentele al mundo sobre tu apoyo!"
   share_my_contributions: "Comparta el proyecto "
-  tell_about_this_project: " Cuentele al mundo sobre su proyecto!"
+  tell_about_this_project: " Cuentele al mundo sobre tu proyecto!"
   share_my_projects: "Comparta el proyecto "
   count_contributed_projects: "Apoyo %{total} proyectos"
   footer:
     titles:
-      about: "Sobre nosotros"
+      about: "Acerca de nosotros"
       social: "Redes sociales"
       sitemap: "Navegue"
       newsletter: "Suscribete a nuestras noticias"
@@ -162,7 +162,7 @@ es:
         user_id: "Id de usuário"
         video_url: "URL del video"
         permalink: 'URL de su proyecto'
-        more_links: 'Algún otro link para conocer más sobre su proyecto?'
+        more_links: 'Algún otro link para conocer más sobre tu proyecto?'
         how_know: 'Como supo de Súmame?'
       reward:
         description: Descripcion
@@ -290,7 +290,7 @@ es:
         online_days: " Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
         goal: "Es importante saber que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='http://blog.sumame.co' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de mobilizar por lo menos 50% del valor dentro de su red de contactos."
         headline: "Resuma en 140 caracteres su proyecto. Esta frase será el primer contacto de las personas con su proyecto, antes incluso de ver el video. Sea creativo, transparente y directo :)"
-        name: "Cuanto más directo mejor. Deje para describir su proyecto encima y en el Vídeo."
+        name: "Cuanto más directo mejor, utilice para describir su proyecto el espacio de abajo y el video."
         uploaded_image: "Aqui usted sube una imagen(.jpg) con tamaño 512x400."
         video_url: "El vídeo es la principal pieza del proyecto. Si aun no tiene video no está obligado a enviar... Pero vaya pensando en como hacer un video MATADOR!"
         more_links: "Cuales serán los canales de movilizacion? (Coloque links como Facebook, Twitter, Blogs... todo lo que le ayude a divulgar su proyecto)"
@@ -317,7 +317,7 @@ es:
         headline: 'Frase de efecto *'
         uploaded_image: "Thumbnail del proyecto"
         more_links: "Lista de Links relacionados con su proyecto *"
-        first_contributions: "Lista con los primeiros apoyadores *"
+        first_contributions: "Lista con los primeros apoyadores *"
         how_know: "Como se enteró de Súmame? *"
       reward:
         maximum_contributions: "Máximo de apoyadores (opcional)"
@@ -476,7 +476,7 @@ es:
       success: "Su proyecto fue actualizado exitosamente! Luego nos pondremos en contacto con usted. Muchas gracias!"      
     form:
       permalink_hint: 'Simplifique el URL de su proyecto.Imagine que su apoyador  se tiene que acordar de la dirección para divulgar el proyecto hablando con sus amigos en el bar.'
-      important_html: "Recuerde la tasa del 13% descontada por Súmame en caso que su proyecto sea exitoso."
+      important_html: "Recuerde la tasa del 15% descontada por Súmame en caso que su proyecto sea exitoso."
       add_reward: "Agregar nueva recompensa"
       project_warning:
         content_html: "Quiere aumentar la probabilidad de que su proyecto sea seleccionado? No deje de leer %{link}."
@@ -573,7 +573,7 @@ es:
         all_contributions_without_reward: 'Reporte de todos los apoyadores que no selecionaron recompensa: '
         link_reward: 'Bajar reporte de los apoyadores que escogieron alguna recompensa en: '
       menu:
-        about: Sobre
+        about: Acerca del proyecto
         contributions: Apoyadores
         comments: Comentários
         updates: Novedades
@@ -593,11 +593,11 @@ es:
       introduction_html: "Llene el formulario debajo de la forma más objetiva, pues cuanto más<br/>completo recibamos su proyecto, más rápido entrará en la plataforma online."
       permalink_important: 'Intente no usar guion o guion al piso etc.'
       permalink_hint: 'Simplifique la URL de su proyecto. Imagine que su apoyador necesitara acordarse de ka dirección para divulgar el proyecto en el bar.'
-      important_html: "Acuerdese de la tasa de 13% cobrada por Súmame en caso que su proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
+      important_html: "Acuérdate de la tasa de 15% cobrada por Súmame en caso que el proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
       about: " Discriba su proyecto y com el $ será utilizado "
       how_much_you_need: "Cuanto pretende recaudar?"
       how_much_hint_html: "Es importante recordar que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='%{href}' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de movilizar por lo menos 50% del valor dentro de su red de contactos."
-      how_much_important: " Acuerdese de la tasa de 13% cobrada por Súmame en caso que su proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
+      how_much_important: " Acuérdate de la tasa de 15% cobrada por Súmame en caso que el proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
       days: "En cuantos dias?"
       days_hint: "En promedio los proyectos permanecen al aire por 40 días."
       days_important: "El plazo máximo para permanecer en el aire es de 60 días."
@@ -609,7 +609,7 @@ es:
       links_hint: "Pegue aquí links de videos, aticulos,reportajes blogs..."
       category: "Qual es la categoria de su proyecto?"
       tags_hint: "Antes de enviar su proyecto, explore e inspirese con otros proyectos que estuvieron en la plataforma."
-      tags_important: "Revise ms proyectos relacionados con su categoría haciendo click en <a href='%{href}' target='_blank'>aqui!</a>."
+      tags_important: "Revise los proyectos relacionados con su categoría haciendo click en <a href='%{href}' target='_blank'>aquí</a>."
       video: "Ya tiene video? Mandenos la URL!"
       video_hint: " El vídeo es la principal pieza del proyecto. Si aun no tiene video no está obligado a enviar... Pero vaya pensando en como hacer un video MATADOR!"
       video_important: "Copia y pega aquí la URL del video que subiste a Youtube o Vimeo. Compártelo con todos!"
@@ -795,11 +795,11 @@ es:
       title_magic: "Nuestra fórmula mágica"
       magic: "Creemos que propiciar encuentros entre personas que compartan el costo de un proyecto es la mejor forma de volverlo realidad y hasta incrementar su potencial. Por  eso , utilize súmame como un canal para direccionar su red de contactos hacia un objetivo COMÚN."
       title_money: "De donde viene el dinero que financia los proyectos?"
-      money: "Por lo menos el 50% vendrá de su red de contactos. De esa manera, súmame es una forma para que usted se acerque a las personas que gustan y creen en su trabajo y expandir esa red a través de redes socialsm periódicos, blogs y , por supuesto, los bares de la vida."
+      money: "Por lo menos el 50% vendrá de su red de contactos. De esta manera, Súmame.co se convierte en una herramienta para acercarse a nuevas personas que les pueda gustar y crean en su proyecto, así podrá expandir su red de contactos a través de Internet utilizando redes sociales, blogs, email, etc, lo más importante es regar la voz!"
       title_work: "Cuesta mucho trabajo?"
       work: "Muuuuuuuuucho! NO tiene nada de “dinero fácil en Internet”. Usted tendrá que trabajar bastante antes, durante y después del periodo de recaudo, pero le garantizamos que valdrá la pena. Ese proceso le ayudará, además de realizar su proyecto, a fortalecer su red de contacto con personas que creen y están dispuestas a invertir en su trabajo."
       title_costs: "Cuanto cuesta usar Súmame?"
-      costs: "Enviar un proyecto no cuesta nada. Ahora, estando al aire  y alcanzando (o superando) la meta, súmame se queda con el 15%, siendo que este valor incluye tanto comisión como la tasa de medios de pago que procesa las transacciones, ok?"
+      costs: "Enviar un proyecto no cuesta nada. Ahora, estando al aire  y alcanzando (o superando) la meta, súmame se queda con el 15%, siendo que este valor incluye tanto comisión como la tasa de medios de pago que procesa las transacciones."
       why: "Por que Súmame?"
       intro: "Antes que nada, es muy bacano que usted sepa porqué creemos en esta nueva via pata financiar proyectos es sensacional:"
       why_one: "Poca burocracia y bajo riesgo financiero; sin intereses, sin venta de patrimonio, sin costos para salir al aire. Pero con mucha emoción y diversión."
@@ -872,7 +872,7 @@ es:
       explore_curious: "Tâmo junto!"
       explore_projects: "Quero apoiar um proyecto"
     guidelines:
-      title: "Como Funciona o Súmame"
+      title: "Cómo Funciona Súmame.co ::Súmame.co::"
       subtitle: "Conheça melhor o que é o Súmame."
       introduction_html: "O Súmame é um espaço de trocas entre indivíduos que, juntos, <br>viabilizam a realização de proyectos criativos."
       legend_html: "Acreditamos que conectar pessoas que compartilham valor a respeito de uma causa, uma ideia, um proyecto é uma das melhores formas de fazer com que elas se tornem realidade. <br><br> Seja muito bem-vindo! Esse espaço é tão seu cuanto nosso, afinal, Súmame acontece, diariamente,  do encontro de pessoas em busca de novos caminhos para dar vida a mais iniciativas da própria sociedade. Entendemos ser essa uma alternativa  a recursos governamentais, ao patrocínio de empresas e ao não dos bancos. =D"
