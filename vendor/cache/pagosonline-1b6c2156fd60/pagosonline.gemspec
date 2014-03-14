@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Sebastian Gamboa, Carlos Lopez"]
-  s.date = "2014-03-13"
+  s.date = "2014-03-14"
   s.description = "Pagosonline"
   s.email = ["me@sagmor.com,carloshlopez@gmail.com"]
   s.files = [".gitignore", "Gemfile", "Rakefile", "lib/pagosonline.rb", "lib/pagosonline/client.rb", "lib/pagosonline/payment.rb", "lib/pagosonline/response.rb", "lib/pagosonline/version.rb", "pagosonline.gemspec"]

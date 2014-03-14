@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Gustavo Guichard"]
-  s.date = "2014-03-13"
+  s.date = "2014-03-14"
   s.description = "Pagosonline integration with Catarse crowdfunding platform"
   s.email = ["gustavoguichard@gmail.com"]
   s.files = [".gitignore", ".rvmrc", "Gemfile", "Gemfile.lock", "MIT-LICENSE", "README.md", "Rakefile", "app/controllers/catarse_pagosonline/payment/pagosonline_controller.rb", "app/views/catarse_pagosonline/payment/pagosonline/review.html.slim", "catarse_pagosonline.gemspec", "config/initializers/register.rb", "config/routes.rb", "lib/catarse_pagosonline.rb", "lib/catarse_pagosonline/engine.rb", "lib/catarse_pagosonline/version.rb", "script/rails", "spec/controllers/catarse_pagosonline/payment/pagosonline_spec.rb", "spec/spec_helper.rb"]
