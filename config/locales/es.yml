@@ -593,11 +593,11 @@ es:
       introduction_html: "Llene el formulario debajo de la forma más objetiva, pues cuanto más<br/>completo recibamos su proyecto, más rápido entrará en la plataforma online."
       permalink_important: 'Intente no usar guion o guion al piso etc.'
       permalink_hint: 'Simplifique la URL de su proyecto. Imagine que su apoyador necesitara acordarse de ka dirección para divulgar el proyecto en el bar.'
-      important_html: "Acuérdate de la tasa de 15% cobrada por Súmame en caso que el proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
+      important_html: "Acuérdate de la tasa de 15% cobrada por Súmame en caso que el proyecto sea exitoso. Basta dividir  su recolección final entre 0,85."
       about: " Discriba su proyecto y com el $ será utilizado "
       how_much_you_need: "Cuanto pretende recaudar?"
       how_much_hint_html: "Es importante recordar que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='%{href}' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de movilizar por lo menos 50% del valor dentro de su red de contactos."
-      how_much_important: " Acuérdate de la tasa de 15% cobrada por Súmame en caso que el proyecto sea exitoso. Basta dividir  su recolección final entre 0,87."
+      how_much_important: " Acuérdate de la tasa de 15% cobrada por Súmame en caso que el proyecto sea exitoso. Basta dividir  su recolección final entre 0,85."
       days: "En cuantos dias?"
       days_hint: "En promedio los proyectos permanecen al aire por 40 días."
       days_important: "El plazo máximo para permanecer en el aire es de 60 días."
