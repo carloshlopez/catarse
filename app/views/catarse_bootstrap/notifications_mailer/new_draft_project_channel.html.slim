@@ -4,17 +4,16 @@
 - company_name = ::Configuration[:company_name]
 - project_link = project_by_slug_url(permalink: project.permalink)
 
-| Olá
+| Hola
 - if user.name
   | , #{user.name}!
 
 br
 br
-| Um novo rascunho pediu sua avaliação! É importante que você saiba que o 
-| #{company_name} mantém uma política e um comprometimento de responder projetos em até 4 dias úteis. Não deixe Realizadores esperando! 
+| Un nuevo proyecto necesita de tu aprobación! Es importante que sepas que #{company_name} tiene una política y un compromiso con los proyectos nuevos para responder dentro de los próximos 5 días hábiles. No los dejes esperando! 
 br
 br
-| <strong>Projeto:</strong> #{link_to project.name, project_link, target: '__blank'}
+| <strong>Proyecto:</strong> #{link_to project.name, project_link, target: '__blank'}
 br/
 br/
 | <strong>Realizador:</strong> #{link_to project.user.display_name, user_url(project.user)}
@@ -24,10 +23,10 @@ b Lista de Links relacionados:
 br
 = simple_format(project.more_links)
 br
-b Primeiros apoiadores:
+b Primeros apoyadores:
 br
 = simple_format(project.first_contributions)
 br
-b Como conheceu o #{channel.name}:
+b Como conoció a #{channel.name}:
 br
 = simple_format(project.how_know)
