@@ -1,5 +1,5 @@
 class NotificationsMailer < ActionMailer::Base
-  layout 'email'
+  # layout 'email'
 
   def notify(notification)
     @notification = notification

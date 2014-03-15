@@ -8,53 +8,51 @@
 = content_for :email_logo do
   = image_tag(channel.image, alt: channel.name)
 
-|Olá, #{user.name}!
+|Hola, #{user.name}!
 br
 br
-| Nossa equipe do #{channel.name} acabou de receber o projeto #{link_to project.name, project_link, target: '__blank'}
+| El equipo de #{channel.name} acaba ou de receber o projeto #{link_to project.name, project_link, target: '__blank'}
 br/
 br/
-| Durante os próximos 4 dias úteis, iremos analisar o rascunho de projeto que você nos enviou e te daremos uma resposta.
+| Durante lo próximos 5 días habiles, se analizará el borrador del proyecto que se envió y daremos una respuesta.
+br
+br
+strong Pueden recibir 3 tipos de respuesta: 
 br/
 br/
-strong Você pode receber 3 tipos de resposta:
+strong 1: 
+| El proyecto pasó nuestro análisis, fue aceptado y ya está al aire! 
+br/
+| Desde ese momento ya puedes cuadrar un día y hora para estrenar y decirle a todo el mundo que el proyecto ya está en Súmame!
 br/
 br/
-strong Opção 1:
-| Seu rascunho passou na análise, foi aceito e poderá ir ao ar!
-| Agora é só marcarmos o dia e hora para estreiar seu projeto no #{channel.name}, no site do #{company_name}!
+strong 2: 
+| Nos parece que el proyecto tiene mucho que ver con lo que #{company_name} quiere apoar, pero todavía necesita algunos ajustes para poder salir al aire. Vamos a contactarnos con ustedes para comprender sus necesidades y sugerirles algunas cosas y resolver algunas dudas.
 br/
 br/
-strong Opção 2:
-| Nos parece que o seu projeto tem muito ver com o #{channel.name}, mas ainda precisa de alguns ajustes para ir para o ar.
-| Vamos entrar em contato para entender possibilidades , sugerir coisas e tirar algumas dúvidas.
+strong 3:
+| Por desgracia, el proyecto que se envió no encaja en el perfil de lo esperado por #{channel.name}.
+| Enviaremos un email notificando la causa. Sabemos que las respuestas negativas no son bienvenidas, pero recuerda "arriba y pa'lante". Recuerda mirar nuestra #{link_to 'Central de Soporte', ::Configuration[:support_forum], target: '__blank'} do #{company_name} y la #{ link_to 'propuesta', channels_about_url(subdomain: channel.permalink), target: '__blank'}
+| de #{channel.name} para que conozcas todo acerca de los pre-requisitos, buenas prácticas y tips al crear tu siguiente proyecto.
 br/
 br/
-strong Opção 3:
-| Infelizmente, o rascunho de projeto que você enviou não se encaixa no perfil do #{channel.name}.
-| Enviaremos um email notificando a recusa. Sim, sabemos que recusas são sempre desagradáveis. Mas o lema aqui
-| é "levanta, sacode a poeira e dá a volta por cima". Mas antes de sacudir qualquer poeira, estude
-' a #{link_to 'Central de Suporte', ::Configuration[:support_forum], target: '__blank'} do #{company_name} e a #{ link_to 'proposta', channels_about_url(subdomain: channel.permalink), target: '__blank'}
-| do #{channel.name} para que você saiba tudo sobre nossos pré-requisitos para a construção do seu próximo projeto.
+| Recuerda que puedes hacernos preguntas respondiendo directamente a este correo o enviandonos un mensaje al e-mail  #{mail_to channel.email}.
 br/
 br/
-| Se ficou com alguma dúvida, entre em contato conosco respondendo a esta mensagem ou através do e-mail #{mail_to channel.email}.
+strong Todas las inquietudes serán atendidas directamente por los responsables del validador a través del correo anterior!
 br/
 br/
-strong Todo o atendimento será diretamente com os gestores do Canal através do email acima!
-br/
-br/
-|Um abraço,
+|Un abrazo,
 br/
 = channel.name
 br/
 br/
-| Você está em contato com o atendimento do #{channel.name}
+| Estás en contacto con los encargados de #{channel.name}
 br/
 br/
-| Saiba mais:
+| Conoce más:
 br/
-= link_to 'O que são os canais ?', 'http://suporte.catarse.me/knowledgebase/articles/190323-o-que-s%C3%A3o-os-canais-', target: '__blank'
+= link_to 'Qué son los validadores?', 'http://sumame.uservoice.com/knowledgebase/articles/333634--qu%C3%A9-es-un-validador', target: '__blank'
 br/
-= link_to "Diferenças entre o atendimento nos Canais e no #{company_name}.", 'http://suporte.catarse.me/knowledgebase/articles/279356-diferen%C3%A7as-entre-o-atendimento-nos-canais-e-no-cat', target: '__blank'
+= link_to "Diferencias entre un validador y #{company_name}.", 'http://sumame.uservoice.com/knowledgebase/articles/333635-diferencia-entre-un-validador-y-sumame-co', target: '__blank'
 

@@ -1,36 +1,36 @@
-p Seguem todos os dados do pagamento:
+p Aquí están todos los detalles del aporte:
 p
-  | Nome do apoiador: #{(contribution.payer_name || contribution.user.display_name)}
+  | Nombre del apoyador: #{(contribution.payer_name || contribution.user.display_name)}
   br/
-  | CPF/CNPJ do apoiador: #{(contribution.payer_document || contribution.user.cpf)}
+  | CC/NIT del apoyador: #{(contribution.payer_document || contribution.user.cpf)}
   br/
-  | Data da confirmação do apoio: #{l contribution.confirmed_at}
+  | Fecha de confirmación del aporte: #{l contribution.confirmed_at}
   br/
-  | Opção de pagamento: #{contribution.payment_choice || contribution.payment_method}
+  | Opción de pago utilizada: #{contribution.payment_choice || contribution.payment_method}
   br/
-  | Valor da contribuição: #{number_to_currency contribution.value}
+  | Valor: #{number_to_currency contribution.value}
   br/
   -if contribution.reward.present?
-    | Recompensa selecionada: #{contribution.reward.description}
+    | Recompensa seleccionada: #{contribution.reward.description}
     br/
-    | Estimativa de entrega: #{contribution.reward.display_deliver_estimate}
+    | Días estimados para la entrega: #{contribution.reward.display_deliver_estimate}
     br/
-  | ID do apoio: #{contribution.id}
+  | ID de la contribución: #{contribution.id}
   br/
-  | Nome/Razão Social do realizador: #{contribution.project.user.display_name}
+  | Nombre/Razón Social del realizador: #{contribution.project.user.display_name}
   br/
-  | CPF/CNPJ do realizador: #{contribution.project.user.cpf}
+  | CC/NIT del realizador: #{contribution.project.user.cpf}
 
 p 
-  | É importante ressaltar que o Catarse é apenas intermediador desse processo,
-  | portanto, se tiver alguma dúvida em relação ao projeto ou recompensa selecionada entre 
-  | em contato diretamente com o realizador através do e-mail #{mail_to contribution.project.user.email}.  
-  | Ah! Lembre-se de guardar este email, pois ele contém informações importantes 
-  | a respeito da sua contribuição ao projeto.
-p Se ficou com alguma dúvida, entre em contato conosco respondendo a esta mensagem ou através do e-mail #{mail_to Configuration[:email_contact]}
+  | Es importante resaltar que Súmame es solamente un intermediario de este proceso,
+  | por lo tanto si ud tiene alguna pregunta relacionada con el proyecto o la recompensa seleccionada,
+  | contacte directamente al realizador del proyecto a través del e-mail #{mail_to contribution.project.user.email}.  
+  | Recuerde que debe mantener este correo electrónico ya que contiene información
+  | importante acerca de su contribución
+p Si tiene alguna otra pregunta, póngase en contacto con nosotros, repondiendo a este mensaje o por el e-mail #{mail_to Configuration[:email_contact]}
 
 p
-  | Um abraço e muito obrigado,
+  | Un abrazo, y muchísimas gracias por hacer parte del financiamiento colectivo doonde todos ponene, todos ganan!
   br/
   | #{Configuration[:company_name]}
 
