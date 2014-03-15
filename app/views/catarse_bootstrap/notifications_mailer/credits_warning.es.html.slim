@@ -1,0 +1,41 @@
+- user = @notification.user
+|Hola, <strong>#{user.display_name}</strong> !
+br
+br
+|Nos dimos cuenta que tienes $ #{user.credits} en créditos dentro de Súmame.co. ¿Qué tal si apoyas otro proyecto interesante ahora?
+br
+br
+|Hemos seleccionado algunas sugerencias especialmente para ti:
+br
+br
+-user.recommended_projects.limit(3).each do |project|
+  |#{link_to(project.name, "#{Configuration[:base_url]}/projects/#{project.to_param}")}
+  br
+  |#{project.headline}
+  br
+  br
+br
+br
+|Estas son las instrucciones paso a paso para que no tengas problemas utilizando tus créditos ;)
+br
+br
+|1 - #{link_to('Escoge el proyecto que quieres apoyar;', explore_url)}
+br
+|2 - Click en el botón 'Súmame a este proyecto';
+br
+|3 - Indica la cantidad que quieres aportar y asegurate de marcar la opción que dice que quieres utilizar créditos para hacerlo.
+br
+|4 - Haz Click en 'Revisa y realiza tu aporte';
+br
+|5 - Listo! Tu aporte será confirmado! =)
+br
+br
+|Si quieres pedir un reembolso, primero debes ingresar a sumame.co y hacer click en #{link_to("here", "#{Configuration[:base_url]}/users/#{user.to_param}#credits")}.
+|#{link_to('Este artículo', 'http://sumame.uservoice.com/knowledgebase/articles/333553-reglas-de-reembolso')} acerca de los reembolsos te solucionará la mayoría de tus dudas.
+br
+br
+|Si tienes alguna otra duda, porfavor escríbenos a hola@sumame.co o contáctanos en nuestro centro de soporte: #{link_to("sumame.uservoice.com"), 'http://sumame.uservoice.com'}
+br
+br
+|Un saludo desde Súmame.co,
+|Donde todos suman, todos ganan.

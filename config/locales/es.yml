@@ -437,7 +437,7 @@ es:
           subtitle: " Usted esta a pocos pasos de hacer la diferencia y volverse parte de este proyecto."
           title: "Oohh yeah!"
         no_reward: "Gracias. Yo solo quiero ayudar al proyecto."
-        submit: "Revisar y realizar pago"
+        submit: "Revisa y realiza tu aporte"
         title: "Apoye a %{name}"
       edit:
         brazil_address_title: 'llena los campos debajo si su apoyo es nacional'

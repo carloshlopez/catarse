@@ -1,0 +1,20 @@
+- contribution = @notification.contribution
+|Hola, <strong>#{contribution.user.display_name}</strong> !
+br
+br
+|Mandaste a imprimir un recibo para contribuir con <strong>#{contribution.project.name}</strong>.
+br
+br
+|Si el recibo ya ha sido pagado y tu nombre no sale en la lista de apoyadores, no te preocupes, en no más de <strong>5 working days</strong> tu nombre aparecerá en el sitio. Esto es lo que se demora para que la información sea procesada por los bancos y pasada por MoiP
+br
+br
+|Si olvidaste pagar el recibo, y todavía quieres apoyar el proyecto, es muy sencillo, , entra a la #{link_to('página del proyecto', project_by_slug_url(permalink: contribution.project.permalink, host: Configuration['host'] ))} y haz una nueva contribución, el recibo anterior será ignorado.
+br
+br
+|Tan pronto como el pago sea autorizado por MoiP, te enviaremos otro email de confirmación.
+br
+br
+|Un abrazo de parte del equipo de,
+br
+|#{Configuration[:company_name]}
+| donde todos suman, todos ganan.
