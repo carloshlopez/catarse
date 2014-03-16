@@ -30,7 +30,7 @@
           .profile
             = f.input :id, as: :string, input_html: { disabled:  'disabled'}
             = f.input :full_name, required: true, as: :string
-            = f.input :cpf, as: :string, input_html: {autocomplete: 'off'}, label: (t('activerecord.attributes.user.cpf') + link_to(t('activerecord.attributes.user.cpf_hint'), 'http://www.sumame.co/legal', {title: t('activerecord.attributes.user.cpf_hint_title') })).html_safe
+            = f.input :cpf, as: :string, input_html: {autocomplete: 'off'}, label: (t('activerecord.attributes.user.cpf') + link_to(t('activerecord.attributes.user.cpf_hint'), 'http://sumame.uservoice.com/knowledgebase/articles/333396-t%C3%A9rminos-de-uso', {title: t('activerecord.attributes.user.cpf_hint_title') })).html_safe
             = f.input :state_inscription, as: :string
             = f.input :name, required: false, as: :string
             = f.input :address_street, as: :string

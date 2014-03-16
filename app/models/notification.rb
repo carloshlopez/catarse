@@ -9,10 +9,16 @@ class Notification < ActiveRecord::Base
   end
 
   def self.notify(template_name, user, params = {})
+    puts "user locale #{user.locale} **** I18n.locale #{I18n.locale}"
+    elloc = "es"
+    # if (I18n.locale != "pt" and user.locale != "es")
+    #   elloc = user.locale || I18n.locale
+    # end
+
     create!({
       template_name: template_name,
       user: user,
-      locale: user.locale || I18n.locale,
+      locale: elloc,
       origin_email: Configuration[:email_contact],
       origin_name: Configuration[:company_name]
     }.merge(params)).deliver
