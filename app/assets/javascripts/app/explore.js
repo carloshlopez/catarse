@@ -18,8 +18,11 @@ App.addChild('Explore', _.extend({
     this.route('expiring');
     this.route('recent');
     this.route('successful');
-    this.route('by_category_id/:id');
+    this.route('partially_funded');
     this.route('near_of/:state');
+    this.route('by_category_id/:id');
+    this.route('by_campaign_type_id/:id');
+
 
     this.setInitialFilter();
     this.setupScroll();

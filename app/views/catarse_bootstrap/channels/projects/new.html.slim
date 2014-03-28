@@ -29,6 +29,9 @@ section.row
     = form.input :online_days, as: :string, label: t('submit_project.online_days')
     p = t('submit_project.online_days_hint')
 
+    = form.input :campaign_type, as: :boolean, label: t('submit_project.campaign_type')
+    p = t('submit_project.campaign_type_hint')
+
     = form.input :video_url, as: :text, label: t('submit_project.video_url')
     p = t('submit_project.video_url_hint')
 

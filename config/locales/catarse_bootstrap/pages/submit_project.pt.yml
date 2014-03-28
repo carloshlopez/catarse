@@ -26,6 +26,9 @@ pt:
     online_days: "Qual o prazo em dias para atingir o mínimo?"
     online_days_hint: "O prazo máximo para deixar o projeto no ar é de 60 dias, sendo que em média ficam no ar por 40 dias."
 
+    flexible: "Tipo de campaña?"
+    flaxible_hint: "Todo o Nada - Ideal para cuando necesitas el financiamiento para un producto, y sin la totalidad de los fondos requeridos, no lo puedes llevar a cabo. Todo suma - Para finalidades sociales, donde puedes utilizar cualquier aporte que te puedan dar."
+
     video_url: "Vídeo"
     video_url_hint: "O vídeo é a principal peça do projeto, mas você pode envia-lo depois. Faça um belo vídeo e cole o link aqui."
 

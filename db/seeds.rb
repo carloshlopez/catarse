@@ -58,19 +58,19 @@ puts 'Seeding the database...'
   twitter_username: "sumamecolombia",
   mailchimp_url: "http://eepurl.com/M1euf",
   catarse_fee: '0.13',
-  support_forum: 'http://soporte.sumame.co/',
+  support_forum: 'http://sumame.uservoice.com/',
   base_domain: 'sumame.co',
   uservoice_secret_gadget: 'change_this',
   uservoice_key: 'uservoice_key',
-  faq_url: 'http://soporte.sumame.co/',
-  feedback_url: 'http://soporte.sumame.co/',
+  faq_url: 'http://sumame.uservoice.com/',
+  feedback_url: 'http://sumame.uservoice.com/',
   terms_url: 'http://sumame.co/legal',
   privacy_url: 'http://sumame.co/legal',
   about_channel_url: 'http://blog.sumame.co',
   instagram_url: 'http://instagram.com/sumamecolombia',
   blog_url: "http://blog.sumame.co",
   github_url: 'http://github.com/catarse',
-  contato_url: 'http://soporte.sumame.co/'
+  contato_url: 'http://sumame.uservoice.com/'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by(name: name)
    conf.update_attributes({
@@ -78,6 +78,16 @@ puts 'Seeding the database...'
    }) if conf.new_record?
 end
 
+[
+  { pt: 'Tudo ou nada', en: 'All or nothing', es: 'Todo o nada' },
+  { pt: 'Tudo acrescenta', en: 'Everything adds', es: 'Todo suma' }
+].each do |name|
+   campaign_type = CampaignType.find_or_initialize_by(name_pt: name[:pt])
+   campaign_type.update_attributes({
+     name_en: name[:en],
+     name_es: name[:es]
+   })
+ end
 
 Channel.find_or_create_by!(name: "Recojo") do |c|
   c.permalink = "recojo"

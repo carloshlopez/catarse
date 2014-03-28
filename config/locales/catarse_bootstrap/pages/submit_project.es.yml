@@ -25,6 +25,9 @@ es:
     online_days: "Por cuántos días la campaña?"
     online_days_hint: "Finalmente, escoge cuanto tiempo quieres tener la campaña al aire. De nuevo, este es un factor estratégico: si pones mucho tiempo, la gente perderá interés en el camino; si pones muy poco, de pronto no alcanzarás a alcanzar el mínicmo que necesitas."
 
+    flexible: "Tipo de campaña?"
+    flaxible_hint: "Todo o Nada - Ideal para cuando necesitas el financiamiento para un producto, y sin la totalidad de los fondos requeridos, no lo puedes llevar a cabo. Todo suma - Para finalidades sociales, donde puedes utilizar cualquier aporte que te puedan dar."
+
     video_url: "Video"
     video_url_hint: "Copia y pega aquí la URL del video que subiste a Youtube o Vimeo."
 

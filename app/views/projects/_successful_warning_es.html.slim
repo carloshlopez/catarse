@@ -1,0 +1,25 @@
+- if policy(@project).update?
+  br
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i Excelente! El proyecto fue financiado!
+      #toggle_warning
+        = link_to '(minimizar esta información)', '#'
+      #project_warning_text
+        br/
+        | A través de la #{link_to 'pestaña de Reportes', 'http://sumame.uservoice.com/knowledgebase/articles/338325--voy-a-tener-acceso-a-una-lista-con-la-informaci%C3%B3n', target: '__blank'} (abajo) 
+        | puede bajar los reportes con la información de las personas que apoyaron el proyecto. Recompensa | Valor del apoyo | Fecha de confirmación del apoyo | Nombre | E-mail | Dirección.
+        br/
+        br/
+        strong Importante!
+        br/
+        = link_to '¿Cómo se hará la transferencia del dinero?', 'http://sumame.uservoice.com/knowledgebase/articles/338328--c%C3%B3mo-se-hara-la-transferencia-del-dinero', target: '_blank'
+        br/
+        = link_to 'Entrega de recompensas', 'http://sumame.uservoice.com/knowledgebase/articles/338330--c%C3%B3mo-hacer-las-entregas-de-las-recompensas', target: '_blank'
+        br/
+        = link_to 'Rendición de cuentas', 'http://sumame.uservoice.com/knowledgebase/articles/338332-rendici%C3%B3n-de-cuentas-proyecto-financiado', target: '_blank'
+        br/
+        br/
+        strong Solución de problemas: 
+        br/
+        = link_to 'Ayuda! | Errores en los reportes de apoyadores', 'http://sumame.uservoice.com/knowledgebase/articles/335374-ayuda-errores-en-los-reportes-de-los-apoyadores', target: '_blank'

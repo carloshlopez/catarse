@@ -1,7 +1,7 @@
 .bootstrap-twitter
   .alert.alert-info
     p
-      = "Para saber tudo sobre como estruturar o seu projeto, baixe o #{link_to 'Guia Completo', "#{Configuration[:base_url]}/guia_realizadores.pdf", target: '_blank'}".html_safe
+      = "Para conocer más sobre como estructurar un proyecto ganador, visita nuestra  #{link_to 'guía aquí', "http://sumame.uservoice.com/knowledgebase/articles/335136-gu%C3%ADa-para-realizadores", target: '_blank'}".html_safe
 .bootstrap-form
   = semantic_form_for @project do |form|
     = form.inputs do
@@ -21,6 +21,8 @@
           hint: (@project.uploaded_image.present? ? image_tag(@project.uploaded_image.project_thumb.url, size: '220x172') : t('formtastic.hints.project.uploaded_image') )
       - if policy(@project).permitted_for?(:online_days, :update)
         = form.input :online_days, as: :number, required: false
+      - if policy(@project).permitted_for?(:campaign_type_id, :update)
+        = form.input :campaign_type, as: :select, required: true
       - if policy(@project).permitted_for?(:goal, :update)
         = form.input :goal, as: :number, required: false, hint: t('formtastic.hints.project.goal').html_safe
       - if policy(@project).permitted_for?(:about, :update)

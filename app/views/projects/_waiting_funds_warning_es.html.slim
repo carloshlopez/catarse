@@ -1,0 +1,29 @@
+- if policy(@project).update?
+  br
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i Existen contribuciones que hace falta confirmar para el proyecto
+      #toggle_warning
+        = link_to '(minimizar esta información)', '#'
+      #project_warning_text
+        br/
+        br/
+        | Dentro de 5 días hábiles confirmaremos las contribuciones pendientes y sabremos exactamente cuanto se consiguió recaudar y sabremos si el proyecto llegó a su meta!
+        br/
+        br/
+        strong En caso de que se haya conseguido la meta haremos la transferencia del dinero.
+        | ó si la campaña era "Todo Suma" 
+        br/
+        | Echa un vistazo a: #{link_to '¿Cómo será hecho el paso del dinero?', 'http://sumame.uservoice.com/knowledgebase/articles/339019--c%C3%B3mo-se-har%C3%A1-la-transferencia-del-dinero', target: '_blank'}
+        br/
+        br/
+        strong En el caso de que no se haya conseguido la meta, le devolveremos el dinero a los apoyadores!
+        br/
+        | Enviaremos un e-mail a los apoyadores informándoles como es el proceso de reembolso. (Si el tipo de campaña del proyecto era "Todo Suma", este proceso no se hará)
+        br/
+        | Echa un vistazo a: #{link_to 'Reglas y funcionamiento de los reembolsos', 'http://sumame.uservoice.com/knowledgebase/articles/333553-reglas-de-reembolso', target: '_blank'}
+        br/
+        br/
+        strong Solución de problemas:
+        br/
+        = link_to 'Ayuda! | Errores en los reportes de apoyadores', 'http://sumame.uservoice.com/knowledgebase/articles/335374-ayuda-errores-en-los-reportes-de-los-apoyadores', target: '_blank'

@@ -74,11 +74,22 @@
                 span
                 .alert
                   .important= t('.online_days_important')
-              = form.label :online_days, t('formtastic.labels.project.expires_at')
+              = form.label :online_days, t('formtastic.labels.project.online_days')
               .input-append
                 = form.text_field :online_days, class: "#{'error' if @project.errors[:online_days].present?}"
                 span.add-on= t('days')
               p.inline-hints= t('formtastic.hints.project.online_days')
+
+            .input
+              .bootstrap-alert
+                span
+                .alert
+                  .important= t('.campaign_type_important')
+              = form.label :campaign_type, t('formtastic.labels.project.campaign_type')
+              .input-append
+                = collection_select(:project, :campaign_type_id, CampaignType.all, :id, :name_es, class: "#{'error' if @project.errors[:campaign_type_id].present?}")
+                / = form.select :campaign_type_id, CampaignType.all, :name_es, class: "#{'error' if @project.errors[:campaign_type].present?}"
+              p.inline-hints= t('formtastic.hints.project.campaign_type')              
 
             .input
               .bootstrap-alert

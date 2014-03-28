@@ -11,7 +11,7 @@ class Project < ActiveRecord::Base
   include Project::VideoHandler
   include Project::CustomValidators
 
-  belongs_to :campaign
+#  belongs_to :campaign
   mount_uploader :uploaded_image, ProjectUploader
 
   delegate :display_status, :progress, :display_progress, :display_image, :display_expires_at, :remaining_text, :time_to_go,
@@ -22,6 +22,7 @@ class Project < ActiveRecord::Base
   has_one :project_total
   has_many :rewards
   accepts_nested_attributes_for :rewards
+  belongs_to :campaign_type
 
   catarse_auto_html_for field: :about, video_width: 600, video_height: 403
 
@@ -38,6 +39,7 @@ class Project < ActiveRecord::Base
   scope :successful, ->{ with_state('successful') }
   scope :with_project_totals, -> { joins('LEFT OUTER JOIN project_totals ON project_totals.project_id = projects.id') }
 
+  scope :by_campaign_type_id, ->(id) { where(campaign_type_id: id) }
   scope :by_progress, ->(progress) { joins(:project_total).where("project_totals.pledged >= projects.goal*?", progress.to_i/100.to_f) }
   scope :by_user_email, ->(email) { joins(:user).where("users.email = ?", email) }
   scope :by_id, ->(id) { where(id: id) }
@@ -59,6 +61,7 @@ class Project < ActiveRecord::Base
   scope :expiring, -> { not_expired.where("projects.expires_at <= (current_timestamp + interval '2 weeks')") }
   scope :not_expiring, -> { not_expired.where("NOT (projects.expires_at <= (current_timestamp + interval '2 weeks'))") }
   scope :recent, -> { where("(current_timestamp - projects.online_date) <= '5 days'::interval") }
+  scope :expired_and_paritially_funded, -> { expired.with_states(['partially_funded']) }
   scope :order_for_search, ->{ reorder("
                                      CASE projects.state
                                      WHEN 'online' THEN 1
@@ -147,6 +150,10 @@ class Project < ActiveRecord::Base
     pledged >= goal
   end
 
+  def reached_something?
+    pledged > 0
+  end
+
   def expired?
     expires_at && expires_at < Time.zone.now
   end
@@ -177,11 +184,19 @@ class Project < ActiveRecord::Base
   end
 
   def should_fail?
-    expired? && !reached_goal?
+    expired? && !reached_goal? && !flexible?
   end
 
   def state_warning_template
     "#{state}_warning"
+  end
+
+  def flexible?
+    if campaign_type_id
+      campaign_type_id == CampaignType.find_by_name_es("Todo suma").id 
+    else
+      false
+    end
   end
 
   private

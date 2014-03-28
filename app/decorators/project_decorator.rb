@@ -20,9 +20,17 @@ class ProjectDecorator < Draper::Decorator
 
   def display_status
     if source.online?
-      (source.reached_goal? ? 'reached_goal' : 'not_reached_goal')
+      if source.flexible?
+        (source.reached_goal? ? 'reached_goal' : ( source.expired? ? 'partially_funded' : 'flexible_and_not_reached_goal'))
+      else
+        (source.reached_goal? ? 'reached_goal' : 'not_reached_goal')
+      end
     else
-      source.state
+      if source.flexible?
+        (source.reached_goal? ? source.state : ( source.expired? ? 'partially_funded' : 'flexible_and_not_reached_goal'))
+      else      
+        source.state
+      end
     end
   end
 

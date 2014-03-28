@@ -1,0 +1,22 @@
+- if policy(@project).update?
+  br
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i No fue esta vez…
+      #toggle_warning
+        = link_to '(minimizar esta información)', '#'
+      #project_warning_text
+        br/
+        | Por desgracia, su proyecto no llegó a la meta. Esperamos que su campaña haya generado aprendizajes para que pueda beneficiarse mucho de esta experiencia. Esperamos verlo en un futuro con un nuevo proyecto!!!
+        br/
+        br/
+        strong Importante!
+        br/
+        = link_to 'Mi proyecto no fue financiado, ¿ahora qué?', 'http://sumame.uservoice.com/knowledgebase/articles/338236-mi-proyecto-no-fue-financiado-ahora-qu%C3%A9', target: '_blank'
+        br/
+        = link_to 'Reglas y funcionamento de los Reembolsos', 'http://sumame.uservoice.com/knowledgebase/articles/333553-reglas-de-reembolso', target: '_blank'
+        br/
+        br/
+        strong Solución de problemas
+        br/
+        = link_to 'Ayuda | Error en los reporte de los apoyadores', 'http://sumame.uservoice.com/knowledgebase/articles/335374-ayuda-errores-en-los-reportes-de-los-apoyadores', target: '__blank'

@@ -155,8 +155,9 @@ es:
       project:
         category: Categoria
         expires_at: Plazo
-        online_days: Dias de campaña
-        headline: "Frase de efecto"
+        online_days: Días de campaña
+        campaign_type: Tipo de financiamiento del proyecto
+        headline: "Lema de tu proyecto"
         image_url: "URL de la imagen"
         name: Nombre
         user_id: "Id de usuário"
@@ -224,9 +225,9 @@ es:
     index:
       contribution_date: "Fecha del apoyo"
       current_credits_html: "Su saldo actual es de <span id=\"current_credits\">%{credits}</span> en créditos."
-      important_html: "Para saber todas las reglas sobre el funcionamento del reembolso, <a href='http://www.sumame.co/reembolso' target='_blank'>clic aquí</a>. Cualquier duda, ingrese a nuestro <a href='http://soporte.sumame.co' target='_blank'>soporte</a>."
+      important_html: "Para saber todas las reglas sobre el funcionamento del reembolso, <a href='http://sumame.uservoice.com/knowledgebase/articles/333553-reglas-de-reembolso' target='_blank'>clic aquí</a>. Cualquier duda, ingrese a nuestro <a href='http://sumame.uservoice.com' target='_blank'>soporte</a>."
       project: Proyecto
-      refund_expiration_date_html: "Plazo máximo para solicitar reembolso (<a target='__blank' href='http://www.sumame.co/reembolso'>?</a>)"
+      refund_expiration_date_html: "Plazo máximo para solicitar reembolso (<a target='__blank' href='http://sumame.uservoice.com/knowledgebase/articles/333553-reglas-de-reembolso'>?</a>)"
       refunded: "Reembolso solicitado exitosamente. Nuestro equipo se pondrá en contacto con usted en menos de dos días hábiles. "
       insufficient_credits: "No tienes créditos suficientes para realizar este reembolso."
       refunds_title: "Apoyos que pueden tener devoluciones realizadas"
@@ -274,6 +275,8 @@ es:
       subtitle: "Explore los proyectos, encuentre aquellos que hagan latir su corazón, y hágalos realidad!"
       successful: Exitosos
       title: "Encuentre proyectos increíbles"
+      near: "Cercanos"
+      expired_and_partially_funded: "Financiado parcial"
     title: "Explore los proyectos"
     project:
       empty: "Hey, no encontramos ningún proyecto con el texto que usted buscó. Qué tal experimentar con otras palabras? =D"
@@ -289,6 +292,7 @@ es:
         expires_at: "Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
         online_days: " Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
         goal: "Es importante saber que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='http://blog.sumame.co' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de mobilizar por lo menos 50% del valor dentro de su red de contactos."
+        campaign_type: 'Escoge que tipo de financiamiento que necesitas; "Todo Suma", ó "Todo o Nada"; Todo o Nada: Ideal para cuando necesitas el financiamiento para un producto, y sin la totalidad de los fondos requeridos, no lo puedes llevar a cabo. Todo Suma: Para finalidades sociales, donde puedes utilizar cualquier aporte que te puedan dar.'
         headline: "Resuma en 140 caracteres su proyecto. Esta frase será el primer contacto de las personas con su proyecto, antes incluso de ver el video. Sea creativo, transparente y directo :)"
         name: "Cuanto más directo mejor, utilice para describir su proyecto el espacio de abajo y el video."
         uploaded_image: "Aqui usted sube una imagen(.jpg) con tamaño 512x400."
@@ -305,20 +309,22 @@ es:
         anonymous: "Quiero que mi apoyo sea anónimo."
         credits: "Quiero usar mis créditos para este apoyo."
         reward: "Seleccione su recompensa"
-        value: "¿Con cuanto quieres apoyar? (Pesos Colombianos COP)"
+        value: "¿Con cuánto quieres apoyar? (Pesos Colombianos COP)"
       comment:
         comment: "Deje su comentário sobre este proyecto"
       project:
-        about: "História de su proyecto y como el $ será utilizado *"
-        expires_at: "Cual es el plazo para alcanzar el mínimo? *"
-        goal: "Cuanto pretende recaudar? (sólo números)*"
+        about: "Historia del proyecto y como se utilizará el $ recaudado *"
+        expires_at: "¿Cuál es el plazo para alcanzar el mínimo? *"
+        goal: "¿Cuánto necesitas recaudar? (sólo números)*"
         name: "Nombre del proyecto *"
-        video_url: "Vídeo"
-        headline: 'Frase de efecto *'
+        video_url: "Video"
+        headline: 'Lema del proyecto *'
         uploaded_image: "Thumbnail del proyecto"
         more_links: "Lista de Links relacionados con su proyecto *"
         first_contributions: "Lista con los primeros apoyadores *"
-        how_know: "Como se enteró de Súmame? *"
+        how_know: "¿Cómo se enteró de Súmame? *"
+        campaign_type: "Escoge el tipo financiamiento del proyecto"
+        online_days: "¿Cuántos días estará al aire la compaña?"
       reward:
         maximum_contributions: "Máximo de apoyadores (opcional)"
     optional: " (opcional)"
@@ -393,6 +399,7 @@ es:
       waiting_funds: esperando
       not_reached_goal: esperando
       draft: borrador
+      partially_funded: "parcialmente financiado"
   projects:
     send_to_analysis: 'Tu proyecto fue enviado a nuestro equipo.'
     box:
@@ -404,11 +411,14 @@ es:
       display_status:
         reached_goal: "Este proyecto será exitoso y financiado en %{date}"
         not_reached_goal: "Este proyecto solo será financiado si por lo menos %{goal} son alcanzados al %{date}"
+        flexible_and_not_reached_goal: "Este proyecto recibirá todos los fondos que logre recaudar hasta el %{date}"
+        partially_funded: "Este proyecto recibió todos los fondos que se recaudaron hasta %{date}"
         failed: "Este proyecto no alcanzó el mínimo de %{goal} al %{date} y no fue financiado"
         rejected: "Este proyecto fue rechazado"
         successful: "Este proyecto fue exitoso y fue financiado en %{date}"
         waiting_funds: "Esperando la confirmacion de tickets para saber si este proyecto será financiado."
         draft: "Este proyecto es apenas un borrador y aun no esta abierto para recibir apoyos."
+        in_analysis: "Este proyeto está en análisis y todavía no está listo para recibir apoyos."
       reached_of: "Alcanzados de"
       submit: "SÚMAME a este proyecto"
     contributions:
@@ -582,7 +592,7 @@ es:
         add_reward: 'Agregar recompensa'
       share:
         embed: embed
-        embed_title: "Incorpore este proyecto a su site"
+        embed_title: "Incorpore este proyecto en su página"
         link: Link
         link_title: "Comparta el link"
         take_a_look: "Compruebe el proyecto"
@@ -591,7 +601,7 @@ es:
       subtitle: "La hora para hacer esto realidad es ahora! Estamos locos por saber lo que usted tiene casi listo..."
       title: "Ahooora si! Envie su proyecto, campeon."
       introduction_html: "Llene el formulario debajo de la forma más objetiva, pues cuanto más<br/>completo recibamos su proyecto, más rápido entrará en la plataforma online."
-      permalink_important: 'Intente no usar guion o guion al piso etc.'
+      permalink_important: 'Intente no usar guión o guión al piso etc.'
       permalink_hint: 'Simplifique la URL de su proyecto. Imagine que su apoyador necesitara acordarse de ka dirección para divulgar el proyecto en el bar.'
       important_html: "Acuérdate de la tasa de 15% cobrada por Súmame en caso que el proyecto sea exitoso. Basta dividir  su recolección final entre 0,85."
       about: " Discriba su proyecto y com el $ será utilizado "
@@ -604,10 +614,10 @@ es:
       about_hint: "Cuentenos un poco sobre su inspiración para realizar el proyecto, su história y lo que será el producto final. Sea conciso y huya de las formalidades formalidades de avisos. Nada de OBJETIVO, JUSTIFICACION, DESTINATARIOS... Presentele a sus lectores algo que los conmueva y sea muy transparente con su expectativa del proyecto."
       about_important: "No escriba mucho! Coloque links para que el apoyador pueda explorar más su trabajo."
       contact: "Deje su email para entrar en contacto "
-      links: "Algún otro link para conocer más sobre su proyecto?"
-      links_important: "Ese clipping nos ayudará a entender la história de su trabajo."
+      links: "¿Algún otro link para conocer más sobre su proyecto?"
+      links_important: "Ese clipping nos ayudará a entender la historia de su trabajo."
       links_hint: "Pegue aquí links de videos, aticulos,reportajes blogs..."
-      category: "Qual es la categoria de su proyecto?"
+      category: "¿Cuál es la categoria del proyecto?"
       tags_hint: "Antes de enviar su proyecto, explore e inspirese con otros proyectos que estuvieron en la plataforma."
       tags_important: "Revise los proyectos relacionados con su categoría haciendo click en <a href='%{href}' target='_blank'>aquí</a>."
       video: "Ya tiene video? Mandenos la URL!"
@@ -616,7 +626,8 @@ es:
       how_know_important: "Excelente! Llegamos a la ultima pregunta."
       more_links_important: " Es muy importante utilizar su social media para respaldar la noticia sobre su proyecto y involucrar a du red en el éxito del proyecto."
       first_contributions_important: "Estas personas serán fundamentales para que su proyecto sea exitoso"
-      online_days_important: El plazo máximo para permanecer en el aire es de 60 días.'
+      online_days_important: 'El plazo máximo para permanecer en el aire es de 60 días.'
+      campaign_type_important: 'Importante, el tipo de financiamiento del proyecto será determinante para validar si es proyecto que puede o no estar en Súmame.'
       headline_important: 'Es una breve descripción del proyecto, 140 caracteres máximo! :D'
       name_important: "No se pase de 50 caracteres"
       social: "Canales de Mobilización"
@@ -918,19 +929,19 @@ es:
       title: "Términos de uso"
   terms: "términos de uso"
   user:
-    backs_text:
-      many: "Apoiou este e mais outros %{total} proyectos"
-      one: "Apoiou somente este proyecto até agora"
-      two: "Apoiou este e mais 1 outro proyecto"
-    no_name: "Sem nome"
-    google_account: "Conta Google"
+    contributions_text:
+      many: "Apoyó este y otros %{total} proyectos"
+      one: "Apoyó solamente este proyecto hasta ahora"
+      two: "Apoyó este y otro proyecto más"
+    no_name: "Sin nombre"
+    google_account: "Cuenta de  Google"
   users:
     set_email:
-      site_title: 'Defina um email de contato'
-      title: 'Defina um email de contato'
-      submit: 'Gravar o email e prosseguir'
+      site_title: 'Defina un email de contacto'
+      title: 'Defina un email de contacto'
+      submit: 'Guardar el mail y continuar'
     show:
-      attention: "Atenção"
+      attention: "Atención"
       tabs:
         contributed_projects: "Proyectos apoyados"
         created_projects: "Proyectos creados"
@@ -939,7 +950,7 @@ es:
         settings: Preferencias
         unsubscribes: Notificaciones
       user_social:
-        email: "Me envie um email"
+        email: "Envíe un email"
         facebook: "Perfil de facebook"
         twitter: "Perfil de twitter"
     contributions:

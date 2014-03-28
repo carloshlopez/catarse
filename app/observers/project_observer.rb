@@ -118,6 +118,38 @@ class ProjectObserver < ActiveRecord::Observer
     notify_admin_that_project_reached_deadline(project)
   end
 
+
+  def from_waiting_funds_to_partially_funded(project)
+    # Create notification for partially_funded campaign
+    Notification.notify_once(
+      :project_partially_funded,
+      project.user,
+      {project_id: project.id},
+      {
+        project: project,
+        origin_email: Configuration[:email_projects]
+      }
+    )
+    notify_admin_that_project_reached_deadline(project)
+    notify_users_partially_funded(project)
+  end
+
+  def notify_users_partially_funded(project)
+    project.contributions.with_state('confirmed').each do |contribution|
+      unless contribution.notified_finish
+        Notification.notify_once(
+          (:contribution_project_partially_funded),
+          contribution.user,
+          {contribution_id: contribution.id},
+          contribution: contribution,
+          project: project,
+        )
+        contribution.update_attributes({ notified_finish: true })
+      end
+    end
+    
+  end
+
   def notify_users(project)
     project.contributions.with_state('confirmed').each do |contribution|
       unless contribution.notified_finish
@@ -145,6 +177,11 @@ class ProjectObserver < ActiveRecord::Observer
       if project.failed?
         CatarseMailchimp::API.subscribe(mailchimp_params, Configuration[:mailchimp_failed_projects_list])
       end
+      
+      if project.partially_funded?
+        CatarseMailchimp::API.subscribe(mailchimp_params, Configuration[:mailchimp_partially_funded_projects_list])
+      end
+
     rescue Exception => e
       Rails.logger.info "-----> #{e.inspect}"
     end

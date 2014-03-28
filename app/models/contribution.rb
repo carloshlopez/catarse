@@ -10,7 +10,7 @@ class Contribution < ActiveRecord::Base
   delegate :display_value, :display_confirmed_at, to: :decorator
 
   validates_presence_of :project, :user, :value
-  validates_numericality_of :value, greater_than_or_equal_to: 10.00
+  validates_numericality_of :value, greater_than_or_equal_to: 5000.00
 
   scope :available_to_count, ->{ with_states(['confirmed', 'requested_refund', 'refunded']) }
   scope :available_to_display, ->{ with_states(['confirmed', 'requested_refund', 'refunded', 'waiting_confirmation']) }
@@ -60,7 +60,7 @@ class Contribution < ActiveRecord::Base
   end
 
   def can_refund?
-    confirmed? && project.failed?
+    confirmed? && project.failed? && !project.flexible?
   end
 
   def available_rewards
