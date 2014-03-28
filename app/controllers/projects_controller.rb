@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   after_filter :verify_authorized, except: %i[index video video_embed embed embed_panel]
   inherit_resources
   has_scope :pg_search, :by_category_id, :near_of, :by_campaign_type_id
-  has_scope :expired_and_paritially_funded, :recent, :expiring, :successful, :recommended, :not_expired, type: :boolean
+  has_scope :partially_funded, :recent, :expiring, :successful, :recommended, :not_expired, type: :boolean
 
   respond_to :html
   respond_to :json, only: [:index, :show, :update]

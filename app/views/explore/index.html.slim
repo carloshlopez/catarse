@@ -31,7 +31,7 @@
               a.explore-link[href='#successful']
                 = t('.successful')
             li
-              a.explore-link[href='#expired_and_partially_funded']
+              a.explore-link[href='#partially_funded']
                 = t('.expired_and_partially_funded')                
             - if current_user
               li
@@ -54,7 +54,7 @@
             ul
               - @campaign_types.each_with_index do |campaign_type, index|
                 li
-                  a.explore-link[href="#by_campaign_type/#{campaign_type.id}"]
+                  a.explore-link[href="#by_campaign_type_id/#{campaign_type.id}"]
                     = campaign_type
 
     .clearfix

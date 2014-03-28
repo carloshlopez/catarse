@@ -78,6 +78,8 @@ class ProjectDecorator < Draper::Decorator
         image_tag "not_successful.#{I18n.locale}.png"
       elsif source.waiting_funds?
         image_tag "waiting_confirmation.#{I18n.locale}.png"
+      elsif source.partially_funded?
+        image_tag "partially_funded.#{I18n.locale}.png"
       end
     end
 

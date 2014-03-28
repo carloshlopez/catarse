@@ -32,7 +32,7 @@ class Project < ActiveRecord::Base
       [:about, 'C']
     ],
     associated_against:  {user: [:name, :address_city ]},
-    using: {tsearch: {dictionary: "portuguese"}},
+    using: {tsearch: {dictionary: "spanish"}},
     ignoring: :accents
 
   # Used to simplify a has_scope
@@ -61,7 +61,7 @@ class Project < ActiveRecord::Base
   scope :expiring, -> { not_expired.where("projects.expires_at <= (current_timestamp + interval '2 weeks')") }
   scope :not_expiring, -> { not_expired.where("NOT (projects.expires_at <= (current_timestamp + interval '2 weeks'))") }
   scope :recent, -> { where("(current_timestamp - projects.online_date) <= '5 days'::interval") }
-  scope :expired_and_paritially_funded, -> { expired.with_states(['partially_funded']) }
+  scope :partially_funded, ->{ with_state('partially_funded') }
   scope :order_for_search, ->{ reorder("
                                      CASE projects.state
                                      WHEN 'online' THEN 1

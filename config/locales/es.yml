@@ -73,7 +73,7 @@ es:
   share_my_contributions: "Comparta el proyecto "
   tell_about_this_project: " Cuentele al mundo sobre tu proyecto!"
   share_my_projects: "Comparta el proyecto "
-  count_contributed_projects: "Apoyo %{total} proyectos"
+  count_contributed_projects: "Apoyó %{total} proyectos"
   footer:
     titles:
       about: "Acerca de nosotros"
@@ -276,7 +276,8 @@ es:
       successful: Exitosos
       title: "Encuentre proyectos increíbles"
       near: "Cercanos"
-      expired_and_partially_funded: "Financiado parcial"
+      expired_and_partially_funded: "Parcialmente Financiados"
+      campaign_types: "Tipos de Campaña"
     title: "Explore los proyectos"
     project:
       empty: "Hey, no encontramos ningún proyecto con el texto que usted buscó. Qué tal experimentar con otras palabras? =D"
@@ -399,7 +400,7 @@ es:
       waiting_funds: esperando
       not_reached_goal: esperando
       draft: borrador
-      partially_funded: "parcialmente financiado"
+      partially_funded: "financiado parcial"
       reached_goal: financiado
   projects:
     send_to_analysis: 'Tu proyecto fue enviado a nuestro equipo.'
