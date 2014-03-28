@@ -400,6 +400,7 @@ es:
       not_reached_goal: esperando
       draft: borrador
       partially_funded: "parcialmente financiado"
+      reached_goal: financiado
   projects:
     send_to_analysis: 'Tu proyecto fue enviado a nuestro equipo.'
     box:
