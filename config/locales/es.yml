@@ -420,7 +420,7 @@ es:
         failed: "Este proyecto no alcanzó el mínimo de %{goal} al %{date} y no fue financiado"
         rejected: "Este proyecto fue rechazado"
         successful: "Este proyecto fue exitoso y fue financiado en %{date}"
-        waiting_funds: "Esperando la confirmacion de tickets para saber si este proyecto será financiado."
+        waiting_funds: "Esperando la confirmacion de pagos para saber si este proyecto será financiado."
         draft: "Este proyecto es apenas un borrador y aun no esta abierto para recibir apoyos."
         in_analysis: "Este proyeto está en análisis y todavía no está listo para recibir apoyos."
       reached_of: "Alcanzados de"
@@ -565,7 +565,7 @@ es:
     rewards:
       new_reward: "Registrar recompensa"
       edit_reward: "Editar recompensa"    
-      reward_title: "Para %{minimum} o mas"
+      reward_title: "Por %{minimum} o más"
       reward_deliver_time: "<b>Entrega estimada:</b> %{estimate}"
       contributions_to_confirm:  
         one: "1 apoyo en plazo de confirmacion."
@@ -874,7 +874,7 @@ es:
       title_credits: " Si el proyecto no alcanzó la meta, comó utilizo mis créditos?"
       credits: " Usted recibirá los créditos en su perfil de Súmame. En el momento en que escoja otro proyecto para apoyar, en el momento de escoger la recompensa, tendrá un campo para utilizar sus créditos."
       title_money: "Y si no quiero usar los créditos?"
-      money: "NO hay problema! Solamente debe entrar a su perfil (Mis créditos) t solicitar la devolucion. Si pago con debito o con ticket, solo debe abrir una cuenta en MOip. Tarjeta de crédito, le haremos la devolución con su próxima factura."
+      money: "NO hay problema! Solamente debe entrar a su perfil (Mis créditos) y solicitar la devolucion. Si pagó con debito o con ticket, solo debe abrir una cuenta en MOip. Tarjeta de crédito, le haremos la devolución con su próxima factura."
       other_contributions: "QUIERO MÁS! PUEDO APOYAR DE OTRAS FORMAS?"
       intro: "Conozca las otras formas de ayudar al proyecto que usted cree que será exitoso."
       other_one: "Traga mais dois amigos para apoiar com o mesmo valor que você apoiou."
