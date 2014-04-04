@@ -55,11 +55,12 @@ class ProjectDecorator < Draper::Decorator
   end
 
   def display_pledged
-    number_to_currency source.pledged
+    number_to_currency source.pledged, locale: I18n.locale, precision: 0
   end
 
+
   def display_goal
-    number_to_currency source.goal
+    number_to_currency source.goal,  locale: I18n.locale, precision: 0
   end
 
   def progress_bar

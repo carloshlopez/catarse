@@ -293,7 +293,7 @@ es:
         expires_at: "Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
         online_days: " Finalmente, escoja cuento tiempo quiere que dure su campaña. De nuevo, es una elección estrategica: Si usted se toma mucho tiempo, las personas pierden su interés a mitad de camino; si se toma muy poco, puede que no alcance su meta a tiempo. "
         goal: "Es importante saber que gran parte de los apoyos vendrán de personas cercanas a usted (1º y 2º nível de relacionamento): <a href='http://blog.sumame.co' target='_blank'>Haga click aqui!</a> De este modo, al definir el valor que pretende recaudar a través de Súmame es fundamental pensar en su capacidad de mobilizar por lo menos 50% del valor dentro de su red de contactos."
-        campaign_type: 'Escoge que tipo de financiamiento que necesitas; "Todo Suma", ó "Todo o Nada"; Todo o Nada: Ideal para cuando necesitas el financiamiento para un producto, y sin la totalidad de los fondos requeridos, no lo puedes llevar a cabo. Todo Suma: Para finalidades sociales, donde puedes utilizar cualquier aporte que te puedan dar.'
+        campaign_type: 'Escoge que tipo de financiamiento que necesitas; "Todo Suma", ó "Todo o Nada"; Todo o Nada: Ideal para cuando necesitas el financiamiento para un producto, y sin la totalidad de los fondos requeridos, no lo puedes llevar a cabo. Todo Suma: Para finalidades sociales, donde puedes utilizar cualquier aporte que te puedan dar.Recomendamos: Todo o nada'
         headline: "Resuma en 140 caracteres su proyecto. Esta frase será el primer contacto de las personas con su proyecto, antes incluso de ver el video. Sea creativo, transparente y directo :)"
         name: "Cuanto más directo mejor, utilice para describir su proyecto el espacio de abajo y el video."
         uploaded_image: "Aqui usted sube una imagen(.jpg) con tamaño 512x400."
@@ -402,6 +402,8 @@ es:
       draft: borrador
       partially_funded: "financiado parcial"
       reached_goal: financiado
+      in_analysis: "en análisis"
+      flexible_and_not_reached_goal: "en línea y esperando"
   projects:
     send_to_analysis: 'Tu proyecto fue enviado a nuestro equipo.'
     box:
@@ -629,7 +631,7 @@ es:
       more_links_important: " Es muy importante utilizar su social media para respaldar la noticia sobre su proyecto y involucrar a du red en el éxito del proyecto."
       first_contributions_important: "Estas personas serán fundamentales para que su proyecto sea exitoso"
       online_days_important: 'El plazo máximo para permanecer en el aire es de 60 días.'
-      campaign_type_important: 'Importante, el tipo de financiamiento del proyecto será determinante para validar si es proyecto que puede o no estar en Súmame.'
+      campaign_type_important: 'Importante, el tipo de financiamiento del proyecto será determinante para validar si es proyecto que puede o no estar en Súmame. Recomendamos: Todo o nada' 
       headline_important: 'Es una breve descripción del proyecto, 140 caracteres máximo! :D'
       name_important: "No se pase de 50 caracteres"
       social: "Canales de Mobilización"
