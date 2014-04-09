@@ -8,68 +8,63 @@
 = content_for :email_logo do
   = image_tag(channel.image, alt: channel.name)
 
-| Olá
+| Hola
 - if user.name
   | , #{user.name}!
 br/
 br/
-| O projeto #{link_to project.name, project_link, target: '__blank' } está no ar no #{channel.name} e já pode receber apoios! 
-| Boa sorte nessa maratona!  Uma campanha de financiamento coletivo dá trabalho, mas é recompensador! 
-| Se não planejou suas ações anteriormente, não perca tempo. A hora é essa! Agora é #{link_to 'TUDO-OU-NADA!', 'http://suporte.catarse.me/knowledgebase/articles/153519-por-que-o-tudo-ou-nada-', target: '__blank'}
+| El proyecto #{link_to project.name, project_link, target: '__blank'} está al aire, ya puedes recibir contribuciones, buena suerte! 
+| Una campaña de financiación colectiva requiere trabajo, pero es gratificante! Si planea sus acciones antes, no pierda el tiempo.
+br/
+| Para discutir las estrategias de comunicación con nuestro equipo y recibir sugerencias sobre cómo actuar en su campaña, 
+| responda este email o envie uno a #{mail_to ::Configuration[:email_projects]} . 
+| Recuerda que <strong>TU eres el responsable de promover la campaña y divulgar el proyecto</strong>. Hazlo con todoas tus redes, estas son supremamente importante para consguir apoyo para que la campaña sea exitosa. Cuantale a todo el mundo!
 br/
 br/
-| Para conversar sobre estratégias de comunicação com nossa equipe e receber sugestões sobre como agir na sua campanha, 
-| responda esse email ou envie uma mensagem para #{mail_to channel.email}. Mas, lembre-se que <strong>você é o responsável por 
-| promover a campanha e cuidar da divulgação do projeto.</strong> É da sua rede que virão grande parte dos apoios, 
-| esta conversa deve ser encarada como um auxílio.
+strong Información importante:
 br/
 br/
-strong Informações Importantes:
+| Tu <strong>NO</strong> puedes <strong>cambiar</strong> la <strong>Meta de Financiamiento</strong> ni el  <strong>Plazo escogido</strong>, ni el <strong> Tipo de Campaña</strong> para a campaña. 
 br/
 br/
-| Você <strong>NÃO</strong> pode mais <strong>alterar</strong> nem a <strong>Meta de Arrecadação</strong> nem o <strong>Prazo escolhido</strong> para a campanha. 
+| Esto es lo que si se puede modificar:
+br/
+| - El video principal de la campaña
+br/
+| - La descripción del proyecto
+br/
+| - Puedes crear nuevas recompensas
+br/
+| - Modificar el contenido y valor de recompensas que naide ha escogido
+br/
+| - Modificar el límite de apoyadores de una recompensa
+br/
+| - Cambiar la foto y la frase clave del proyecto
+br/
+| - Recuerde revisar las reglas, consejos y otra información a través de la #{link_to 'Central de Soporte', ::Configuration[:support_forum]}.
 br/
 br/
-| No entanto você ainda pode:
-br/
-| - Trocar o vídeo principal da sua campanha
-br/
-| - Editar a descrição do seu projeto
-br/
-| - Criar novas recompensas
-br/
-| - Alterar conteúdo e valor de recompensas que ninguém escolheu
-br/
-| - Alterar o limite de apoiadores de uma determinada recompensa
-br/
-| - Esgotar recompensas (limitando-as para um numero X de apoiadores)
-br/
-| - Trocar o Thumbnail e a Frase de Efeito do seu projeto
-br/
-| - Estudar regras, dicas e outras informações através da #{link_to 'Central de Suporte', ::Configuration[:support_forum]} do #{company_name}.
+| <strong>Si no haz visitado la #{link_to 'Central de Soporte', ::Configuration[:support_forum], target: '__blank'}, 
+| hazlo! Entre más sepas sobre los detalles de una campaña en #{company_name}, vas a estar mejor preparado.</strong> 
+| Y acuérdate que estamos aquí para ti! Cualquier duda, contáctanos, escribenos a #{mail_to channel.email}
 br/
 br/
-| <strong>Se você não conferiu a #{link_to 'Central de Suporte', ::Configuration[:support_forum], target: '__blank'}, 
-| confira! Quanto mais você souber sobre os detalhes de uma campanha no #{company_name}, melhor preparado você estará.</strong> 
-| E fique tranquilo, estamos por aqui! Você pode tirar dúvidas conosco respondendo diretamente a esta mensagem ou através do e-mail #{mail_to channel.email}
+| Agreganos </strong>a tu lista de contactos:</strong> 
+| #{mail_to channel.email}, #{mail_to ::Configuration[:email_projects]} y #{mail_to ::Configuration[:email_contact]} para evitar que los mensajes  
+| lleguen a spam
 br/
 br/
-| E por falar nisso, por favor </strong>não esqueça de incluir na sua lista de contatos os e-mails:</strong> 
-| #{mail_to channel.email}, #{mail_to ::Configuration[:email_projects]} e #{mail_to ::Configuration[:email_contact]} para evitar que nossas mensagens 
-| caiam na sua caixa de spam devido a filtros do seu email. 
+| Un abrazo,
+br/
+| El equipo de #{company_name} y de #{channel.name} te desean una buena campaña, vamos con toda!!!!
 br/
 br/
-| Um abraço,
-br/
-| A equipe do #{company_name} e do #{channel.name} te desejam uma boa campanha!!!!
+| Estás en contacto con el soporte de #{channel.name}
 br/
 br/
-| Você está em contato com o atendimento do #{channel.name}
+| Más información:
 br/
+= link_to 'Qué es un validador?', 'http://sumame.uservoice.com/knowledgebase/articles/333634--qu%C3%A9-es-un-validador', target: '__blank'
 br/
-| Saiba mais:
-br/
-= link_to 'O que são os canais ?', 'http://suporte.catarse.me/knowledgebase/articles/190323-o-que-s%C3%A3o-os-canais-', target: '__blank'
-br/
-= link_to "Diferenças entre o atendimento nos Canais e no #{company_name}.", 'http://suporte.catarse.me/knowledgebase/articles/279356-diferen%C3%A7as-entre-o-atendimento-nos-canais-e-no-cat', target: '__blank'
+= link_to "Diferencia entre un validador y #{company_name}.", 'http://sumame.uservoice.com/knowledgebase/articles/333635-diferencia-entre-un-validador-y-sumame-co', target: '__blank'
 

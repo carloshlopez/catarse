@@ -1,18 +1,18 @@
 -contribution = @notification.contribution
 - company_name = ::Configuration[:company_name]
 - contact_email = ::Configuration[:email_contact]
-|Olá, <strong>#{contribution.user.display_name}</strong>!
+|Hola, <strong>#{contribution.user.display_name}</strong>!
 br
 br
-| Seu reembolso foi realizado com sucesso e o pagamento para o projeto #{link_to contribution.project.name, project_by_slug_url(permalink: contribution.project.permalink)}, cancelado. 
+| El reembolso fue realizado exitosamente y el aporte para el proyecto #{link_to contribution.project.name, project_by_slug_url(permalink: contribution.project.permalink)}, fue cancelado. 
 br
 br
-| A chave de identificação do seu apoio é: #{contribution.id}
+| La clave del apoyo es: #{contribution.id}
 br
 br
-| Se ficou com alguma dúvida, entre em contato conosco respondendo a esta mensagem ou através do e-mail #{mail_to contact_email}
+| Si tiene alguna duda, contáctenos en #{mail_to contact_email}
 br
 br
-|Um abraço,
+|Un abrazo,
 br
 | #{company_name}

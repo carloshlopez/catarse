@@ -3,39 +3,38 @@
 - project_link = project_by_slug_url(permalink: project.permalink)
 - company_name = ::Configuration[:company_name]
 
-|Oi, #{project.user.display_name},
+|Hey #{project.user.display_name},
 br/
 br/
-| Infelizmente o projeto #{link_to project.name, project_link } não alcançou a meta estipulada por você no #{company_name}.
+| Infelizmente el proyecto #{link_to project.name, project_link } no alcanzó la meta en #{company_name}.
 br/
 br/
-| Todos os apoiadores receberam um email com instruções sobre como utilizar seus créditos ou pedir o reembolso do seu apoio. 
+| Todos los apoyadores recibirán um email con instrucciones sobre como utilizar sus créditos o pedir un reembolso del apoyo. 
 br/
-| Confira: #{link_to 'Regras e Funcionamento dos Reembolsos', 'http://suporte.catarse.me/knowledgebase/articles/164746-regras-e-funcionamento-dos-reembolsos-estornos', target: '__blank' }
+| Mirar: #{link_to 'Reglas de Reembolsos', 'http://sumame.uservoice.com/knowledgebase/articles/333553-reglas-de-reembolso', target: '__blank' }
 br/
 br/
 strong Último pedido =)
 br/
-| Sempre estamos em busca de melhorar nosso serviço e para isso precisamos estar atentos ao que os usuários nos dizem. Uma das melhores formas de fazer isso é colher o feedback e auxílio de quem teve experiências com a plataforma. Seria fabuloso se você respondesse essas duas perguntinhas abaixo:
+| Siempre estamos buscando mejorar nuestro servicio y tenemos que estar atentos a lo que los usuarios nos dicen. Una de las mejores maneras de hacerlo es recoger información y asistencia de los que tenían experiencia con la plataforma. Sería fabuloso si respondió estas dos preguntas poco más abajo:
 br/
 br/
-strong 1. Quais os 2 piores problemas que você enfrentou durante o processo de campanha?
+strong 1. Cuales fueron los 2 peores problemas que enfrentó durante esta campaña?
 br/
 br/
-| Pode ser algo diretamente relacionado com o #{company_name} ou talvez em relação a dificuldades na 
-| captação ou comunicação do projeto enquanto ele estava em campanha, entre outros.
+| Puede ser relacionado o no con #{company_name} o de pronto relacionado a las comunicción, etc...
 br/
 br/
-strong 2. O que você mais sentiu falta na plataforma do #{company_name}?
+strong 2. Qué es lo que más siente que le hace falta a la plataforma de #{company_name}?
 br/
 br/
-|Parabéns pela campanha, seu projeto pode não ter atingido a meta mas com certeza você aprendeu alguma coisa e pode tirar grande proveito dessa experiência se quiser!
+|Felicitaciones por su campaña, su proyecto no pueden haber alcanzado el objetivo pero seguro aprendido algo y pueden beneficiarse enormemente de esta experiencia si quieres!
 br/
 br/
-| Muito muito obrigado por entrar nessa com a gente! Te esperamos numa próxima.
+| Muchas gracias por creer en Súmame y dejarnos hacer parte de un mundo donde todos suman, todos ganan.
 br/
 br/
-| Um abraço,
+| Un abrazo,
 br/
 = company_name
 

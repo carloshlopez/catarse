@@ -5,34 +5,32 @@
 
 | Uhuu, #{project.user.name},
 br/
-| Parabéns pela campanha!
+br/
+| El proyecto #{link_to project.name, project_link} fue parcialmente financiado!
 br/
 br/
-| O projeto #{link_to project.name, project_link} foi financiado!
+| Después de celebrar la finalización de la campaña de recaudación de fondos,
+| es el momento de seguir trabajando! Hemos reunido alguna información muy importante para aquellos que tuvieron su
+| proyecto financiado completa o parcialmente aquí en #{company_name}.
 br/
 br/
-| Depois que você comemorar com vontade o término bem sucedido da sua campanha de arrecadação,
-| é hora de voltar ao trabalho! Reunimos aqui algumas informações importantíssimas para quem teve seu
-| projeto financiado com sucesso aqui no #{company_name}.
+| <strong>1</strong> - En la pestaña Reporte (en la página del proyecto) puede descargar los detalles
+| con toda la información <strong> sobre los apoyadores del proyecto</strong> (Recompensa  escogida | Valor del apoyo | Fecha de confirmación del apoyo | Nombre | E-mail | Direccion)
 br/
 br/
-| <strong>1</strong> - Na aba Relatórios (que fica na página do seu projeto) você consegue baixar
-| planilhas com as <strong>informações sobre os apoiadores do seu projeto</strong> (Recompensa  escolhida | Valor do apoio | Data de confirmação do apoio | Nome | E-mail | Endereço)
+| <strong>2</strong> - Realizaremos una <strong>Carta convenio</strong> para usted para que podamos realizar el transpaso del dinero. Para emitir esta carta utilizaremos los datos de su perfil.
+br/
+| Mirar:  #{link_to 'Como será la transferencia del dinero?', 'http://sumame.uservoice.com/knowledgebase/articles/339019--c%C3%B3mo-se-har%C3%A1-la-transferencia-del-dinero', target: '__blank'}
 br/
 br/
-| <strong>2</strong> - Emitiremos a <strong>Nota Fiscal</strong> para você assim que fizermos o repasse do dinheiro. Para emitir a nota fiscal nós vamos usar as informações que estão no seu perfil.
-br/
-| Confira:  #{link_to 'Como será feito o repasse?', 'http://suporte.catarse.me/knowledgebase/articles/161090-como-ser%C3%A1-feito-o-repasse-do-dinheiro-', target: '__blank'}
-br/
-br/
-' <strong>3</strong> - Aqui no link: #{link_to 'Realizadores | acabou o prazo!', 'http://suporte.catarse.me/knowledgebase/topics/25770-realizadores-acabou-o-prazo' }
-| você pode encontrar mais informações sobre essa nova fase do seu projeto no #{company_name}!
-| Leia com atenção e fique por dentro de todos os processos que serão realizados no após o término do projeto!
+| <strong>3</strong> - Aquí en este enlace: #{link_to 'Realizadores | Se terminó el plazo del proyecto', 'http://sumame.uservoice.com/knowledgebase/articles/344515-realizadores-se-termin%C3%B3-el-plazo-del-proyecto' }
+| encontrará más información sobre la nueva fase del proyecto en #{company_name}!
+| Lea con cuidado y esté pendiente de todos los procesos que se realizan después de la finalización del proyecto!
 br/
 br/
-| Se ficou com alguma dúvida, responda a esta mensagem diretamente ou fale conosco através do e-mail #{mail_to ::Configuration[:email_projects]}
+| Si tiene alguna duda, por favor responda este mensaje o escribanos al e-mail #{mail_to ::Configuration[:email_projects]}
 br/
 br/
-| Um abraço apertado de parabéns!
+| Un fuerte abrazo de felicitaciones!
 br/
 = company_name

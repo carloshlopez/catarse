@@ -1,28 +1,28 @@
 - contribution = @notification.contribution
-|Olá, #{contribution.user.name}!
+|Hola, #{contribution.user.name}!
 br
 br
-|Você iniciou um apoio para o projeto #{link_to contribution.project.name, project_by_slug_url(permalink: contribution.project.permalink)}, porém ele não atingiu a meta estabelecida no Catarse.
+|Tu iniciaste un apoyo para el proyecto #{link_to contribution.project.name, project_by_slug_url(permalink: contribution.project.permalink)}, pero no alcanzó la meta en Súmame.
 br
 br
-| <strong>Se você NÃO concluiu o apoio</strong>, pode desconsiderar as informações desse e-mail.
+| <strong>Si usted NO ha completado el proceso de apoyo</strong>, puede ignorar la información de este correo.
 br
 br
-| <strong>Se você concluiu o seu apoio</strong>, mas não recebeu a confirmação do Catarse ainda, você deverá recebê-la nos próximos dias, assim que o #{contribution.payment_method} confirmar sua contribuição.
+| <strong>Si usted SI completo el apoyo</strong>, pero no he recibido la confirmación de Súmame, sin embargo, usted debe recibir en los próximos días, cuando el método de pago: #{contribution.payment_method} confirme su contribución.
 br
 br
-|Em função disto, você recebera #{contribution.display_value} em créditos para apoiar outros projetos.
+|Debido a esto, usted recibirá #{contribution.display_value} en créditos para apoyar otros proyectos.
 br
 br
-| Caso prefira, você poderá pedir o #{link_to("reembolso seu apoio.", "#{Configuration[:base_url]}/users/#{contribution.user.to_param}#credits")}.
+| Si lo prefiere, puedes solicitar un #{link_to("reembolso del apoyo.", "#{Configuration[:base_url]}/users/#{contribution.user.to_param}#credits")}.
 br
 br
-| Lembrando que a chave de identificação do seu apoio é: <strong>#{contribution.id}</strong>
+| Recuerda que la clave del apoyo es: <strong>#{contribution.id}</strong>
 br
 br
-| Se ficou com alguma dúvida, entre em contato conosco respondendo a esta mensagem ou através do e-mail #{mail_to Configuration[:email_payments]}
+| Si tiene alguna duda, póngase en contacto con nosotros respondiendo a este mensaje o escribiendonos a: #{mail_to Configuration[:email_payments]}
 br
 br
-| Um abraço,
+| Un abrazo,
 br
 | #{Configuration[:company_name]}

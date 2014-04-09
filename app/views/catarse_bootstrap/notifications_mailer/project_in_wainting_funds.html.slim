@@ -3,44 +3,39 @@
 - project_link = project_by_slug_url(permalink: project.permalink)
 - company_name = ::Configuration[:company_name]
 
-|Oi #{project.user.name},
+|HOla #{project.user.name},
 br/
 br/
-| O prazo do projeto #{link_to project.name, project_link} no #{company_name} chegou ao fim.
+| El plazo para el proyecto #{link_to project.name, project_link} en #{company_name} llegó a su fin.
 br/
 br/
-| Existem pagamentos pendentes para o seu projeto. Para computar essas quantias ficaremos 
-| aguardando a confirmação dessas contribuições de última hora pelos próximos 3 dias úteis. 
+| Existen aportes pendientes para el proyecto. Para poder calcular el total recaudado, esperaremos confirmación de estas contribuciones en lo próximos 4 días hábiles. 
 br/
 br/
-| Confira alguns cenários nos quais seu projeto pode se encaixar:
+| Estos son algunos de los escenarios en los que podría terminar su proyecto:
 br/
 br/
-| <strong>1) Se o seu projeto já ultrapassou a meta:</strong> a gente apenas vai contabilizar caso 
-| haja alguma confirmação de pagamento e irá fazer o repasse para você depois desse prazo. 
-| <strong>Se sua conta MoIP ainda não foi verificada, nossa equipe entrará em contato com você para 
-| realizarmos juntos esse processo.</strong>  
+| <strong>1) El proyecto ya ha superado la meta:</strong> contaremos lo recaudado en caso 
+| de haber una confirmación pendiente de algún aporte les haremos llegar todos los aportes que estén en este caso. 
 br/
-| Confira: #{link_to 'Como será feito o repasse?', 'http://suporte.catarse.me/knowledgebase/articles/161090-como-ser%C3%A1-feito-o-repasse-do-dinheiro-', target: '__blank'}
+| Mirar: #{link_to 'Como se hará la transferencia del dinero?', 'http://sumame.uservoice.com/knowledgebase/articles/339019--c%C3%B3mo-se-har%C3%A1-la-transferencia-del-dinero', target: '__blank'}
 br/
 br/
-| <strong>2) Se o seu projeto ainda não chegou na meta, mas tem pagamentos pendentes que podem fazer com que 
-| isso aconteça:</strong> iremos esperar e torcer para que esses pagamento sejam confirmados e seu projeto consiga atingir 100%. 
-| Como alguns dos projetos são financiados com esses pagamentos de última hora, nossa equipe entrará em contato com você 
-| para agilizarmos a verificação da sua conta junto ao MoIP.
+| <strong>2) Si su proyecto aún no ha alcanzado la meta, pero tiene pagos pendientes que podrían hacer que se cumpla:</strong> vamos a esperar, y esperamos que estos aportes se confirmen y se pueda llegar a la meta del 100% (Si el proyecto es tipo Todo o Nada, solo se hará la transferencia si se llega a la meta, si el proyecto es tipo Todo Suma se entregará todo lo recaudado a la fecha). 
+| Como algunos de los proyectos son financiados con aportes de última hora, hay que estar pendientes de estos aportes y nos estaremos comunicando con ustedes.
 br/
 br/
-| <strong>3) Se o seu projeto não atingir a meta mesmo com esses pagamentos de última hora:</strong> primeiramente, 
-| os apoiadores receberão o valor da contribuição na forma de créditos no #{company_name} para apoiar outros projetos. 
-| E eles também receberão um e-mail com instruções sobre como pedir o reembolso do valor, caso prefiram receber o 
-| dinheiro de volta. 
+| <strong>3) Si el proyecto no llega a la meta, incluso después de esperar estas confirmaciones de última hora:</strong> primero, 
+| Si el proyecto es de tipo Todo Suma, lo recaudado será transferido al responsable del proyecto.
+| Si el proyecto es de tipo Todo o Nada: Los apoyadores recibirán el valor de la contribución en forma de créditos en #{company_name} para apoyar otros proyetos. 
+| Ellos también recibirán un correo con las instrucciones de como pedir un reembolso del valor contribuido, en caso de preferirlo. 
 br/
-| Confira: #{link_to 'Regras e Funcionamento dos Reembolsos', 'http://suporte.catarse.me/knowledgebase/articles/164746-regras-e-funcionamento-dos-reembolsos-estornos', target: '__blank'}.
-br/
-br/
-| Se ficou com alguma dúvida, responda a esta mensagem diretamente ou fale conosco através do e-mail #{mail_to ::Configuration[:email_projects]}
+| Mirar: #{link_to 'Reglas de Reembolsos', 'http://sumame.uservoice.com/knowledgebase/articles/333553-reglas-de-reembolso', target: '__blank'}.
 br/
 br/
-| Um abraço,
+| Si tiene alguna duda, respnda a este correo o envíe un mensaje al e-mail #{mail_to ::Configuration[:email_projects]}
+br/
+br/
+| Un abrazo,
 br/
 = company_name

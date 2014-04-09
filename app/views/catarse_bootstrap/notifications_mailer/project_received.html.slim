@@ -4,46 +4,46 @@
 - project_link = project_by_slug_url(permalink: project.permalink)
 - company_name = ::Configuration[:company_name]
 
-|Olá, #{user.name}!
+|Hola, #{user.name}!
 br
 br
-| Obrigado por iniciar o processo de inscrição de um projeto no #{company_name}! 
-| Este é apenas o passo inicial e quer dizer que você acabou de criar seu 
-| <strong>#{link_to 'rascunho de projeto', project_link, target: '__blank'}</strong> no #{company_name}.
+| Gracias por comenzar el proceso de solicitud de un proyecto en #{company_name}! 
+| Esto es el primer paso, podemos confirmar que su proyesta está en estado 
+| <strong>#{link_to 'borrador', project_link, target: '__blank'}</strong> en #{company_name}.
 br/
 br/
-| As dicas fundamentais para estruturar o seu projeto podem ser encontradas em 
-| diversos artigos na nossa #{link_to "Central de Suporte do #{company_name}", ::Configuration[:support_forum], target: '__blank'}. 
-| Ela pode ser utilizada como fonte de consulta para a maioria das dúvidas que você terá antes, durante e após a sua campanha. 
-| Mesmo assim resolvemos destacar alguns pontos nesse email. Leia todos com bastante atenção: 
+| Los consejos fundamentales para estructurar su proyecto se puede encontrar en
+| varios artículos en nuestra #{link_to "Central de Soporte", ::Configuration[:support_forum], target: '__blank'}. 
+| Puede ser utilizado como una fuente de referencia para la mayoría de las preguntas que tenga antes, durante y después de su campaña. 
+| Aun así, decidimos destacar algunos puntos en el correo electrónico. Lea todo con mucho cuidado: 
 br/
-= link_to "O Básico do #{company_name}", 'http://suporte.catarse.me/knowledgebase/topics/25760-o-b%C3%A1sico-do-catarse', target: '__blank'
+= link_to "Lo básico de #{company_name}", 'http://sumame.uservoice.com/knowledgebase/topics/52611-lo-b%C3%A1sico', target: '__blank'
 br/
-= link_to 'Realizadores - primeiros passos (rascunho)', 'http://suporte.catarse.me/knowledgebase/topics/25764-realizadores-primeiros-passos-rascunho-', target: '__blank'
-br/
-br/
-|Confira também:
-br/
-= link_to "Quais são todos os passos que envolvem uma campanha no #{company_name}?", 'http://suporte.catarse.me/knowledgebase/articles/160683-quais-s%C3%A3o-todos-os-passos-que-envolvem-uma-campanh', target: '__blank'
-br/
-= link_to "Como promover seu projeto", 'https://docs.google.com/a/catarse.me/document/d/14l3tS-x3wHhYV1xalRugl9tpgcaG9ot7RCvmth-ApH8/edit#heading=h.7yl6fbbvuvm9', target: '__blank'
+= link_to 'Realizadores - Primeros pasos', 'http://sumame.uservoice.com/knowledgebase/topics/52612-realizadores-primeros-pasos', target: '__blank'
 br/
 br/
-| Leia esses materiais e depois preencha tudo com bastante calma para aperfeiçoar seu projeto. 
+|Mirar también:
 br/
-| Você pode ficar o tempo que quiser montando a página do seu projeto antes de enviá-lo. 
+= link_to "Cuales son los pasos para crear una campaña en #{company_name}?", 'http://sumame.uservoice.com/knowledgebase/articles/344533--cu%C3%A1les-son-los-pasos-a-seguir-para-crear-una-camp', target: '__blank'
 br/
-br/
-| Quando considerar que a sua página de projeto está pronta, basta clicar no botão “ENVIAR PROJETO” que entraremos em contato contigo.
-br/
-br/
-| Se ficou com alguma dúvida, entre em contato conosco respondendo a esta mensagem ou através do e-mail #{mail_to ::Configuration[:email_projects]}
+= link_to "Como promover un proyecto", 'http://sumame.uservoice.com/knowledgebase/articles/344541-la-promoci%C3%B3n-de-un-proyecto', target: '__blank'
 br/
 br/
-| E por falar nisso, por favor <strong>não esqueça de incluir na sua lista de contatos os e-mails:</strong> 
-| #{mail_to ::Configuration[:email_projects]} e #{mail_to ::Configuration[:email_contact]} para evitar que nossas mensagens caiam na sua caixa de spam devido a filtros do seu email. 
+| Lea estos materiales y luego empiece a llenarlo con calma suficiente para perfeccionar su proyecto.
+br/
+| Tienen todo el tiempo que requieran para montar la información del proyecto antes de enviarlo. 
 br/
 br/
-| Um abraço,
+| Cuando consideren que el diseño de la página está lista, simplemente haga clic en el botón "ENVIAR PROYECTO" y nos pondremos en contacto con usted.
+br/
+br/
+| Si tienes alguna pregunta, por favor póngase en contacto con nosotros respondiendo a este mensaje o envíe un e-mail #{mail_to ::Configuration[:email_projects]}
+br/
+br/
+| Y por cierto, por favor <strong>no se olvide de incluir estas direcciones en su lista de contactos de e-mails:</strong> 
+| #{mail_to ::Configuration[:email_projects]} y #{mail_to ::Configuration[:email_contact]} para evitar que nuestros mensajes caigan en sus filtros de spam. 
+br/
+br/
+| Un abrazo,
 br/
 = company_name

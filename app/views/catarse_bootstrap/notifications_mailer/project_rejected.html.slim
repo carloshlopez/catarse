@@ -3,23 +3,23 @@
 - project_link = project_by_slug_url(permalink: project.permalink)
 - company_name = ::Configuration[:company_name]
 
-| Olá #{user.name},
+| Hola #{user.name},
 br/
 br/
-| Infelizmente, o projeto #{link_to project.name, project_link, target: '__blank'} não foi aceito no #{company_name}.
+| Infelizmente, el proyecto #{link_to project.name, project_link, target: '__blank'} no fue aceptado en #{company_name}.
 br/
 br/
-| Acreditamos que o projeto não se enquadra no perfil de projetos hospedados no #{company_name}.
+| Creemos que el proyecto no se ajusta al perfil de los proyectos alojados en #{company_name}.
 br/
 br/
-| Caso queira tirar quaisquer outras dúvidas, ou deletar o seu rascunho recusado, responda a esta mensagem ou entre em contato conosco através do e-mail #{mail_to ::Configuration[:email_projects]}
+| Si usted quiere tomar alguna pregunta, o eliminar su proyecto rechazado, responda a este correo electrónico o póngase en contacto con nosotros por e-mail #{mail_to ::Configuration[:email_projects]}
 br/
 br/
-| Lembrando que ter um projeto recusado não impede que você envie novos projetos para avaliação. 
-| Levanta, sacode a poeira e dá a volta por cima! Estude nossa #{link_to 'Central de Suporte', ::Configuration[:support_forum], target: '__blank'} para que você saiba tudo sobre nossos pré-requisitos 
-| para a construção do seu próximo projeto. Para mais informações sobre requisitos para aprovação de um projeto no #{company_name}, basta acessar #{link_to 'esse artigo', 'http://suporte.catarse.me/knowledgebase/articles/241190-diretrizes-para-a-cria%C3%A7%C3%A3o-de-projetos', target: '__blank' }.
+| Recordando a tener un proyecto reducido no impide que envíe nuevos diseños para su evaluación.
+| Levántate, sacudir el polvo y da una vuelta! Estudie nuestra #{link_to 'Central de Soporte', ::Configuration[:support_forum], target: '__blank'} para que conozca más sobre los prerequisitos.
+| para la construcción de su próximo proyecto. Para obtener más información sobre los requisitos para la aprobación de un proyecto en #{company_name}, basta acessar #{link_to 'este artículo', 'http://sumame.uservoice.com/knowledgebase/articles/344540-lineamientos-para-la-creaci%C3%B3n-de-proyectos', target: '__blank' }.
 br/
 br/
-| Um abraço,
+| Un abrazo,
 br/
 = company_name
