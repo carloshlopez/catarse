@@ -469,7 +469,7 @@ es:
           credits: "Confirmar apoyo con créditos"
           moip: "Efetuar pagto por MoIP"
         subtitle: "Estos datos seran informados al organizador del proyecto."
-        title: "llene y revise los datos para el pago "
+        title: "llene y revise los datos para la contribución "
         choose_payment: "Como desea pagar?"
         choose_payment_subtitle: "Selecione debajo una forma de pago"
         choose_credit_card: "Pago internacional - PayPal"

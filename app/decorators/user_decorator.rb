@@ -44,7 +44,7 @@ class UserDecorator < Draper::Decorator
   end
 
   def display_credits
-    number_to_currency source.credits
+    number_to_currency source.credits, precision: 0
   end
 
   def display_total_of_contributions
