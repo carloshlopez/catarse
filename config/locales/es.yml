@@ -285,7 +285,7 @@ es:
     hints:
       contribution:
         credits: "Usted posee <strong>%{credits}</strong> en créditos y puede apoyar hasta este valor sin tener que realizar un nuevo pago."
-        value: "Usted escoge el valor ;) a partir de $20.000 es óptimo."
+        value: "Usted escoge el valor ;) a partir de $30.000 es óptimo."
       project:
         video_url_edit: 'Pegue aqui el link de su video alojado en Vimeo'
         about: "Cuentenos un poco sobre su inspiración para realizar el proyecto, su história y lo que será el producto final. Sea conciso y huya de las formalidades formalidades de avisos. Nada de OBJETIVO, JUSTIFICACION, DESTINATARIOS... Presentele a sus lectores algo que los conmueva y sea muy transparente con su expectativa del proyecto."
