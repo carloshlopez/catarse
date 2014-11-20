@@ -123,6 +123,7 @@ group :development do
   gem 'foreman'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'quiet_assets'
   # Uncomment only for optimization, should be commented on master branch
   # gem 'rack-mini-profiler'
 end
