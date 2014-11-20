@@ -188,7 +188,7 @@ es:
         email: Email
         full_name: "Nombre completo / Razón Social"
         bio: 'Mini Biografía'
-        name: Usuario en súmeme.co
+        name: Usuario en sumame.co
         id: 'ID'
         password: Contraseña
         password_confirmation: "Confirmacion de senha"
@@ -981,9 +981,9 @@ es:
       current_password_hint: "<i>Para cambiar tu contraseña, necesitamos validar la actual.</i>"
       email_hint: "Tu email sólo se utiliza para el envío de comunicaciones Súmame y Proyectos usted apoya. Él no será visible en su perfil. Cuando alguien apoya a un Proyecto, vamos a darle a su correo electrónico al dueño del proyecto para que que pueda ofrecer las recompensas."
       email_tooltip: "Clic aquí para escribir el email..."
-      gravatar_hint_html: "Puedes cambiar tu foto usanndo el %{link} con tu email. <br>Es tan simple, solo tienes que enviar una imagen y funciona para otros sitios también ;)"
+      gravatar_hint_html: "Puedes cambiar tu foto usando el %{link} con tu email. <br>Es tan simple, solo tienes que enviar una imagen y funciona para otros sitios también ;)"
       local_avatar: "Mi avatar"
-      submit_text: "Escogue tu imagen"
+      submit_text: "Escoge tu imagen"
       submit: "Enviar"
       my_data: "Mis datos"
       newsletter: "Quiero recibir novedades de Súmame por email"
