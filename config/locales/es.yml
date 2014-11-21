@@ -106,11 +106,12 @@ es:
   main:
     banner: "Conoce la investigación"
     links:
-      channels: "Descubra más proyectos de este validador"
-      recommended: "Descubra los proyetos recomendados"
-      expiring: "Descubra los proyetos en la recta final"
-      recents: "Descubra los proyetos recientes"
-      near: "Descubra los proyetos cerca tuyo"
+      channels: "Descubre más proyectos de este validador"
+      recommended: "Descubre los proyetos recomendados"
+      expiring: "Descubre los proyetos en la recta final"
+      recents: "Descubre los proyetos recientes"
+      near: "Descubre los proyetos cerca tuyo"
+      successful: "Descubre los proyectos exitos"
   sidebar:
     titles:
       blog: blog
@@ -133,6 +134,8 @@ es:
       title: "Recientes"
     channels:
       title: 'Proyectos de nuestros Validadores'
+    successful:
+      title: 'Exitosos'
   accept_terms_html: "Yo leí y estoy de acuerdo con los %{link}."
   activerecord:
     errors:

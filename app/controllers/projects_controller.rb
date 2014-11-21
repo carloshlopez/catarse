@@ -22,10 +22,11 @@ class ProjectsController < ApplicationController
             @recommends = ProjectsForHome.recommends
           end
 
-          @channel_projects = Project.from_channels([2]).order_for_search.limit(3)
+          # @channel_projects = Project.from_channels([2]).order_for_search.limit(3)
           @projects_near = Project.with_state('online').near_of(current_user.address_state).order("random()").limit(3) if current_user
-          @expiring = ProjectsForHome.expiring
-          @recent   = ProjectsForHome.recents
+          # @expiring = ProjectsForHome.expiring
+          # @recent   = ProjectsForHome.recents
+          @successful = Project.successful.limit(6)
         end
       end
     end

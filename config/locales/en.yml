@@ -113,6 +113,7 @@ en:
       expiring: "Discover expiring projects"
       recents: "Discover recent projects"
       near: "Discover projects near you"
+      successful: "Discover successful projects"
   sidebar:
     titles:
       blog: blog
@@ -135,6 +136,8 @@ en:
       title: Recent
     channels:
       title: "Asas Channel"
+    successful:
+      title: 'Successful'
   accept_terms_html: "I have read and accepted the %{link}."
   activerecord:
     errors:
