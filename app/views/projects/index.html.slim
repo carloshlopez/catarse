@@ -43,6 +43,14 @@
         .projects
           == render @successful
 
+      section.partially_funded.list
+        header
+          h2.list-title
+            = link_to t('sections.partially_funded.title'), explore_path(anchor: :partially_funded)
+          = link_to t('main.links.partially_funded'), explore_path(anchor: :partially_funded), class: "more-projects"
+        .projects
+          == render @partially_funded
+
       / section.channel_projects.list
       /   header
       /     h2.list-title

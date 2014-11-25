@@ -114,6 +114,7 @@ en:
       recents: "Discover recent projects"
       near: "Discover projects near you"
       successful: "Discover successful projects"
+      partially_funded: "Discover partially funded projects"
   sidebar:
     titles:
       blog: blog
@@ -138,6 +139,8 @@ en:
       title: "Asas Channel"
     successful:
       title: 'Successful'
+    partially_funded:
+      title: 'Partially Funded'
   accept_terms_html: "I have read and accepted the %{link}."
   activerecord:
     errors:

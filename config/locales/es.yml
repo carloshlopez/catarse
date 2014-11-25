@@ -112,6 +112,7 @@ es:
       recents: "Descubre los proyetos recientes"
       near: "Descubre los proyetos cerca tuyo"
       successful: "Descubre los proyectos exitos"
+      partially_funded: "Descubre los proyectos parcialmente financiados"
   sidebar:
     titles:
       blog: blog
@@ -136,6 +137,8 @@ es:
       title: 'Proyectos de nuestros Validadores'
     successful:
       title: 'Exitosos'
+    partially_funded:
+      title: 'Parcialmente financiados'
   accept_terms_html: "Yo leí y estoy de acuerdo con los %{link}."
   activerecord:
     errors:
