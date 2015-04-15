@@ -1,7 +1,0 @@
-.bundle/
-log/*.log
-pkg/
-test/dummy/
-
-*.sublime-workspace
-*.sublime-project
