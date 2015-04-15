@@ -27,7 +27,10 @@ class ProjectsController < ApplicationController
           # @expiring = ProjectsForHome.expiring
           # @recent   = ProjectsForHome.recents
           @successful = Project.successful.limit(6)
-          @partially_funded = Project.partially_funded.limit(6)
+          # @partially_funded = Project.partially_funded.limit(6)
+          @partially_funded = Project.partially_funded.with_project_totals.order("pledged DESC").limit(6)
+
+
         end
       end
     end
