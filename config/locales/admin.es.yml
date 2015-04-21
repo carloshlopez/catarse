@@ -8,7 +8,7 @@ es:
         user: 'Usuário MoIP'
         user_id: 'User ID'
         goal: 'Meta'
-        total_payment_service_fee: 'Taza de pagos'
+        total_payment_service_fee: 'Taza de pagos aprox.'
         total_catarse_fee: 'Taza de Súmame'
         repass_value: 'Transferencias'
         expires_at: 'Finaliza'
