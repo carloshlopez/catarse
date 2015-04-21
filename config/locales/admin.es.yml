@@ -9,7 +9,7 @@ es:
         user_id: 'User ID'
         goal: 'Meta'
         total_payment_service_fee: 'Taza pagos (aprox)'
-        total_catarse_fee: 'Taza de Súmame'
+        total_catarse_fee: 'Taza Súmame'
         repass_value: 'Transferencias'
         expires_at: 'Finaliza'
         online_date: 'Entró al aire'
