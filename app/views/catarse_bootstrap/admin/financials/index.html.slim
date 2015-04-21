@@ -28,7 +28,8 @@
       =' pluralize_without_number @scoped_projects.count, t('found_singular'), t('found_plural')
       strong=' @scoped_projects.count
       =' pluralize_without_number(@scoped_projects.count, t('project_singular'), t('project_plural')).downcase
-
+  p
+    b % de Súmame:  #{Configuration[:catarse_fee].to_f}
   = paginate @projects
   - if @projects.empty?
     = t('.no_projects')
@@ -60,7 +61,7 @@
             td
               = number_to_currency catarse_fee, precision: 2
             td
-              = number_to_currency ((project.pledged*0.87)), precistion: 2
+              = number_to_currency (project.pledged - catarse_fee), precistion: 2
             td
               = project.display_expires_at
             td
