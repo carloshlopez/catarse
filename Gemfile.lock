@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/carloshlopez/catarse_mercadopagos.git
-  revision: c9918d09faccf9f4d4510fb088ddde67d9d2a6ad
+  revision: 589429c134ca7405532fb1cae96a16bb19f9c2ac
   specs:
     catarse_mercadopagos (0.1.0)
       mercadopago-sdk
