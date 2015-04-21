@@ -20,7 +20,7 @@ class Notification < ActiveRecord::Base
       user: user,
       locale: elloc,
       origin_email: Configuration[:email_contact],
-      origin_name: Configuration[:company_name]
+      origin_name: "Súmame" || Configuration[:company_name]
     }.merge(params)).deliver
   end
 

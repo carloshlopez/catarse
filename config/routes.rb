@@ -29,6 +29,7 @@ Catarse::Application.routes.draw do
 
   # mount CatarsePaypalExpress::Engine => "/", as: :catarse_paypal_express
   # mount CatarseMoip::Engine => "/", as: :catarse_moip
+  mount CatarseMercadopagos::Engine => "/", :as => "catarse_mercadopagos"
   mount CatarsePagosonline::Engine => "/", :as => "catarse_pagosonline"
   # mount CatarsePayulatam::Engine => "/", :as => "catarse_payulatam"
   # mount CatarseWepay::Engine => "/", as: :catarse_wepay

@@ -35,6 +35,7 @@ gem 'chartkick'
 # gem 'pagosonline', git: 'git://github.com/sagmor/pagosonline.git'
 # gem 'catarse_pagosonline'
 gem 'pagosonline', git: 'git://github.com/carloshlopez/pagosonline.git'
+gem 'catarse_mercadopagos', git: 'git://github.com/carloshlopez/catarse_mercadopagos.git'
 gem 'catarse_pagosonline', git: 'git://github.com/carloshlopez/catarse_pagosonline.git'
 
 # Decorators
