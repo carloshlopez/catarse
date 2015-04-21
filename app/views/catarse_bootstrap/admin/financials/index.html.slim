@@ -39,7 +39,7 @@
         tr
           th style="width: 200px;"
             = t('.name')
-          th= t('.user')
+          / th= t('.user')
           th= t('.goal')
           th= t('.pledged')
           th= t('.total_payment_service_fee')
@@ -53,7 +53,7 @@
         - @projects.each do |project|
           tr id=project.id class=cycle("even", "odd")
             td= link_to project.name, project_by_slug_path(permalink: project.permalink), target: '_blank'
-            td= link_to (project.user.moip_login.blank? ? 'Não preenchido' : project.user.moip_login), user_path(project.user, anchor: :settings), target: '_blank'
+            / td= link_to (project.user.moip_login.blank? ? 'Não preenchido' : project.user.moip_login), user_path(project.user, anchor: :settings), target: '_blank'
             td= project.display_goal
             td= project.display_pledged
             - payment_fee = 0.10 * project.pledged

@@ -10,7 +10,7 @@ es:
         goal: 'Meta'
         total_payment_service_fee: 'Taza de pagos'
         total_catarse_fee: 'Taza de Súmame'
-        repass_value: 'Vl. Transferencias'
+        repass_value: 'Transferencias'
         expires_at: 'Finaliza'
         online_date: 'Entró al aire'
         pledged: 'Alcanzado'
