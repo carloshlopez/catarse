@@ -7,13 +7,7 @@ GIT
       jquery-rails
       rails (~> 4)
 
-GIT
-  remote: git://github.com/carloshlopez/catarse_mercadopagos.git
-  revision: ddbde7c2373e4e55c5c1abe92855047cbe92493f
-  specs:
-    catarse_mercadopagos (0.1.0)
-      mercadopago-sdk
-      rails
+
 
 GIT
   remote: git://github.com/carloshlopez/catarse_pagosonline.git
