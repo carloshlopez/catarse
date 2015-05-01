@@ -1,7 +1,10 @@
 require 'sidekiq/web'
 
 Catarse::Application.routes.draw do
-  resources :campaigns  
+
+  get "/mercado_pago_clients/code" => "mercado_pago_clients#code", as: :mercado_pago_clients_code
+
+  resources :campaigns
   resources :validators
   get '/conectandocorazones' => "validators#conectando_corazones"
 
@@ -137,6 +140,7 @@ Catarse::Application.routes.draw do
     resources :statistics, only: [ :index ]
     resources :financials, only: [ :index ]
 
+
     resources :contributions, only: [ :index, :update, :show ] do
       member do
         put 'confirm'
@@ -153,7 +157,10 @@ Catarse::Application.routes.draw do
     namespace :reports do
       resources :contribution_reports, only: [ :index ]
     end
-  end
+    get "setupmercadopago" => "setupmercadopago#setup", as: :admin_setup_mercadopago
 
+  end
+  resources :mercado_pago_clients
+  get "create_mercadopago_client" => "mercado_pago_clients#create_mercadopago_client", as: :create_mercadopago_client
   get "/:permalink" => "projects#show", as: :project_by_slug
 end

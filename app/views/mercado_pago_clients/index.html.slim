@@ -1,0 +1,23 @@
+h1 Listing mercado_pago_clients
+
+table
+  tr
+    th Project
+    th Email
+    th Code
+    th
+    th
+    th
+
+  - @mercado_pago_clients.each do |mercado_pago_client|
+    tr
+      td = mercado_pago_client.project_id
+      td = mercado_pago_client.email
+      td = mercado_pago_client.code
+      td = link_to 'Show', mercado_pago_client
+      td = link_to 'Edit', edit_mercado_pago_client_path(mercado_pago_client)
+      td = link_to 'Destroy', mercado_pago_client, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Mercado pago client', new_mercado_pago_client_path

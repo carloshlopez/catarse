@@ -1,0 +1,10 @@
+= render 'shared/header'
+.row.admin
+  h1= Agregar Clientes de Mercado Pago
+  - if @render_iframe
+    p Una vez te hayas loggeado a mercado pago y salga abajo la página de súmame, haz click en Siguiente para ver el código del cliente
+    iframe height="1000px" src="#{@src_iframe}" width="100%"
+  - else
+    input name="client_email"
+  .clearfix
+= render 'shared/footer'

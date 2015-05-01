@@ -1,0 +1,20 @@
+p#notice = notice
+
+p Una vez te hayas loggeado a mercado pago y salga abajo la página de súmame, haz click en Siguiente para ver el código del cliente
+p = mercado_pago_client_code_url(@mercado_pago_client, :client_email => @mercado_pago_client.email)
+
+iframe height="400px" src="https://auth.mercadolibre.com.ar/authorization?client_id=4750269945802765&response_type=code&platform_id=mp&redirect_uri=#{mercado_pago_client_code_url(@mercado_pago_client, :client_email => @mercado_pago_client.email)}" width="100%"
+
+p
+  strong Project:
+  = @mercado_pago_client.project_id
+p
+  strong Email:
+  = @mercado_pago_client.email
+p
+  strong Code:
+  = @mercado_pago_client.code
+
+= link_to 'Edit', edit_mercado_pago_client_path(@mercado_pago_client)
+'|
+= link_to 'Back', mercado_pago_clients_path

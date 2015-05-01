@@ -1,0 +1,22 @@
+require 'spec_helper'
+
+describe "mercado_pago_clients/new" do
+  before(:each) do
+    assign(:mercado_pago_client, stub_model(MercadoPagoClient,
+      :proyect_id => 1,
+      :email => "MyString",
+      :code => "MyString"
+    ).as_new_record)
+  end
+
+  it "renders new mercado_pago_client form" do
+    render
+
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    assert_select "form[action=?][method=?]", mercado_pago_clients_path, "post" do
+      assert_select "input#mercado_pago_client_proyect_id[name=?]", "mercado_pago_client[proyect_id]"
+      assert_select "input#mercado_pago_client_email[name=?]", "mercado_pago_client[email]"
+      assert_select "input#mercado_pago_client_code[name=?]", "mercado_pago_client[code]"
+    end
+  end
+end
