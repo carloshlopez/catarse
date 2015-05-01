@@ -1,0 +1,1 @@
+PaymentEngines.register({name: 'mercadopagos', review_path: ->(backer){ CatarseMercadopagos::Engine.routes.url_helpers.payment_review_mercadopagos_path(backer) }, locale: 'es'})
