@@ -1,6 +1,6 @@
 class MercadoPagoClientsController < InheritedResources::Base
   def code
-    @mercado_pago_client = MercadoPagoClient.find_by_email_and_project_id(params[:email], params[:project_id])
+    @mercado_pago_client = MercadoPagoClient.find_by_project_id(params[:project_id])
     if params[:code]
       @mercado_pago_client.code = params[:code]
       @mercado_pago_client.get_token
