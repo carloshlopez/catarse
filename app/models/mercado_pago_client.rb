@@ -2,7 +2,7 @@
 require 'mercadopago.rb'
 class MercadoPagoClient < ActiveRecord::Base
   belongs_to :project
-  after_create :get_token
+  validates_uniqueness_of :project_id
 
   def get_token
     begin
