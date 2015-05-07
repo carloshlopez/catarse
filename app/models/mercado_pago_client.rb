@@ -7,7 +7,11 @@ class MercadoPagoClient < ActiveRecord::Base
   def get_token
     begin
       mp = MercadoPago.new(Configuration[:mercadopagos_client_id] , Configuration[:mercadopagos_client_secret] )
-      params = "grant_type=authorization_code&client_id=#{Configuration[:mercadopagos_client_id]}&client_secret=#{Configuration[:mercadopagos_client_secret]}&code=#{self.code}"
+      # params = "grant_type=authorization_code&client_id=#{Configuration[:mercadopagos_client_id]}&client_secret=#{Configuration[:mercadopagos_client_secret]}&code=#{self.code}"
+      params = Hash["grant_type" => "authorization_code",
+        "client_id" => "#{Configuration[:mercadopagos_client_id]}",
+        "client_secret" => "#{Configuration[:mercadopagos_client_secret]}",
+        "code"=> "#{self.code}"]
       resp = mp.post("/oauth/token", params)
       puts "%$%$ Respuesta es #{resp.inspect}"
       self.access_token = @preference['response']['access_token']
