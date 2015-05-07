@@ -11,7 +11,8 @@ class MercadoPagoClient < ActiveRecord::Base
       params = Hash["grant_type" => "authorization_code",
         "client_id" => "#{Configuration[:mercadopagos_client_id]}",
         "client_secret" => "#{Configuration[:mercadopagos_client_secret]}",
-        "code"=> "#{self.code}"]
+        "code"=> "#{self.code}",
+        "redirect_uri" => "http://sumame-test.herokuapp.com/es/mercado_pago_clients/code"]
       resp = mp.post("/oauth/token", params)
       puts "%$%$ Respuesta es #{resp.inspect}"
       self.access_token = @preference['response']['access_token']
