@@ -6,6 +6,7 @@ class MercadoPagoClientsController < InheritedResources::Base
       @mercado_pago_client.get_token
       @mercado_pago_client.save!
     end
+    layout false
   end
 
   def create_mercadopago_client
