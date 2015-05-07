@@ -8,7 +8,7 @@ class MercadoPagoClient < ActiveRecord::Base
     begin
       mp = MercadoPago.new(Configuration[:mercadopagos_client_id] , Configuration[:mercadopagos_client_secret] )
       params = "grant_type=authorization_code&client_id=#{Configuration[:mercadopagos_client_id]}&client_secret=#{Configuration[:mercadopagos_client_secret]}&code=#{self.code}"
-      resp = mp.get("/oauth/token", params)
+      resp = mp.psot("/oauth/token", params)
       puts "%$%$ Respuesta es #{resp.inspect}"
       self.access_token = @preference['response']['access_token']
       self.refresh_token = @preference['response']['refresh_token']
