@@ -15,8 +15,8 @@ class MercadoPagoClient < ActiveRecord::Base
         "redirect_uri" => "http://sumame-test.herokuapp.com/es/mercado_pago_clients/code?project_id=#{self.project_id}"]
       resp = mp.post("/oauth/token", params)
       puts "%$%$ Respuesta es #{resp.inspect}"
-      self.access_token = @preference['response']['access_token']
-      self.refresh_token = @preference['response']['refresh_token']
+      self.access_token = resp['response']['access_token']
+      self.refresh_token = resp['response']['refresh_token']
       self.save!
     rescue Exception => e
       puts "%$%%$$%$%%$  Error al traer token de Mercado Pagos!! #{e.message}"
