@@ -10,7 +10,12 @@ class MercadoPagoClientsController < InheritedResources::Base
   end
 
   def create_mercadopago_client
-    @mercado_pago_client = MercadoPagoClient.first_or_create(params[:mercado_pago_client])
+    begin
+      @mercado_pago_client = MercadoPagoClient.create(params[:mercado_pago_client])
+    rescue Exception => ex
+      puts "Error creando mercado_pago_client #{ex.message}"
+      @mercado_pago_client = MercadoPagoClient.find_by_project_id(params[:mercado_pago_client][:project_id])
+    end
   end
 
   protected
