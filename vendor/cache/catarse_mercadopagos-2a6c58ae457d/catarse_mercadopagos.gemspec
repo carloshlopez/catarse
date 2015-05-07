@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Carlos Lopez"]
-  s.date = "2015-05-01"
+  s.date = "2015-05-07"
   s.description = "Mercadopagos integration with Catarse crowdfunding platform"
   s.email = ["carloshlopez@gmail.com"]
   s.files = [".gitignore", ".rvmrc", "Gemfile", "Gemfile.lock", "LICENSE", "MIT-LICENSE", "README.md", "Rakefile", "app/controllers/catarse_mercadopagos/payment/mercadopagos_controller.rb", "app/views/catarse_mercadopagos/payment/mercadopagos/review.html.slim", "catarse_mercadopagos.gemspec", "config/initializers/register.rb", "config/routes.rb", "lib/catarse_mercadopagos.rb", "lib/catarse_mercadopagos/engine.rb", "lib/catarse_mercadopagos/version.rb", "script/rails", "spec/controllers/catarse_mercadopagos/payment/mercadopagos_spec.rb", "spec/spec_helper.rb"]
