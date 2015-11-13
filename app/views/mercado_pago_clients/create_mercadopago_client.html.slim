@@ -1,4 +1,4 @@
 p = "Cliente de mercado pago creado con el id: #{@mercado_pago_client.id} para el proyecto: #{@mercado_pago_client.project_id} y con email: #{@mercado_pago_client.email}"
-p = "Se le envió un mail con toda la información para el proceso, pero también se puede hacer copiando este link en un explorador, o en el Frame de abajo"
-p = "#{MERCADOPAGO_AUTH_URL}#{mercado_pago_clients_code_url}?email=#{@mercado_pago_client.email}&project_id=#{@mercado_pago_client.project_id}"
+p = "Se le envió un mail con toda la información para el proceso, pero también se puede hacer copiando este link en un explorador."
+p = "#{MERCADOPAGO_AUTH_URL}#{mercado_pago_clients_code_url}?project_id=#{@mercado_pago_client.project_id}&email=#{@mercado_pago_client.email}"
 p = link_to "haz click aquí", "#{MERCADOPAGO_AUTH_URL}#{mercado_pago_clients_code_url}?project_id=#{@mercado_pago_client.project_id}"
