@@ -437,8 +437,8 @@ es:
         anonymous_description: "Optó por permanecer incógnito"
         no_reward: "Este apoyador no selecionó ninguna recompensa"
       review:
-        pagosonline: "Paga en Efectivo"
-        mercadopagos: "Paga con Tarjeta de Crédito o Débito"
+        pagosonline: "Paga con Pagos On Line"
+        mercadopagos: "Paga con Mercado Pago"
         error: "Ooops. Ocorrió un error al registrar tu apoyo. Por favor, intente nuevamente."
       show:
         error: "Ooops. Usted solo puede ingresar a esta página, después de apoya un proyecto."
