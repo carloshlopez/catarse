@@ -81,9 +81,9 @@
               = link_to "MP",  create_mercadopago_client_path + "?mercado_pago_client[project_id]=#{project.id}&mercado_pago_client[email]=#{project.user.email}", :class => 'button info small', confirm: "¿Seguro que desea crear cliente MercadoPago?", :title => "Crear cliente para utilizar mercado pago con este proyecto"
             td.large-1.columns
               p
-                =best_in_place [:channels, :admin, project], :accepts_pagosonline, method: :put, type: :checkbox, collection: ["MP: " + t('no'), "MP: "+t('yes')] 
+                =best_in_place [:channels, :admin, project], :accepts_pagosonline, method: :put, type: :checkbox, collection: ["POL: " + t('no'), "POL: "+t('yes')] 
               p
-                =best_in_place [:channels, :admin, project], :accepts_mercadopago, method: :put, type: :checkbox, collection: ["POL: "+t('no'), "POL: "+t('yes')]
+                =best_in_place [:channels, :admin, project], :accepts_mercadopago, method: :put, type: :checkbox, collection: ["MP: "+t('no'), "MP: "+t('yes')]
             td.large-1.columns= project.category
             td.large-1.columns= best_in_place [:channels, :admin, project], :user_id, method: :put, type: :input
             td.large-1.columns= best_in_place [:channels, :admin, project], :goal, method: :put, type: :input, display_as: :display_goal
