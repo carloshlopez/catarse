@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/carloshlopez/catarse_mercadopagos.git
-  revision: e7c683e810bb981329b689abfcb9c40e5cfa82b3
+  revision: f014c8f0eaec138229a5a6a1be04c2c5fbe1341c
   specs:
     catarse_mercadopagos (0.1.1)
       mercadopago-sdk
@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/carloshlopez/catarse_pagosonline.git
-  revision: 16391345e0d172a416e0b46565d459f3d783bdd2
+  revision: 32c161185bd3aeb1a77dd97b6dabd31ec260e186
   specs:
     catarse_pagosonline (0.1.12)
       pagosonline
@@ -238,7 +238,7 @@ GEM
     mailchimp (0.0.9)
       httparty
     memcachier (0.0.2)
-    mercadopago-sdk (0.3.3)
+    mercadopago-sdk (0.3.4)
       json
     method_source (0.8.2)
     mime-types (1.25.1)
