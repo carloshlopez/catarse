@@ -24,10 +24,10 @@ class MercadoPagoClient < ActiveRecord::Base
     end
   end
 
-  def notify_project_user (user, mp_url)
+  def notify_project_user(user, mp_url)
     puts "Estamos en notify"
     begin
-      Notification.notify(:mp_config,
+      Notification.notify_once(:mp_config,
         user,
         { mp_url: mp_url }
       )
