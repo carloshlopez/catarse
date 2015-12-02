@@ -12,9 +12,13 @@ class MercadoPagoClientsController < InheritedResources::Base
   def create_mercadopago_client
     begin
       @mercado_pago_client = MercadoPagoClient.create(params[:mercado_pago_client])
+      @mercado_pago_client.save!
     rescue Exception => ex
       puts "Error creando mercado_pago_client #{ex.message}"
       @mercado_pago_client = MercadoPagoClient.find_by_project_id(params[:mercado_pago_client][:project_id])
+    ensure
+      puts "Vamos a mandar el perform con #{@mercado_pago_client.id}"
+      MercadoPagoAdminWorker.perform_async(@mercado_pago_client.id)
     end
   end
 

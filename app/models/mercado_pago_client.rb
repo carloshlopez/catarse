@@ -12,7 +12,7 @@ class MercadoPagoClient < ActiveRecord::Base
         "client_id" => "#{Configuration[:mercadopagos_client_id]}",
         "client_secret" => "#{Configuration[:mercadopagos_client_secret]}",
         "code"=> "#{self.code}",
-        "redirect_uri" => "http://www.sumame.co/es/mercado_pago_clients/code?project_id=#{self.project_id}"]
+        "redirect_uri" => "#{Configuration[:base_url]}/es/mercado_pago_clients/code?project_id=#{self.project_id}"]
       resp = mp.post("/oauth/token", params)
       puts "$$$%% Esta es la url al que se hace el pedido: #{params}"
       puts "%$%$ Respuesta es #{resp.inspect}"
@@ -21,6 +21,18 @@ class MercadoPagoClient < ActiveRecord::Base
       self.save!
     rescue Exception => e
       puts "%$%%$$%$%%$  Error al traer token de Mercado Pagos!! #{e.message}"
+    end
+  end
+
+  def notify_project_user user, mp_url
+    puts "Estamos en notify"
+    begin
+      Notification.notify(:mp_email,
+        user,
+        { mp_url: mp_url }
+      )
+    rescue Exception => e
+      puts "Error al enviar notificacion #{e.message}"
     end
   end
 
