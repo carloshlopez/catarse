@@ -24,11 +24,11 @@ class MercadoPagoClient < ActiveRecord::Base
     end
   end
 
-  def notify_project_user(user, mp_url)
+  def notify_project_user(user, project_id)
     puts "Estamos en notify"
     begin
       Notification.notify_once(:mp_config,
-        user, nil, {} )
+        user, nil, {project_id: project_id} )
     rescue Exception => e
       puts "Error al enviar notificacion #{e.message}"
     end
