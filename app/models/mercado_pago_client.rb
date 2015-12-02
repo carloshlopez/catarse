@@ -28,9 +28,7 @@ class MercadoPagoClient < ActiveRecord::Base
     puts "Estamos en notify"
     begin
       Notification.notify_once(:mp_config,
-        user, nil,
-        { mp_url: mp_url }
-      )
+        user )
     rescue Exception => e
       puts "Error al enviar notificacion #{e.message}"
     end
