@@ -14,6 +14,7 @@ class MercadoPagoClient < ActiveRecord::Base
         "code"=> "#{self.code}",
         "redirect_uri" => "http://sumame-test.herokuapp.com/es/mercado_pago_clients/code?project_id=#{self.project_id}"]
       resp = mp.post("/oauth/token", params)
+      puts "$$$%% Esta es la url al que se hace el pedido: #{params}"
       puts "%$%$ Respuesta es #{resp.inspect}"
       self.access_token = resp['response']['access_token']
       self.refresh_token = resp['response']['refresh_token']
