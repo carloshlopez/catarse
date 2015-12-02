@@ -28,7 +28,7 @@ class MercadoPagoClient < ActiveRecord::Base
     puts "Estamos en notify"
     begin
       Notification.notify_once(:mp_config,
-        user,
+        user, nil,
         { mp_url: mp_url }
       )
     rescue Exception => e
