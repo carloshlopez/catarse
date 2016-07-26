@@ -219,7 +219,14 @@ Devise.setup do |config|
     begin
       if ActiveRecord::Base.connection.table_exists? 'oauth_providers'
         OauthProvider.all.each do |p|
-          config.omniauth p.name, p.key, p.secret, scope: p.scope
+          if p.name == 'facebook'
+            config.omniauth p.name, p.key, p.secret, scope: p.scope, client_options: {
+              site: 'https://graph.facebook.com/v2.2',
+              authorize_url: "https://www.facebook.com/v2.2/dialog/oauth"
+            }
+          else
+            config.omniauth p.name, p.key, p.secret, scope: p.scope
+          end
         end
       end
     rescue Exception => e
