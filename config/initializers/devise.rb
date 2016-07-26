@@ -221,8 +221,8 @@ Devise.setup do |config|
         OauthProvider.all.each do |p|
           if p.name == 'facebook'
             config.omniauth p.name, p.key, p.secret, scope: p.scope, client_options: {
-              site: 'https://graph.facebook.com/v2.2',
-              authorize_url: "https://www.facebook.com/v2.2/dialog/oauth"
+              site: 'https://graph.facebook.com/v2.8',
+              authorize_url: "https://www.facebook.com/v2.8/dialog/oauth"
             }
           else
             config.omniauth p.name, p.key, p.secret, scope: p.scope
